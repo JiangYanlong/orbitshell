@@ -207,6 +207,17 @@
             position: relative;
         }
 
+        .hero-image-wrapper {
+            margin-top: 60px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            line-height: 0;
+            position: relative;
+        }
+
         .hero-image-wrapper video {
             width: 100%;
             height: auto;
@@ -421,7 +432,7 @@
             .dark-section p { font-size: 15px; margin-bottom: 32px; }
         }
 
-        /* 弹窗样式 */
+        /* --- 弹窗与查看器样式 --- */
         .modal {
             display: none;
             position: fixed;
@@ -439,6 +450,42 @@
         }
 
         .modal.show { display: flex; opacity: 1; }
+
+        /* 图片尺寸强力约束 */
+        .modal-content {
+            max-width: 90vw;
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* 确保图片不会拉伸变形 */
+            border-radius: 12px;
+            transform: scale(0.95);
+            transition: transform 0.4s var(--ease-out-expo);
+            cursor: zoom-out; /* 提示用户点击可以缩小/关闭 */
+        }
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        /* 放大图片的关闭按钮 */
+        .close-modal {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-size: 40px;
+            font-weight: 300;
+            color: #FFFFFF;
+            cursor: pointer;
+            z-index: 2001;
+            transition: transform 0.2s ease, color 0.2s ease;
+            line-height: 1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* 增加阴影，在浅色图片上依然可见 */
+        }
+
+        .close-modal:hover {
+            color: var(--accent-blue);
+            transform: scale(1.1);
+        }
 
         .text-modal-content {
             background-color: var(--bg-card);
@@ -566,7 +613,8 @@
 
     <!-- 图片放大 Modal -->
     <div id="imgModal" class="modal">
-        <img class="modal-content" id="expandedImg" style="border-radius: 12px;">
+        <span class="close-modal" id="closeImgBtn">&times;</span>
+        <img class="modal-content" id="expandedImg">
     </div>
 
     <!-- 隐私政策 Modal -->
@@ -626,10 +674,13 @@
             document.getElementById('textModal').classList.add('show');
         });
 
-        // 统一点击背景关闭
+        // 统一弹窗关闭逻辑 (包含背景、关闭按钮以及直接点击图片)
         document.querySelectorAll('.modal').forEach(modal => {
             modal.addEventListener('click', (e) => {
-                if(e.target === modal) modal.classList.remove('show');
+                // 判断点击区域：如果是背景本身、是“X”按钮、或是放大显示的图片内容，则关闭弹窗
+                if (e.target === modal || e.target.classList.contains('close-modal') || e.target.classList.contains('modal-content')) {
+                    modal.classList.remove('show');
+                }
             });
         });
     </script>
