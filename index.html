@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrbitShell - 智能统一连接管理与 AI 终端</title>
+    <style>
+        :root {
+            /* 提取自软件截图的配色 */
+            --bg-sidebar: #FCF9F6; /* 淡淡的米色背景 */
+            --bg-card: #FFFFFF;
+            --text-main: #1D1D1F;
+            --text-secondary: #86868B;
+            --accent-blue: #007AFF; /* 苹果蓝 */
+            --accent-purple: #AF52DE;
+            --border-color: rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-sidebar);
+            color: var(--text-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-blue);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 导航栏 */
+        header {
+            background-color: rgba(252, 249, 246, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: #FFF;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0062CC;
+            color: #FFF;
+            transform: scale(1.02);
+        }
+
+        /* 首屏展示 (Hero) */
+        .hero {
+            text-align: center;
+            padding: 80px 0 40px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #1D1D1F 0%, #434345 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+        }
+
+        .hero-image-wrapper {
+            margin-top: 40px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 功能网格 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 80px 0;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+        }
+
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+            display: inline-block;
+            background: var(--bg-sidebar);
+            padding: 12px;
+            border-radius: 12px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* 详情展示块 (左右交替) */
+        .showcase-section {
+            padding: 60px 0;
+        }
+
+        .showcase-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .showcase-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .showcase-text {
+            flex: 1;
+        }
+
+        .showcase-text h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .showcase-text p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .showcase-image {
+            flex: 1.5;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+        }
+
+        .showcase-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* 深色模式区块展示 (例如大屏看板) */
+        .dark-section {
+            background-color: #111111;
+            color: #FFFFFF;
+            padding: 100px 0;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .dark-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .dark-section p {
+            color: #A1A1A6;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .dark-section img {
+            max-width: 1000px;
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        /* 页脚 */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 40px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-desc {
+            color: var(--text-secondary);
+            font-size: 14px;
+            max-width: 300px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 60px;
+        }
+
+        .link-group h4 {
+            font-size: 14px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .link-group a {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .link-group a:hover {
+            color: var(--accent-blue);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .hero p { font-size: 18px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .showcase-row, .showcase-row:nth-child(even) { flex-direction: column; }
+            .footer-content { flex-direction: column; gap: 40px; }
+            .footer-links { flex-direction: column; gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <div class="logo">
+                <!-- 请确保上一轮生成的 app-icon.png 放在同级目录 -->
+                <img src="app-icon.png" alt="OrbitShell Logo" onerror="this.style.display='none'"> 
+                OrbitShell
+            </div>
+            <div class="nav-links">
+                <a href="#features">核心功能</a>
+                <a href="#showcase">界面预览</a>
+                <a href="#support">技术支持</a>
+            </div>
+            <a href="#" class="btn-primary">在 App Store 获取</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首屏 -->
+        <section class="hero container">
+            <h1>优雅，且强大的连接枢纽。</h1>
+            <p>OrbitShell 将 SSH、SFTP、RDP 与数据库管理完美融于一体。内置 AI 助手，专为现代开发者打造的 macOS 原生工作台。</p>
+            <a href="#" class="btn-primary" style="padding: 12px 24px; font-size: 16px;">免费下载体验</a>
+            
+            <div class="hero-image-wrapper">
+                <img src="index.jpg" alt="OrbitShell 欢迎页">
+            </div>
+        </section>
+
+        <!-- 核心功能 -->
+        <section id="features" class="container features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>AI 智能诊断</h3>
+                <p>遇到报错不再慌张。OrbitShell 内置 AI 助手，一键解析终端报错信息，自动为您提供修复建议与完整命令。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🗄️</div>
+                <h3>全栈连接管理</h3>
+                <p>无论你是管理 Linux 服务器 (SSH/SFTP)、Windows 桌面 (RDP) 还是生产数据库，一个软件全部搞定。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>数据可视化看板</h3>
+                <p>不仅仅是连接工具，更能将您的数据库资产直接转化为精美的数据看板和图表，实时监控业务指标。</p>
+            </div>
+        </section>
+
+        <!-- 详情图文展示 -->
+        <section id="showcase" class="showcase-section container">
+            <div class="showcase-row">
+                <div class="showcase-text">
+                    <h2>SSH 终端集成 AI 大脑</h2>
+                    <p>告别繁琐的排错过程。当您在终端遇到 "command not found" 或其他环境配置问题时，只需点击 AI 诊断，系统将结合当前上下文为您生成精准的解决方案。</p>
+                    <p style="color: var(--accent-blue); font-weight: 500;">✓ 支持一键应用修复建议</p>
+                    <p style="color: var(--accent-blue); font-weight: 500;">✓ 历史会话智能分析</p>
+                </div>
+                <div class="showcase-image">
+                    <img src="ssh-AI诊断.jpg" alt="SSH AI 诊断">
+                </div>
+            </div>
+
+            <div class="showcase-row">
+                <div class="showcase-text">
+                    <h2>文件管理与终端无缝协同</h2>
+                    <p>在进行 SSH 连接的同时，侧边栏直接打开高效率的 SFTP 文件浏览器。双屏对照，文件拖拽上传下载，一切尽在掌握。</p>
+                </div>
+                <div class="showcase-image">
+                    <img src="ssh.jpg" alt="SSH 与 SFTP 界面">
+                </div>
+            </div>
+
+            <div class="showcase-row">
+                <div class="showcase-text">
+                    <h2>统一的数据资产管理</h2>
+                    <p>轻松管理本地及生产环境的数据库 (如 MySQL)。通过图表元素库，您可以将枯燥的 SQL 查询转化为可复用的可视化卡片。</p>
+                </div>
+                <div class="showcase-image">
+                    <img src="Databases列表.jpg" alt="数据库管理列表">
+                </div>
+            </div>
+        </section>
+
+        <!-- 暗色背景展示看板 -->
+        <section class="dark-section">
+            <div class="container">
+                <h2>大屏沉浸式数据看板</h2>
+                <p>将您的图表元素组装成数据看板，支持一键切换至全屏暗黑模式，非常适合用于团队展示或监控中心。</p>
+                <img src="fullview.jpg" alt="数据看板大屏展示">
+            </div>
+        </section>
+        
+        <section class="container" style="padding-bottom: 60px;">
+             <div class="showcase-row" style="margin-bottom: 0;">
+                <div class="showcase-text">
+                    <h2>管理所有 RDP 会话</h2>
+                    <p>Windows 远程桌面同样可以优雅地在 OrbitShell 中进行管理，支持不同环境的分组与快速启动。</p>
+                </div>
+                <div class="showcase-image">
+                    <img src="RDP列表.png" alt="RDP 连接管理">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚与支持政策 -->
+    <footer id="support">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">OrbitShell</div>
+                    <p class="footer-desc">为现代开发者构建的下一代智能终端与连接管理工具。</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>支持</h4>
+                        <a href="#">使用文档</a>
+                        <a href="#">常见问题 (FAQ)</a>
+                        <a href="mailto:support@orbitshell.app">联系我们</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>法律与隐私</h4>
+                        <a href="#">隐私政策 (Privacy Policy)</a>
+                        <a href="#">服务条款 (Terms of Service)</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 OrbitShell. All rights reserved. 
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
