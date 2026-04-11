@@ -75,14 +75,17 @@
         /* --- 动画核心类 --- */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(30px) scale(0.98);
+            filter: blur(10px);
             transition: opacity var(--transition-speed) var(--ease-out-expo),
-                        transform var(--transition-speed) var(--ease-out-expo);
+                        transform var(--transition-speed) var(--ease-out-expo),
+                        filter var(--transition-speed) var(--ease-out-expo);
         }
 
         .reveal.active {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
+            filter: blur(0);
         }
 
         .delay-1 { transition-delay: 0.1s; }
@@ -110,7 +113,7 @@
 
         .logo {
             font-size: 20px;
-            font-weight: 700; /* 纯文字 Logo 稍微加粗更稳重 */
+            font-weight: 700;
             color: var(--text-main);
             z-index: 1001;
             letter-spacing: -0.01em;
@@ -173,30 +176,34 @@
             padding: 100px 0 60px;
         }
 
+        /* 标题流光动画 */
+        @keyframes textShine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
         .hero h1 {
             font-size: 64px;
             font-weight: 700;
             letter-spacing: -0.015em;
             margin-bottom: 16px;
             line-height: 1.07143;
+            /* 动态渐变填充 */
+            background: linear-gradient(
+                to right,
+                var(--text-main) 20%,
+                var(--accent-blue) 40%,
+                var(--accent-purple) 60%,
+                var(--text-main) 80%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShine 6s linear infinite;
         }
 
         .hero p {
             font-size: 24px;
-            color: var(--text-secondary);
-            max-width: 800px;
-            margin: 0 auto 40px;
-            font-weight: 400;
-        }
-
-        .hero-image-wrapper {
-            margin-top: 60px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            border: 1px solid var(--border-color);
-            background: var(--bg-card);
-            line-height: 0;
             position: relative;
         }
 
@@ -210,16 +217,18 @@
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 120px 0;
+            gap: 24px;
+            padding: 100px 0;
         }
 
         .feature-card {
             background: var(--bg-card);
-            border-radius: 24px;
-            padding: 48px;
+            border-radius: 22px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             border: 1px solid var(--border-color);
             transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo), background-color 0.5s ease;
+            text-align: left;
         }
 
         .feature-card:hover {
@@ -237,31 +246,35 @@
             align-items: center;
             justify-content: center;
             border-radius: 18px;
-            transition: background-color 0.5s ease;
+            transition: background-color 0.5s ease, transform 0.4s var(--ease-out-expo);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .feature-card h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            font-weight: 600;
+            font-size: 22px;
+            margin-bottom: 14px;
+            font-weight: 700;
         }
 
         .feature-card p {
             color: var(--text-secondary);
-            font-size: 17px;
-            line-height: 1.47;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
         /* 图文展示 */
         .showcase-section {
-            padding: 80px 0;
+            padding: 60px 0;
         }
 
         .showcase-row {
             display: flex;
             align-items: center;
-            gap: 100px;
-            margin-bottom: 140px;
+            gap: 80px;
+            margin-bottom: 120px;
         }
 
         .showcase-row:nth-child(even) {
@@ -269,23 +282,23 @@
         }
 
         .showcase-text h2 {
-            font-size: 40px;
-            margin-bottom: 24px;
-            font-weight: 600;
-            letter-spacing: -0.01em;
+            font-size: 38px;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            font-weight: 700;
         }
 
         .showcase-text p {
-            font-size: 19px;
+            font-size: 18px;
             color: var(--text-secondary);
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
 
         .showcase-image {
-            flex: 1.5;
-            border-radius: 20px;
+            flex: 1.4;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
             border: 1px solid var(--border-color);
             background: var(--bg-card);
         }
@@ -301,31 +314,31 @@
         .dark-section {
             background-color: #000;
             color: #FFFFFF;
-            padding: 120px 0;
+            padding: 100px 0;
             text-align: center;
-            margin: 60px 0;
+            margin: 40px 0;
         }
 
         .dark-section h2 {
-            font-size: 48px;
-            margin-bottom: 28px;
+            font-size: 42px;
+            margin-bottom: 24px;
             font-weight: 600;
         }
 
         .dark-section p {
             color: #86868B;
-            font-size: 21px;
+            font-size: 20px;
             max-width: 700px;
-            margin: 0 auto 60px;
+            margin: 0 auto 50px;
         }
 
         .dark-section .image-container {
-            max-width: 1060px;
+            max-width: 1000px;
             margin: 0 auto;
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
             border: 1px solid #333;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
         }
 
         .dark-section img {
@@ -393,15 +406,22 @@
             .nav-links {
                 background: var(--modal-bg);
             }
-            .hero h1 { font-size: 28px; } /* 移动端标题进一步微调 */
-            .hero p { font-size: 17px; }
-            .features-grid { grid-template-columns: 1fr; padding: 60px 0; gap: 20px; }
-            .feature-card { padding: 32px 24px; }
-            .showcase-row { flex-direction: column !important; text-align: center; gap: 32px; }
-            .showcase-text h2 { font-size: 28px; }
+            .hero { padding: 40px 0 20px; }
+            .hero h1 { font-size: 28px; line-height: 1.3; }
+            .hero p { font-size: 16px; margin-bottom: 24px; }
+            .hero-image-wrapper { margin-top: 30px; }
+            .features-grid { grid-template-columns: 1fr; padding: 40px 0; gap: 16px; }
+            .feature-card { padding: 30px 20px; border-radius: 20px; }
+            .feature-icon { width: 50px; height: 50px; font-size: 26px; margin-bottom: 18px; }
+            .feature-card h3 { font-size: 19px; }
+            .showcase-row { flex-direction: column !important; text-align: center; gap: 32px; margin-bottom: 64px; }
+            .showcase-text h2 { font-size: 24px; }
+            .dark-section { padding: 60px 0; }
+            .dark-section h2 { font-size: 26px; }
+            .dark-section p { font-size: 15px; margin-bottom: 32px; }
         }
 
-        /* 弹窗样式适配暗黑模式 */
+        /* 弹窗样式 */
         .modal {
             display: none;
             position: fixed;
@@ -458,8 +478,10 @@
             <h1 class="reveal">优雅，且强大的连接枢纽。</h1>
             <p class="reveal delay-1">SSH、SFTP、RDP 与数据库管理完美融于一体。内置 AI 助手，专为开发者打造的 macOS 原生工作台。</p>
             <div class="hero-image-wrapper reveal delay-2">
+                <!-- 将图片替换为视频 -->
                 <video autoplay muted loop playsinline poster="index.png">
                     <source src="demo.mp4" type="video/mp4">
+                    <!-- 兜底图片 -->
                     <img src="index.png" alt="OrbitShell 预览">
                 </video>
             </div>
