@@ -297,6 +297,7 @@
             color: var(--text-secondary);
             font-size: 14px;
             margin-bottom: 12px;
+            cursor: pointer;
         }
 
         .link-group a:hover {
@@ -374,6 +375,60 @@
             transform: scale(1.1);
         }
 
+        /* --- 隐私政策文本弹窗样式 --- */
+        .text-modal-content {
+            background: var(--bg-card);
+            color: var(--text-main);
+            max-width: 650px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 40px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal.show .text-modal-content {
+            transform: translateY(0);
+        }
+
+        .text-modal-content h2 {
+            margin-bottom: 24px;
+            font-size: 24px;
+        }
+
+        .text-modal-content h3 {
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-size: 18px;
+            color: var(--text-main);
+        }
+
+        .text-modal-content p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .close-text-modal {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .close-text-modal:hover {
+            color: var(--text-main);
+        }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 40px; }
             .hero p { font-size: 18px; }
@@ -382,6 +437,7 @@
             .footer-content { flex-direction: column; gap: 40px; }
             .footer-links { flex-direction: column; gap: 24px; }
             .close-modal { top: 15px; right: 20px; font-size: 30px; }
+            .text-modal-content { padding: 24px; }
         }
     </style>
 </head>
@@ -509,7 +565,7 @@
                     </div>
                     <div class="link-group">
                         <h4>法律与隐私</h4>
-                        <a href="#">隐私政策 (Privacy Policy)</a>
+                        <a id="openPrivacyBtn">隐私政策 (Privacy Policy)</a>
                         <a href="#">服务条款 (Terms of Service)</a>
                     </div>
                 </div>
@@ -526,39 +582,78 @@
         <img class="modal-content" id="zoomedImage">
     </div>
 
-    <!-- 添加点击放大图片的脚本 -->
+    <!-- 隐私政策内容的 Modal 弹窗 -->
+    <div id="privacyModal" class="modal">
+        <div class="text-modal-content">
+            <span class="close-text-modal">&times;</span>
+            <h2>OrbitShell 隐私政策</h2>
+            <p><strong>最后更新日期：</strong> 2024年</p>
+            <p>OrbitShell 致力于保护您的隐私和数据安全。作为一款连接管理工具，我们采取了“本地优先”的数据处理原则。</p>
+            
+            <h3>1. 敏感数据本地存储</h3>
+            <p>您在 OrbitShell 中配置的所有服务器地址、SSH 密钥、SFTP 凭证、RDP 密码以及数据库连接信息，均经过加密处理并**仅保存在您的本地设备上**。我们不会在任何云端服务器收集、存储或同步这些敏感信息。</p>
+            
+            <h3>2. AI 功能与数据交互</h3>
+            <p>当您主动使用“AI 智能诊断”功能时，OrbitShell 会将您当前选中的报错日志或输入的查询内容发送至第三方 AI 服务提供商（如 OpenAI 等 API）以获取修复建议。在此过程中：</p>
+            <p>• 仅发送您选定的必要上下文内容。<br>
+               • 强烈建议您在发送前，留意并脱敏输出内容中的密码或密钥等个人隐私。<br>
+               • 我们的 API 请求不会用于第三方 AI 模型的数据训练。</p>
+            
+            <h3>3. 崩溃日志与基础分析</h3>
+            <p>为了持续优化软件体验，在您授权同意（通过 Apple 的标准崩溃报告机制）的情况下，我们可能会收集匿名的崩溃日志和基础的应用内交互数据。这些数据完全匿名，不包含任何个人身份信息或您的业务数据。</p>
+            
+            <h3>4. 联系我们</h3>
+            <p>如果您对本隐私政策有任何疑问，请通过以下方式联系我们：<br>
+               邮箱：support@orbitshell.app</p>
+        </div>
+    </div>
+
+    <!-- 交互脚本 -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById("imageModal");
+            // --- 图片放大逻辑 ---
+            const imageModal = document.getElementById("imageModal");
             const modalImg = document.getElementById("zoomedImage");
-            const closeBtn = document.querySelector(".close-modal");
-
-            // 获取页面中所有的展示图片 (排除顶部的 logo)
+            const closeImageBtn = document.querySelector(".close-modal");
             const images = document.querySelectorAll('main img');
 
             images.forEach(function(img) {
-                // 为图片添加指针样式类
                 img.classList.add('zoomable-image');
-                
-                // 绑定点击事件
                 img.addEventListener('click', function() {
                     modalImg.src = this.src;
-                    modal.classList.add('show');
+                    imageModal.classList.add('show');
                 });
             });
 
-            // 点击关闭按钮隐藏弹窗
-            closeBtn.addEventListener('click', function() {
-                modal.classList.remove('show');
-                // 等待动画结束再清空图片源，体验更好
+            closeImageBtn.addEventListener('click', function() {
+                imageModal.classList.remove('show');
                 setTimeout(() => { modalImg.src = ''; }, 300);
             });
 
-            // 点击空白遮罩处也可以隐藏弹窗
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.classList.remove('show');
+            imageModal.addEventListener('click', function(e) {
+                if (e.target === imageModal) {
+                    imageModal.classList.remove('show');
                     setTimeout(() => { modalImg.src = ''; }, 300);
+                }
+            });
+
+            // --- 隐私政策弹窗逻辑 ---
+            const privacyModal = document.getElementById("privacyModal");
+            const openPrivacyBtn = document.getElementById("openPrivacyBtn");
+            const closePrivacyBtn = document.querySelector(".close-text-modal");
+
+            openPrivacyBtn.addEventListener('click', function(e) {
+                e.preventDefault(); // 阻止默认的 a 标签跳转
+                privacyModal.classList.add('show');
+            });
+
+            closePrivacyBtn.addEventListener('click', function() {
+                privacyModal.classList.remove('show');
+            });
+
+            privacyModal.addEventListener('click', function(e) {
+                if (e.target === privacyModal) {
+                    privacyModal.classList.remove('show');
                 }
             });
         });
