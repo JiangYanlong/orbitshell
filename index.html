@@ -310,6 +310,70 @@
             font-size: 14px;
         }
 
+        /* --- 图片点击放大 (Lightbox) 样式 --- */
+        .zoomable-image {
+            cursor: zoom-in;
+            transition: opacity 0.3s ease;
+        }
+        
+        .zoomable-image:hover {
+            opacity: 0.85;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0,0,0,0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            transform: scale(0.8);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: 0.2s;
+            z-index: 1001;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: var(--accent-blue);
+            transform: scale(1.1);
+        }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 40px; }
             .hero p { font-size: 18px; }
@@ -317,6 +381,7 @@
             .showcase-row, .showcase-row:nth-child(even) { flex-direction: column; }
             .footer-content { flex-direction: column; gap: 40px; }
             .footer-links { flex-direction: column; gap: 24px; }
+            .close-modal { top: 15px; right: 20px; font-size: 30px; }
         }
     </style>
 </head>
@@ -334,7 +399,7 @@
                 <a href="#showcase">界面预览</a>
                 <a href="#support">技术支持</a>
             </div>
-            <a href="#" class="btn-primary">在 App Store 获取</a>
+            <a href="https://apps.apple.com/app/id您的应用ID" target="_blank" class="btn-primary">在 App Store 获取</a>
         </div>
     </header>
 
@@ -343,7 +408,7 @@
         <section class="hero container">
             <h1>优雅，且强大的连接枢纽。</h1>
             <p>OrbitShell 将 SSH、SFTP、RDP 与数据库管理完美融于一体。内置 AI 助手，专为现代开发者打造的 macOS 原生工作台。</p>
-            <a href="#" class="btn-primary" style="padding: 12px 24px; font-size: 16px;">免费下载体验</a>
+            <a href="https://apps.apple.com/app/id您的应用ID" target="_blank" class="btn-primary" style="padding: 12px 24px; font-size: 16px;">免费下载体验</a>
             
             <div class="hero-image-wrapper">
                 <img src="index.png" alt="OrbitShell 欢迎页">
@@ -454,6 +519,50 @@
             </div>
         </div>
     </footer>
+
+    <!-- 图片放大显示的 Modal 弹窗 -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="zoomedImage">
+    </div>
+
+    <!-- 添加点击放大图片的脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("zoomedImage");
+            const closeBtn = document.querySelector(".close-modal");
+
+            // 获取页面中所有的展示图片 (排除顶部的 logo)
+            const images = document.querySelectorAll('main img');
+
+            images.forEach(function(img) {
+                // 为图片添加指针样式类
+                img.classList.add('zoomable-image');
+                
+                // 绑定点击事件
+                img.addEventListener('click', function() {
+                    modalImg.src = this.src;
+                    modal.classList.add('show');
+                });
+            });
+
+            // 点击关闭按钮隐藏弹窗
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('show');
+                // 等待动画结束再清空图片源，体验更好
+                setTimeout(() => { modalImg.src = ''; }, 300);
+            });
+
+            // 点击空白遮罩处也可以隐藏弹窗
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                    setTimeout(() => { modalImg.src = ''; }, 300);
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
