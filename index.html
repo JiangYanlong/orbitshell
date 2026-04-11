@@ -7,48 +7,54 @@
     <style>
         :root {
             /* 提取自软件截图的配色 */
-            --bg-sidebar: #FCF9F6; /* 淡淡的米色背景 */
+            --bg-sidebar: #FCF9F6;
             --bg-card: #FFFFFF;
             --text-main: #1D1D1F;
             --text-secondary: #86868B;
-            --accent-blue: #007AFF; /* 苹果蓝 */
+            --accent-blue: #007AFF;
             --accent-purple: #AF52DE;
             --border-color: rgba(0,0,0,0.05);
+            --container-max: 1200px;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent; /* 移除移动端点击高亮 */
+        }
+
+        html {
+            scroll-behavior: smooth; /* 平滑滚动 */
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-sidebar);
             color: var(--text-main);
-            line-height: 1.5;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
         a {
             text-decoration: none;
-            color: var(--accent-blue);
+            transition: color 0.2s;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: var(--container-max);
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
         /* 导航栏 */
         header {
-            background-color: rgba(252, 249, 246, 0.8);
+            background-color: rgba(252, 249, 246, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -56,7 +62,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 60px;
+            height: 64px;
         }
 
         .logo {
@@ -66,17 +72,21 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            z-index: 1001;
         }
 
         .logo img {
             width: 32px;
             height: 32px;
             border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
+        /* 桌面端导航 */
         .nav-links {
             display: flex;
             gap: 24px;
+            align-items: center;
         }
 
         .nav-links a {
@@ -85,23 +95,47 @@
             font-weight: 500;
         }
 
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* 移动端菜单切换按钮 */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 20px;
+            height: 2px;
+            background: var(--text-main);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* 核心按钮样式 */
         .btn-primary {
             background-color: var(--accent-blue);
-            color: #FFF;
-            padding: 8px 16px;
+            color: #FFF !important;
+            padding: 8px 18px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
-            transition: all 0.2s;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
         }
 
         .btn-primary:hover {
             background-color: #0062CC;
-            color: #FFF;
             transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
         }
 
-        /* 首屏展示 (Hero) */
+        /* 首屏展示 */
         .hero {
             text-align: center;
             padding: 80px 0 40px;
@@ -110,31 +144,34 @@
         .hero h1 {
             font-size: 56px;
             font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #1D1D1F 0%, #434345 100%);
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #1D1D1F 0%, #636366 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            line-height: 1.1;
         }
 
         .hero p {
-            font-size: 24px;
+            font-size: 22px;
             color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto 40px;
+            max-width: 800px;
+            margin: 0 auto 32px;
             font-weight: 400;
         }
 
         .hero-image-wrapper {
-            margin-top: 40px;
-            border-radius: 16px;
+            margin-top: 50px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
             border: 1px solid var(--border-color);
             background: var(--bg-card);
+            line-height: 0;
+            position: relative;
         }
 
-        .hero-image-wrapper img {
+        .hero-image-wrapper video {
             width: 100%;
             height: auto;
             display: block;
@@ -150,38 +187,41 @@
 
         .feature-card {
             background: var(--bg-card);
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             border: 1px solid var(--border-color);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
 
         .feature-icon {
-            font-size: 28px;
-            margin-bottom: 16px;
-            display: inline-block;
+            font-size: 32px;
+            margin-bottom: 20px;
+            display: inline-flex;
+            width: 56px;
+            height: 56px;
             background: var(--bg-sidebar);
-            padding: 12px;
-            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
         }
 
         .feature-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
+            font-size: 22px;
+            margin-bottom: 14px;
         }
 
         .feature-card p {
             color: var(--text-secondary);
-            font-size: 15px;
+            font-size: 16px;
         }
 
-        /* 详情展示块 (左右交替) */
+        /* 图文详情展示 */
         .showcase-section {
             padding: 60px 0;
         }
@@ -190,7 +230,7 @@
             display: flex;
             align-items: center;
             gap: 60px;
-            margin-bottom: 80px;
+            margin-bottom: 100px;
         }
 
         .showcase-row:nth-child(even) {
@@ -202,9 +242,9 @@
         }
 
         .showcase-text h2 {
-            font-size: 36px;
-            margin-bottom: 16px;
-            letter-spacing: -0.01em;
+            font-size: 38px;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
         }
 
         .showcase-text p {
@@ -214,10 +254,10 @@
         }
 
         .showcase-image {
-            flex: 1.5;
-            border-radius: 16px;
+            flex: 1.4;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
             border: 1px solid var(--border-color);
             background: var(--bg-card);
         }
@@ -225,11 +265,12 @@
         .showcase-image img {
             width: 100%;
             display: block;
+            cursor: zoom-in;
         }
 
-        /* 深色模式区块展示 (例如大屏看板) */
+        /* 深色模式展示区 */
         .dark-section {
-            background-color: #111111;
+            background-color: #000;
             color: #FFFFFF;
             padding: 100px 0;
             text-align: center;
@@ -237,58 +278,69 @@
         }
 
         .dark-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 42px;
+            margin-bottom: 24px;
         }
 
         .dark-section p {
-            color: #A1A1A6;
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 40px;
+            color: #86868B;
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .dark-section .image-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #333;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
 
         .dark-section img {
-            max-width: 1000px;
             width: 100%;
-            border-radius: 12px;
-            border: 1px solid #333;
+            display: block;
         }
 
         /* 页脚 */
         footer {
             background: var(--bg-card);
             border-top: 1px solid var(--border-color);
-            padding: 60px 0 40px;
-            margin-top: 40px;
+            padding: 80px 0 40px;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo-area {
+            max-width: 320px;
         }
 
         .footer-logo {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 16px;
         }
 
         .footer-desc {
             color: var(--text-secondary);
             font-size: 14px;
-            max-width: 300px;
         }
 
         .footer-links {
             display: flex;
-            gap: 60px;
+            gap: 80px;
         }
 
         .link-group h4 {
             font-size: 14px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             color: var(--text-main);
         }
 
@@ -297,7 +349,6 @@
             color: var(--text-secondary);
             font-size: 14px;
             margin-bottom: 12px;
-            cursor: pointer;
         }
 
         .link-group a:hover {
@@ -306,51 +357,41 @@
 
         .copyright {
             text-align: center;
-            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
             color: var(--text-secondary);
-            font-size: 14px;
+            font-size: 13px;
         }
 
-        /* --- 图片点击放大 (Lightbox) 样式 --- */
-        .zoomable-image {
-            cursor: zoom-in;
-            transition: opacity 0.3s ease;
-        }
-        
-        .zoomable-image:hover {
-            opacity: 0.85;
-        }
-
+        /* 图片放大模态框 */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 2000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            background-color: rgba(0,0,0,0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255,255,255,0.98);
             opacity: 0;
             transition: opacity 0.3s ease;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
 
         .modal.show {
             display: flex;
-            align-items: center;
-            justify-content: center;
             opacity: 1;
         }
 
         .modal-content {
-            max-width: 90%;
+            max-width: 95%;
             max-height: 90vh;
             border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            transform: scale(0.8);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transform: scale(0.95);
+            transition: 0.3s;
         }
 
         .modal.show .modal-content {
@@ -359,86 +400,87 @@
 
         .close-modal {
             position: absolute;
-            top: 30px;
-            right: 40px;
-            color: #ffffff;
-            font-size: 40px;
-            font-weight: 300;
-            cursor: pointer;
-            transition: 0.2s;
-            z-index: 1001;
-            line-height: 1;
-        }
-
-        .close-modal:hover {
-            color: var(--accent-blue);
-            transform: scale(1.1);
-        }
-
-        /* --- 隐私政策文本弹窗样式 --- */
-        .text-modal-content {
-            background: var(--bg-card);
-            color: var(--text-main);
-            max-width: 650px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            padding: 40px;
-            border-radius: 16px;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            transform: translateY(20px);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .modal.show .text-modal-content {
-            transform: translateY(0);
-        }
-
-        .text-modal-content h2 {
-            margin-bottom: 24px;
-            font-size: 24px;
-        }
-
-        .text-modal-content h3 {
-            margin-top: 24px;
-            margin-bottom: 12px;
-            font-size: 18px;
-            color: var(--text-main);
-        }
-
-        .text-modal-content p {
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .close-text-modal {
-            position: absolute;
-            top: 20px;
+            top: 24px;
             right: 24px;
-            font-size: 28px;
+            font-size: 32px;
             cursor: pointer;
-            color: var(--text-secondary);
-            line-height: 1;
-            transition: color 0.2s;
+            color: var(--text-main);
         }
 
-        .close-text-modal:hover {
-            color: var(--text-main);
+        /* 隐私政策文本弹窗 */
+        .text-modal-content {
+            background: #FFF;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .text-modal-content h2 { margin-bottom: 24px; }
+        .text-modal-content h3 { margin-top: 30px; margin-bottom: 12px; }
+        .text-modal-content p { margin-bottom: 16px; color: var(--text-secondary); }
+
+        /* --- 响应式适配 --- */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 48px; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .showcase-row { gap: 30px; }
+            .footer-links { gap: 40px; }
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 40px; }
+            /* 移动端菜单激活状态 */
+            .nav-links {
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: #FFF;
+                flex-direction: column;
+                padding: 30px;
+                gap: 20px;
+                border-bottom: 1px solid var(--border-color);
+                transform: translateY(-110%);
+                transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .menu-toggle { display: flex; }
+
+            .hero { padding: 40px 0; }
+            .hero h1 { font-size: 34px; }
             .hero p { font-size: 18px; }
-            .features-grid { grid-template-columns: 1fr; }
-            .showcase-row, .showcase-row:nth-child(even) { flex-direction: column; }
+
+            .features-grid { grid-template-columns: 1fr; padding: 40px 0; }
+            
+            .showcase-row, .showcase-row:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+                gap: 32px;
+                margin-bottom: 60px;
+            }
+
+            .showcase-text h2 { font-size: 28px; }
+            
+            .dark-section h2 { font-size: 30px; }
+            .dark-section p { font-size: 16px; }
+
             .footer-content { flex-direction: column; gap: 40px; }
-            .footer-links { flex-direction: column; gap: 24px; }
-            .close-modal { top: 15px; right: 20px; font-size: 30px; }
-            .text-modal-content { padding: 24px; }
+            .footer-links { flex-direction: column; gap: 30px; }
         }
+
+        /* 菜单按钮动画 */
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 4px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
     </style>
 </head>
 <body>
@@ -446,218 +488,197 @@
     <header>
         <div class="container nav-inner">
             <div class="logo">
-                <!-- 请确保上一轮生成的 app-icon.png 放在同级目录 -->
-                <img src="app-icon.png" alt="OrbitShell Logo" onerror="this.style.display='none'"> 
+                <img src="app-icon.png" alt="Logo" onerror="this.style.backgroundColor='#007AFF'"> 
                 OrbitShell
             </div>
-            <div class="nav-links">
+            
+            <div class="menu-toggle" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-links" id="navLinks">
                 <a href="#features">核心功能</a>
                 <a href="#showcase">界面预览</a>
                 <a href="#support">技术支持</a>
-            </div>
-            <a href="https://apps.apple.com/app/id您的应用ID" target="_blank" class="btn-primary">在 App Store 获取</a>
+                <a href="https://apps.apple.com/app/id您的应用ID" target="_blank" class="btn-primary">App Store 下载</a>
+            </nav>
         </div>
     </header>
 
     <main>
-        <!-- 首屏 -->
+        <!-- Hero 区域：支持视频动图 -->
         <section class="hero container">
             <h1>优雅，且强大的连接枢纽。</h1>
-            <p>OrbitShell 将 SSH、SFTP、RDP 与数据库管理完美融于一体。内置 AI 助手，专为现代开发者打造的 macOS 原生工作台。</p>
-            <a href="https://apps.apple.com/app/id您的应用ID" target="_blank" class="btn-primary" style="padding: 12px 24px; font-size: 16px;">免费下载体验</a>
+            <p>SSH、SFTP、RDP 与数据库管理完美融于一体。内置 AI 助手，专为现代开发者打造的 macOS 原生工作台。</p>
             
             <div class="hero-image-wrapper">
-                <img src="index.png" alt="OrbitShell 欢迎页">
+                <!-- 关键优化：使用视频标签展示动图 -->
+                <!-- 如果 demo.mp4 还没准备好，浏览器会自动显示 poster 图片 -->
+                <video autoplay muted loop playsinline poster="index.png">
+                    <source src="demo.mp4" type="video/mp4">
+                    <img src="index.png" alt="OrbitShell 预览">
+                </video>
             </div>
         </section>
 
-        <!-- 核心功能 -->
+        <!-- 核心功能网格 -->
         <section id="features" class="container features-grid">
             <div class="feature-card">
                 <div class="feature-icon">✨</div>
                 <h3>AI 智能诊断</h3>
-                <p>遇到报错不再慌张。OrbitShell 内置 AI 助手，一键解析终端报错信息，自动为您提供修复建议与完整命令。</p>
+                <p>内置智能助手。一键解析终端报错，为您提供修复建议与完整命令，让运维不再头疼。</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🗄️</div>
                 <h3>全栈连接管理</h3>
-                <p>无论你是管理 Linux 服务器 (SSH/SFTP)、Windows 桌面 (RDP) 还是生产数据库，一个软件全部搞定。</p>
+                <p>无论 SSH、RDP 还是数据库，在一个干净的标签页窗口中管理所有生产环境资产。</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📊</div>
-                <h3>数据可视化看板</h3>
-                <p>不仅仅是连接工具，更能将您的数据库资产直接转化为精美的数据看板和图表，实时监控业务指标。</p>
+                <h3>可视化看板</h3>
+                <p>直接将数据库查询结果转化为精美的可视化图表，实时掌握业务核心指标。</p>
             </div>
         </section>
 
-        <!-- 详情图文展示 -->
+        <!-- 展示部分 -->
         <section id="showcase" class="showcase-section container">
             <div class="showcase-row">
                 <div class="showcase-text">
                     <h2>SSH 终端集成 AI 大脑</h2>
-                    <p>告别繁琐的排错过程。当您在终端遇到 "command not found" 或其他环境配置问题时，只需点击 AI 诊断，系统将结合当前上下文为您生成精准的解决方案。</p>
-                    <p style="color: var(--accent-blue); font-weight: 500;">✓ 支持一键应用修复建议</p>
-                    <p style="color: var(--accent-blue); font-weight: 500;">✓ 历史会话智能分析</p>
+                    <p>遇到报错不再慌张。AI 结合上下文为您生成精准解决方案，支持一键应用修复建议，效率翻倍。</p>
                 </div>
                 <div class="showcase-image">
-                    <img src="ssh-AI诊断.png" alt="SSH AI 诊断">
+                    <img src="ssh-AI诊断.png" alt="SSH AI 诊断演示" class="zoom-img">
                 </div>
             </div>
 
             <div class="showcase-row">
                 <div class="showcase-text">
-                    <h2>文件管理与终端无缝协同</h2>
-                    <p>在进行 SSH 连接的同时，侧边栏直接打开高效率的 SFTP 文件浏览器。双屏对照，文件拖拽上传下载，一切尽在掌握。</p>
+                    <h2>管理所有 RDP 会话</h2>
+                    <p>Windows 远程桌面同样可以优雅管理。支持分组预览与快速启动，多任务切换如丝般顺滑。</p>
                 </div>
                 <div class="showcase-image">
-                    <img src="ssh.png" alt="SSH 与 SFTP 界面">
-                </div>
-            </div>
-
-            <div class="showcase-row">
-                <div class="showcase-text">
-                    <h2>统一的数据资产管理</h2>
-                    <p>轻松管理本地及生产环境的数据库 (如 MySQL)。通过图表元素库，您可以将枯燥的 SQL 查询转化为可复用的可视化卡片。</p>
-                </div>
-                <div class="showcase-image">
-                    <img src="Databases列表.png" alt="数据库管理列表">
+                    <img src="RDP列表.png" alt="RDP 管理预览" class="zoom-img">
                 </div>
             </div>
         </section>
 
-        <!-- 暗色背景展示看板 -->
         <section class="dark-section">
             <div class="container">
                 <h2>大屏沉浸式数据看板</h2>
-                <p>将您的图表元素组装成数据看板，支持一键切换至全屏暗黑模式，非常适合用于团队展示或监控中心。</p>
-                <img src="fullview.png" alt="数据看板大屏展示">
-            </div>
-        </section>
-        
-        <section class="container" style="padding-bottom: 60px;">
-             <div class="showcase-row" style="margin-bottom: 0;">
-                <div class="showcase-text">
-                    <h2>管理所有 RDP 会话</h2>
-                    <p>Windows 远程桌面同样可以优雅地在 OrbitShell 中进行管理，支持不同环境的分组与快速启动。</p>
-                </div>
-                <div class="showcase-image">
-                    <img src="RDP列表.png" alt="RDP 连接管理">
+                <p>将您的 SQL 转化为可视化的艺术。支持暗黑模式大屏展示，实时刷新，让数据会说话。</p>
+                <div class="image-container">
+                    <img src="fullview.png" alt="全屏看板展示" class="zoom-img">
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- 页脚与支持政策 -->
     <footer id="support">
         <div class="container">
             <div class="footer-content">
-                <div>
+                <div class="footer-logo-area">
                     <div class="footer-logo">OrbitShell</div>
-                    <p class="footer-desc">为现代开发者构建的下一代智能终端与连接管理工具。</p>
+                    <p class="footer-desc">为现代开发者构建的下一代智能终端与连接管理工具。秉承本地优先、隐私至上的原则。</p>
                 </div>
                 <div class="footer-links">
                     <div class="link-group">
                         <h4>支持</h4>
                         <a href="#">使用文档</a>
-                        <a href="#">常见问题 (FAQ)</a>
-                        <a href="mailto:support@orbitshell.app">联系我们</a>
+                        <a href="mailto:support@orbitshell.cn">联系我们</a>
                     </div>
                     <div class="link-group">
-                        <h4>法律与隐私</h4>
-                        <a id="openPrivacyBtn">隐私政策 (Privacy Policy)</a>
-                        <a href="#">服务条款 (Terms of Service)</a>
+                        <h4>法律</h4>
+                        <a href="javascript:void(0)" id="privacyBtn">隐私政策</a>
+                        <a href="#">服务条款</a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2024 OrbitShell. All rights reserved. 
+                &copy; 2026 OrbitShell. All rights reserved. 
             </div>
         </div>
     </footer>
 
-    <!-- 图片放大显示的 Modal 弹窗 -->
-    <div id="imageModal" class="modal">
+    <!-- 图片放大 Modal -->
+    <div id="imgModal" class="modal">
         <span class="close-modal">&times;</span>
-        <img class="modal-content" id="zoomedImage">
+        <img class="modal-content" id="expandedImg">
     </div>
 
-    <!-- 隐私政策内容的 Modal 弹窗 -->
-    <div id="privacyModal" class="modal">
+    <!-- 隐私政策 Modal -->
+    <div id="textModal" class="modal">
         <div class="text-modal-content">
-            <span class="close-text-modal">&times;</span>
+            <span class="close-modal" id="closeTextBtn">&times;</span>
             <h2>OrbitShell 隐私政策</h2>
-            <p><strong>最后更新日期：</strong> 2024年</p>
-            <p>OrbitShell 致力于保护您的隐私和数据安全。作为一款连接管理工具，我们采取了“本地优先”的数据处理原则。</p>
-            
-            <h3>1. 敏感数据本地存储</h3>
-            <p>您在 OrbitShell 中配置的所有服务器地址、SSH 密钥、SFTP 凭证、RDP 密码以及数据库连接信息，均经过加密处理并**仅保存在您的本地设备上**。我们不会在任何云端服务器收集、存储或同步这些敏感信息。</p>
-            
-            <h3>2. AI 功能与数据交互</h3>
-            <p>当您主动使用“AI 智能诊断”功能时，OrbitShell 会将您当前选中的报错日志或输入的查询内容发送至第三方 AI 服务提供商（如 OpenAI 等 API）以获取修复建议。在此过程中：</p>
-            <p>• 仅发送您选定的必要上下文内容。<br>
-               • 强烈建议您在发送前，留意并脱敏输出内容中的密码或密钥等个人隐私。<br>
-               • 我们的 API 请求不会用于第三方 AI 模型的数据训练。</p>
-            
-            <h3>3. 崩溃日志与基础分析</h3>
-            <p>为了持续优化软件体验，在您授权同意（通过 Apple 的标准崩溃报告机制）的情况下，我们可能会收集匿名的崩溃日志和基础的应用内交互数据。这些数据完全匿名，不包含任何个人身份信息或您的业务数据。</p>
-            
-            <h3>4. 联系我们</h3>
-            <p>如果您对本隐私政策有任何疑问，请通过以下方式联系我们：<br>
-               邮箱：support@orbitshell.app</p>
+            <p><strong>发布日期：2026年4月</strong></p>
+            <p>OrbitShell 极度重视您的隐私。作为一款专业的连接管理工具，我们坚守以下原则：</p>
+            <h3>1. 数据本地化存储</h3>
+            <p>您的所有 SSH 密钥、密码、服务器地址均经过强加密，并**仅保存在您的本地磁盘**。OrbitShell 不会上传、收集或出售您的任何敏感凭证。</p>
+            <h3>2. AI 功能与交互</h3>
+            <p>使用 AI 诊断时，仅发送您选定的文本至 API 服务商。我们建议您在发送前脱敏日志中的私密数据。</p>
+            <h3>3. 安全性</h3>
+            <p>我们使用 macOS 原生的 Keychain 保护敏感数据，确保即便设备遗失，数据也难以被第三方窃取。</p>
+            <p>如有疑问，请通过 <strong>support@orbitshell.cn</strong> 联系我们。</p>
         </div>
     </div>
 
-    <!-- 交互脚本 -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // --- 图片放大逻辑 ---
-            const imageModal = document.getElementById("imageModal");
-            const modalImg = document.getElementById("zoomedImage");
-            const closeImageBtn = document.querySelector(".close-modal");
-            const images = document.querySelectorAll('main img');
+        // 移动端菜单逻辑
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
 
-            images.forEach(function(img) {
-                img.classList.add('zoomable-image');
-                img.addEventListener('click', function() {
-                    modalImg.src = this.src;
-                    imageModal.classList.add('show');
-                });
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // 点击导航链接后自动收起菜单
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
             });
+        });
 
-            closeImageBtn.addEventListener('click', function() {
-                imageModal.classList.remove('show');
-                setTimeout(() => { modalImg.src = ''; }, 300);
+        // 图片查看器逻辑
+        const imgModal = document.getElementById('imgModal');
+        const expandedImg = document.getElementById('expandedImg');
+        const zoomImages = document.querySelectorAll('.zoom-img');
+
+        zoomImages.forEach(img => {
+            img.addEventListener('click', () => {
+                imgModal.classList.add('show');
+                expandedImg.src = img.src;
             });
+        });
 
-            imageModal.addEventListener('click', function(e) {
-                if (e.target === imageModal) {
-                    imageModal.classList.remove('show');
-                    setTimeout(() => { modalImg.src = ''; }, 300);
-                }
-            });
+        // 隐私政策弹窗逻辑
+        const textModal = document.getElementById('textModal');
+        const privacyBtn = document.getElementById('privacyBtn');
+        const closeTextBtn = document.getElementById('closeTextBtn');
 
-            // --- 隐私政策弹窗逻辑 ---
-            const privacyModal = document.getElementById("privacyModal");
-            const openPrivacyBtn = document.getElementById("openPrivacyBtn");
-            const closePrivacyBtn = document.querySelector(".close-text-modal");
+        privacyBtn.addEventListener('click', () => {
+            textModal.classList.add('show');
+        });
 
-            openPrivacyBtn.addEventListener('click', function(e) {
-                e.preventDefault(); // 阻止默认的 a 标签跳转
-                privacyModal.classList.add('show');
-            });
-
-            closePrivacyBtn.addEventListener('click', function() {
-                privacyModal.classList.remove('show');
-            });
-
-            privacyModal.addEventListener('click', function(e) {
-                if (e.target === privacyModal) {
-                    privacyModal.classList.remove('show');
+        // 统一关闭弹窗逻辑
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if(e.target === modal || e.target.classList.contains('close-modal')) {
+                    modal.classList.remove('show');
                 }
             });
         });
-    </script>
 
+        // 监听 Esc 键关闭弹窗
+        document.addEventListener('keydown', (e) => {
+            if(e.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(m => m.classList.remove('show'));
+            }
+        });
+    </script>
 </body>
 </html>
