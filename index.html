@@ -66,7 +66,7 @@
         }
 
         .logo {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 700;
             color: var(--text-main);
             display: flex;
@@ -76,10 +76,10 @@
         }
 
         .logo img {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 30px;
+            height: 30px;
+            border-radius: 7px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
         }
 
         /* 桌面端导航 */
@@ -103,15 +103,15 @@
         .menu-toggle {
             display: none;
             flex-direction: column;
-            gap: 4px;
+            gap: 5px;
             cursor: pointer;
             z-index: 1001;
             padding: 10px;
         }
 
         .menu-toggle span {
-            width: 20px;
-            height: 2px;
+            width: 22px;
+            height: 1.5px;
             background: var(--text-main);
             border-radius: 2px;
             transition: 0.3s;
@@ -145,26 +145,27 @@
             font-size: 56px;
             font-weight: 800;
             letter-spacing: -0.03em;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             background: linear-gradient(135deg, #1D1D1F 0%, #636366 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.1;
+            line-height: 1.15;
         }
 
         .hero p {
-            font-size: 22px;
+            font-size: 21px;
             color: var(--text-secondary);
             max-width: 800px;
-            margin: 0 auto 32px;
+            margin: 0 auto 36px;
             font-weight: 400;
+            padding: 0 10px;
         }
 
         .hero-image-wrapper {
             margin-top: 50px;
             border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
             border: 1px solid var(--border-color);
             background: var(--bg-card);
             line-height: 0;
@@ -182,43 +183,46 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         .feature-card {
             background: var(--bg-card);
-            border-radius: 20px;
+            border-radius: 22px;
             padding: 40px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
+            text-align: left;
         }
 
         .feature-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
         }
 
         .feature-icon {
             font-size: 32px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             display: inline-flex;
-            width: 56px;
-            height: 56px;
+            width: 58px;
+            height: 58px;
             background: var(--bg-sidebar);
             align-items: center;
             justify-content: center;
-            border-radius: 14px;
+            border-radius: 16px;
         }
 
         .feature-card h3 {
             font-size: 22px;
             margin-bottom: 14px;
+            font-weight: 700;
         }
 
         .feature-card p {
             color: var(--text-secondary);
             font-size: 16px;
+            line-height: 1.5;
         }
 
         /* 图文详情展示 */
@@ -229,8 +233,8 @@
         .showcase-row {
             display: flex;
             align-items: center;
-            gap: 60px;
-            margin-bottom: 100px;
+            gap: 80px;
+            margin-bottom: 120px;
         }
 
         .showcase-row:nth-child(even) {
@@ -245,6 +249,7 @@
             font-size: 38px;
             margin-bottom: 20px;
             letter-spacing: -0.02em;
+            font-weight: 700;
         }
 
         .showcase-text p {
@@ -257,7 +262,7 @@
             flex: 1.4;
             border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
             border: 1px solid var(--border-color);
             background: var(--bg-card);
         }
@@ -295,7 +300,7 @@
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid #333;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
         }
 
         .dark-section img {
@@ -426,9 +431,9 @@
 
         /* --- 响应式适配 --- */
         @media (max-width: 1024px) {
-            .hero h1 { font-size: 48px; }
+            .hero h1 { font-size: 46px; }
             .features-grid { grid-template-columns: repeat(2, 1fr); }
-            .showcase-row { gap: 30px; }
+            .showcase-row { gap: 40px; }
             .footer-links { gap: 40px; }
         }
 
@@ -439,14 +444,15 @@
                 top: 64px;
                 left: 0;
                 right: 0;
-                background: #FFF;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
                 flex-direction: column;
-                padding: 30px;
-                gap: 20px;
+                padding: 40px 20px;
+                gap: 24px;
                 border-bottom: 1px solid var(--border-color);
                 transform: translateY(-110%);
                 transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.05);
             }
 
             .nav-links.active {
@@ -455,30 +461,38 @@
 
             .menu-toggle { display: flex; }
 
-            .hero { padding: 40px 0; }
-            .hero h1 { font-size: 34px; }
-            .hero p { font-size: 18px; }
+            .hero { padding: 50px 0 30px; }
+            .hero h1 { font-size: 32px; letter-spacing: -0.01em; margin-bottom: 16px; line-height: 1.25; }
+            .hero p { font-size: 17px; margin-bottom: 28px; line-height: 1.5; }
 
-            .features-grid { grid-template-columns: 1fr; padding: 40px 0; }
+            .features-grid { grid-template-columns: 1fr; padding: 40px 0; gap: 16px; }
             
+            /* 重点优化：移动端卡片外观 */
+            .feature-card { padding: 30px 24px; border-radius: 20px; }
+            .feature-icon { width: 50px; height: 50px; font-size: 26px; margin-bottom: 18px; }
+            .feature-card h3 { font-size: 20px; }
+            .feature-card p { font-size: 15px; }
+
             .showcase-row, .showcase-row:nth-child(even) {
                 flex-direction: column;
                 text-align: center;
                 gap: 32px;
-                margin-bottom: 60px;
+                margin-bottom: 64px;
             }
 
-            .showcase-text h2 { font-size: 28px; }
+            .showcase-text h2 { font-size: 26px; margin-bottom: 14px; }
+            .showcase-text p { font-size: 16px; }
             
-            .dark-section h2 { font-size: 30px; }
-            .dark-section p { font-size: 16px; }
+            .dark-section { padding: 60px 0; }
+            .dark-section h2 { font-size: 28px; }
+            .dark-section p { font-size: 16px; margin-bottom: 32px; }
 
             .footer-content { flex-direction: column; gap: 40px; }
-            .footer-links { flex-direction: column; gap: 30px; }
+            .footer-links { flex-direction: column; gap: 32px; }
         }
 
         /* 菜单按钮动画 */
-        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 4px); }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
         .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
     </style>
@@ -508,14 +522,12 @@
     </header>
 
     <main>
-        <!-- Hero 区域：支持视频动图 -->
+        <!-- Hero 区域 -->
         <section class="hero container">
             <h1>优雅，且强大的连接枢纽。</h1>
             <p>SSH、SFTP、RDP 与数据库管理完美融于一体。内置 AI 助手，专为现代开发者打造的 macOS 原生工作台。</p>
             
             <div class="hero-image-wrapper">
-                <!-- 关键优化：使用视频标签展示动图 -->
-                <!-- 如果 demo.mp4 还没准备好，浏览器会自动显示 poster 图片 -->
                 <video autoplay muted loop playsinline poster="index.png">
                     <source src="demo.mp4" type="video/mp4">
                     <img src="index.png" alt="OrbitShell 预览">
@@ -635,7 +647,6 @@
             navLinks.classList.toggle('active');
         });
 
-        // 点击导航链接后自动收起菜单
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenuBtn.classList.remove('active');
@@ -655,7 +666,6 @@
             });
         });
 
-        // 隐私政策弹窗逻辑
         const textModal = document.getElementById('textModal');
         const privacyBtn = document.getElementById('privacyBtn');
         const closeTextBtn = document.getElementById('closeTextBtn');
@@ -664,7 +674,6 @@
             textModal.classList.add('show');
         });
 
-        // 统一关闭弹窗逻辑
         document.querySelectorAll('.modal').forEach(modal => {
             modal.addEventListener('click', (e) => {
                 if(e.target === modal || e.target.classList.contains('close-modal')) {
@@ -673,7 +682,6 @@
             });
         });
 
-        // 监听 Esc 键关闭弹窗
         document.addEventListener('keydown', (e) => {
             if(e.key === 'Escape') {
                 document.querySelectorAll('.modal').forEach(m => m.classList.remove('show'));
