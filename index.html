@@ -512,19 +512,6 @@
             transform: scale(1.1);
         }
 
-        .text-modal-content {
-            background-color: var(--bg-card);
-            color: var(--text-main);
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 600px;
-            width: 90%;
-            transition: background-color 0.5s ease;
-        }
-        
-        .text-modal-content h2 {
-            letter-spacing: -0.02em;
-        }
     </style>
 </head>
 <body>
@@ -624,13 +611,13 @@
                 <div class="footer-links">
                     <div class="link-group">
                         <h4>支持</h4>
-                        <a href="#">使用文档</a>
+                        <a href="support.html">使用文档</a>
                         <a href="mailto:support@orbitshell.cn">联系我们</a>
                     </div>
                     <div class="link-group">
                         <h4>法律</h4>
-                        <a href="javascript:void(0)" id="privacyBtn">隐私政策</a>
-                        <a href="#">服务条款</a>
+                        <a href="privacy.html">隐私政策</a>
+                        <a href="terms.html">服务条款</a>
                     </div>
                 </div>
             </div>
@@ -644,20 +631,6 @@
     <div id="imgModal" class="modal">
         <span class="close-modal" id="closeImgBtn">&times;</span>
         <img class="modal-content" id="expandedImg">
-    </div>
-
-    <!-- 隐私政策 Modal -->
-    <div id="textModal" class="modal">
-        <div class="text-modal-content">
-            <h2>隐私政策</h2>
-            <p style="margin-top: 10px;"><strong>发布日期：2026年4月</strong></p>
-            <p style="margin-top: 15px;">OrbitShell 极度重视您的隐私。您的所有 SSH 密钥、密码、服务器地址均经过强加密，并**仅保存在您的本地磁盘**。</p>
-            <h3 style="margin-top: 20px;">1. 数据本地化存储</h3>
-            <p>我们不会上传、收集或出售您的任何敏感凭证。所有数据通过 macOS Keychain 进行安全管理。</p>
-            <h3 style="margin-top: 20px;">2. AI 功能与交互</h3>
-            <p>使用 AI 诊断时，仅发送您选定的文本至 API 服务商。我们建议您在发送前脱敏日志中的私密数据。</p>
-            <button class="btn-primary" style="margin-top: 30px; width: 100%; padding: 12px;" onclick="document.getElementById('textModal').classList.remove('show')">我已了解</button>
-        </div>
     </div>
 
     <script>
@@ -698,15 +671,10 @@
             });
         });
 
-        // 隐私弹窗
-        document.getElementById('privacyBtn').addEventListener('click', () => {
-            document.getElementById('textModal').classList.add('show');
-        });
-
-        // 统一弹窗关闭逻辑 (包含背景、关闭按钮以及直接点击图片)
+        // 图片查看器关闭逻辑
         document.querySelectorAll('.modal').forEach(modal => {
             modal.addEventListener('click', (e) => {
-                // 判断点击区域：如果是背景本身、是“X”按钮、或是放大显示的图片内容，则关闭弹窗
+                // 点击背景、关闭按钮或放大图片本身时关闭查看器
                 if (e.target === modal || e.target.classList.contains('close-modal') || e.target.classList.contains('modal-content')) {
                     modal.classList.remove('show');
                 }

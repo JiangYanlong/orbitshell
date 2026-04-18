@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrbitShell 隐私政策</title>
+    <meta name="description" content="OrbitShell 隐私政策，说明应用收集、处理、存储与删除数据的方式。">
+    <link rel="icon" type="image/png" href="app-icon.png">
+    <link rel="apple-touch-icon" href="app-icon.png">
+    <link rel="stylesheet" href="legal.css">
+</head>
+<body>
+    <main class="page">
+        <div class="topbar">
+            <div class="brand">OrbitShell</div>
+            <nav>
+                <a href="index.html">首页</a>
+                <a href="support.html">支持</a>
+                <a href="terms.html">服务条款</a>
+            </nav>
+        </div>
+
+        <section class="hero">
+            <div class="eyebrow">法律与隐私</div>
+            <h1>隐私政策</h1>
+            <p>OrbitShell 采用本地优先设计。连接凭证和大部分配置默认保存在您的设备上；只有在您主动使用云端能力时，才会发生必要的数据传输。</p>
+            <div class="meta">
+                <span>生效日期：2026年4月18日</span>
+                <span>适用于 OrbitShell 客户端与 orbitshell.cn</span>
+            </div>
+        </section>
+
+        <article class="document">
+            <section>
+                <h2>1. 适用范围</h2>
+                <p>本政策适用于 OrbitShell 应用程序、官方网站以及与产品运行直接相关的支持服务。使用 OrbitShell，即表示您已阅读并理解本政策中关于数据处理方式的说明。</p>
+                <p>如果某项功能需要调用第三方服务，本政策也覆盖 OrbitShell 团队与该第三方围绕该功能进行的数据处理；相关服务商应提供不低于本政策所述标准的数据保护措施。</p>
+            </section>
+
+            <section>
+                <h2>2. 我们处理哪些数据</h2>
+                <h3>2.1 默认保存在本地设备上的数据</h3>
+                <ul>
+                    <li>服务器地址、端口、用户名、连接分组与标签等连接配置。</li>
+                    <li>SSH 私钥、密码、数据库连接凭证及其他敏感认证信息。</li>
+                    <li>终端偏好设置、窗口布局、收藏项以及您主动保存到本地的历史记录。</li>
+                </ul>
+                <p>上述数据以本地优先方式处理，敏感凭证会通过系统安全能力进行加密存储，例如 macOS Keychain 或同等级别的安全存储机制。</p>
+
+                <h3>2.2 您主动触发云端能力时可能传输的数据</h3>
+                <ul>
+                    <li>您在 AI 诊断、AI 助手或类似功能中明确提交的终端输出、错误日志、命令片段、问题描述或截图文本。</li>
+                    <li>为完成请求所必需的网络与设备通信信息，例如 IP 地址、请求时间、设备类型、接口调用元数据。</li>
+                </ul>
+                <p>如果您不主动使用这些云端能力，上述内容不会因 OrbitShell 的核心连接功能而自动上传。</p>
+
+                <div class="notice">
+                    <strong>重要说明：</strong>如果您准备在 App Store Connect 中声明“未收集数据”，请先确认您接入的 AI 服务、崩溃统计、分析 SDK 或客服系统不会在设备外保留可读数据；否则需要按照实际情况披露。
+                </div>
+            </section>
+
+            <section>
+                <h2>3. 我们如何使用这些数据</h2>
+                <ul>
+                    <li>在本地保存您的连接与偏好设置，以便提供 SSH、RDP、数据库与看板等核心功能。</li>
+                    <li>在您主动调用 AI 功能时，将您选择提交的内容发送给相应的模型服务，用于返回诊断建议、解释报错或生成修复命令。</li>
+                    <li>维护基础的产品安全、滥用防护、故障排查和客户支持。</li>
+                </ul>
+                <p>根据当前版本的产品设计，OrbitShell 不以出售个人信息、跨 App 跟踪或定向广告为目的处理您的数据。</p>
+            </section>
+
+            <section>
+                <h2>4. 第三方服务与共享</h2>
+                <p>OrbitShell 仅在完成功能所必需的范围内与第三方共享数据。例如，您主动发起 AI 诊断时，您提交的文本会发送至当前版本所接入的第三方 AI 服务商进行实时处理。</p>
+                <p>如果您在某个版本中启用了第三方分析、崩溃上报、客服或云同步功能，相应数据也可能由这些服务商处理。您在 App Store Connect 中填写的隐私标签，必须覆盖 OrbitShell 自身以及所有第三方 SDK 或服务商的实际数据处理行为。</p>
+                <p>OrbitShell 不会出售您的个人信息。除法律要求、保护用户安全、调查滥用或履行合同义务所必需的情形外，我们不会向无关第三方披露您的数据。</p>
+            </section>
+
+            <section>
+                <h2>5. 数据保留与删除</h2>
+                <h3>5.1 本地数据</h3>
+                <p>您保存在设备上的连接配置、凭证和偏好设置会持续保留，直到您主动删除、重置应用数据、卸载应用，或通过系统安全设置移除相关条目。</p>
+
+                <h3>5.2 云端请求数据</h3>
+                <p>OrbitShell 自身不会为了账号画像或广告目的长期保存您提交给 AI 功能的内容。若某些请求经第三方基础设施处理，该第三方可能基于安全、计费、反滥用或故障排查需要，在其系统中短期保留必要日志或请求记录；具体保留时长以该第三方当时公开的政策为准。</p>
+
+                <h3>5.3 删除请求</h3>
+                <p>您可以通过应用内删除功能移除本地数据，也可以发送邮件至 <a href="mailto:support@orbitshell.cn">support@orbitshell.cn</a> 提交数据删除或隐私咨询请求。若请求涉及第三方处理的数据，我们会协助您定位对应服务商的删除路径或处理方式。</p>
+            </section>
+
+            <section>
+                <h2>6. 同意、撤回与您的选择</h2>
+                <ul>
+                    <li>您可以选择不使用 AI 诊断或任何需要联网处理的功能。</li>
+                    <li>您可以在发送日志或命令前手动脱敏，避免提交口令、密钥、令牌、客户数据或其他机密信息。</li>
+                    <li>如果某项数据处理基于您的授权，您可以通过关闭相应功能、删除本地数据或联系我们来撤回授权。</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>7. 安全措施</h2>
+                <p>我们会采取合理的技术与管理措施保护数据安全，包括本地加密存储、凭证隔离、最小化传输和访问控制。即便如此，任何网络传输或电子存储方式都无法保证绝对安全，因此请避免在未脱敏的情况下提交高风险生产数据。</p>
+            </section>
+
+            <section>
+                <h2>8. 未成年人</h2>
+                <p>OrbitShell 面向开发者、运维人员和企业技术用户设计，并非面向儿童提供的产品。如果您认为未成年人在未经监护人同意的情况下向我们提供了数据，请通过 <a href="mailto:support@orbitshell.cn">support@orbitshell.cn</a> 联系我们。</p>
+            </section>
+
+            <section>
+                <h2>9. 政策更新与联系方式</h2>
+                <p>如果我们的数据处理方式发生变化，我们会更新本页面的日期与内容；必要时，也会在应用内或 App Store Connect 的隐私信息中同步调整披露。</p>
+                <p>隐私相关问题、删除请求、投诉或建议，请联系：<a href="mailto:support@orbitshell.cn">support@orbitshell.cn</a>。</p>
+
+                <div class="cta-row">
+                    <a class="button-link" href="mailto:support@orbitshell.cn?subject=OrbitShell%20%E9%9A%90%E7%A7%81%E5%92%A8%E8%AF%A2">发送隐私咨询</a>
+                    <a class="button-link secondary" href="terms.html">查看服务条款</a>
+                </div>
+            </section>
+        </article>
+
+        <div class="footer-note">
+            本页面可作为 App Store Connect 中 <code>Privacy Policy URL</code> 的公开链接使用。正式提交前，请再核对 AI 服务商名称、SDK 列表与 App 内实际行为是否完全一致。
+        </div>
+    </main>
+</body>
+</html>
