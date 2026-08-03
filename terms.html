@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrbitShell 服务条款</title>
-    <meta name="description" content="OrbitShell 服务条款，说明产品使用、限制、责任和支持方式。">
+    <title>OrbitShell Terms of Service</title>
+    <meta name="description" content="OrbitShell Terms of Service, covering product usage, restrictions, liability, and support.">
     <link rel="icon" type="image/png" href="app-icon.png">
     <link rel="apple-touch-icon" href="app-icon.png">
     <link rel="stylesheet" href="legal.css">
@@ -14,84 +14,262 @@
         <div class="topbar">
             <div class="brand">OrbitShell</div>
             <nav>
-                <a href="index.html">首页</a>
-                <a href="support.html">支持</a>
-                <a href="privacy.html">隐私政策</a>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="support.html" data-i18n="nav.support">Support</a>
+                <a href="privacy.html" data-i18n="nav.privacy">Privacy Policy</a>
+                <div class="lang-dropdown" id="langDropdown">
+                    <span class="lang-toggle" id="langToggle">🌐 EN <span class="arrow">▼</span></span>
+                    <div class="lang-menu" id="langMenu">
+                        <div class="lang-option active" data-lang="en">English <span class="lang-code">EN</span></div>
+                        <div class="lang-option" data-lang="zh">中文 <span class="lang-code">ZH</span></div>
+                        <div class="lang-option" data-lang="ja">日本語 <span class="lang-code">JA</span></div>
+                        <div class="lang-option" data-lang="ko">한국어 <span class="lang-code">KO</span></div>
+                        <div class="lang-option" data-lang="fr">Français <span class="lang-code">FR</span></div>
+                        <div class="lang-option" data-lang="de">Deutsch <span class="lang-code">DE</span></div>
+                        <div class="lang-option" data-lang="es">Español <span class="lang-code">ES</span></div>
+                        <div class="lang-option" data-lang="pt">Português <span class="lang-code">PT</span></div>
+                        <div class="lang-option" data-lang="ru">Русский <span class="lang-code">RU</span></div>
+                    </div>
+                </div>
             </nav>
         </div>
 
         <section class="hero">
-            <div class="eyebrow">法律文件</div>
-            <h1>服务条款</h1>
-            <p>本条款说明您在使用 OrbitShell 客户端、网站以及相关支持服务时应遵守的基本规则、权利边界和责任分配。</p>
+            <div class="eyebrow" data-i18n="t.eyebrow">Legal Documents</div>
+            <h1 data-i18n="t.title">Terms of Service</h1>
+            <p data-i18n="t.desc">These terms outline the basic rules, rights boundaries, and liability allocation you should follow when using the OrbitShell client, website, and related support services.</p>
             <div class="meta">
-                <span>生效日期：2026年4月18日</span>
-                <span>适用于 OrbitShell 产品与网站</span>
+                <span data-i18n="t.date">Effective: April 18, 2026</span>
+                <span data-i18n="t.scope">Applies to OrbitShell products and website</span>
             </div>
         </section>
 
         <article class="document">
             <section>
-                <h2>1. 接受条款</h2>
-                <p>访问或使用 OrbitShell，即表示您同意受本条款及相关法律文件约束，包括 <a href="privacy.html">隐私政策</a>。如果您代表公司或团队使用本产品，您确认自己有权代表该组织接受这些条款。</p>
+                <h2 data-i18n="t.s1h">1. Acceptance of Terms</h2>
+                <p data-i18n="t.s1p">By accessing or using OrbitShell, you agree to be bound by these terms and related legal documents, including the Privacy Policy. If you use this product on behalf of a company or team, you confirm that you have the authority to accept these terms on behalf of that organization.</p>
             </section>
 
             <section>
-                <h2>2. 产品内容与适用范围</h2>
-                <p>OrbitShell 提供终端连接、远程桌面管理、数据库连接、可视化看板以及 AI 辅助诊断等能力。具体功能以应用当前版本、订阅方案、系统兼容性和地区可用性为准。</p>
-                <p>我们可以在不另行通知的情况下对界面、功能、接入服务、定价或支持方式进行更新，但不会以此影响您依法享有的基本权利。</p>
+                <h2 data-i18n="t.s2h">2. Product Content & Scope</h2>
+                <p data-i18n="t.s2p1">OrbitShell provides terminal connections, remote desktop management, database connections, data visualization dashboards, and AI-assisted diagnosis capabilities. Specific features depend on the current version, subscription plan, system compatibility, and regional availability.</p>
+                <p data-i18n="t.s2p2">We may update the interface, features, connected services, pricing, or support methods without prior notice, but this will not affect your basic rights as provided by law.</p>
             </section>
 
             <section>
-                <h2>3. 允许与禁止的使用方式</h2>
+                <h2 data-i18n="t.s3h">3. Permitted & Prohibited Uses</h2>
                 <ul>
-                    <li>您可以在合法授权范围内使用 OrbitShell 管理自己拥有或被授权访问的设备、服务器、数据库和远程资源。</li>
-                    <li>您不得使用 OrbitShell 从事未授权访问、口令爆破、恶意扫描、数据窃取、传播恶意代码或其他违法活动。</li>
-                    <li>您不得规避产品中的安全限制、许可限制、计费机制或反滥用控制。</li>
-                    <li>您应确保上传到 AI 或其他云端功能的数据不侵犯他人隐私、知识产权或保密义务。</li>
+                    <li data-i18n="t.s3l1">You may use OrbitShell to manage devices, servers, databases, and remote resources that you own or are authorized to access.</li>
+                    <li data-i18n="t.s3l2">You must not use OrbitShell for unauthorized access, password brute-forcing, malicious scanning, data theft, malware distribution, or other illegal activities.</li>
+                    <li data-i18n="t.s3l3">You must not bypass security restrictions, license limitations, billing mechanisms, or anti-abuse controls in the product.</li>
+                    <li data-i18n="t.s3l4">You must ensure that data uploaded to AI or other cloud features does not infringe on others' privacy, intellectual property, or confidentiality obligations.</li>
                 </ul>
             </section>
 
             <section>
-                <h2>4. 您的数据与安全责任</h2>
-                <p>您对自己录入、导入、连接或发送的数据负责，包括服务器凭证、数据库内容、业务日志和命令输出。请根据需要进行脱敏、权限控制和访问审计。</p>
-                <p>OrbitShell 采用本地优先设计，但您仍应妥善保管设备、系统账户、密钥、口令和任何 API 凭证。因您自身管理不当造成的数据泄露、误删或越权访问，由您自行承担相应责任。</p>
+                <h2 data-i18n="t.s4h">4. Your Data & Security Responsibilities</h2>
+                <p data-i18n="t.s4p1">You are responsible for data you enter, import, connect, or send, including server credentials, database contents, business logs, and command outputs. Please apply redaction, permission controls, and access auditing as needed.</p>
+                <p data-i18n="t.s4p2">OrbitShell uses a local-first design, but you should still properly safeguard your device, system accounts, keys, passwords, and any API credentials. You bear full responsibility for data leaks, accidental deletions, or unauthorized access caused by your own mismanagement.</p>
             </section>
 
             <section>
-                <h2>5. AI 功能说明</h2>
-                <p>AI 功能用于提高排障和分析效率，但其输出属于机器生成内容，可能存在不准确、过时、不完整或不适用于您生产环境的情况。您在执行任何建议命令、脚本或配置修改前，应自行复核并承担相应风险。</p>
-                <p>如果您所在组织受行业合规、客户协议或数据出境限制约束，请仅在确认允许的前提下使用相关云端能力。</p>
+                <h2 data-i18n="t.s5h">5. AI Feature Disclaimer</h2>
+                <p data-i18n="t.s5p1">AI features are designed to improve troubleshooting and analysis efficiency, but their output is machine-generated content that may be inaccurate, outdated, incomplete, or inapplicable to your production environment. You should independently review and bear the risks before executing any suggested commands, scripts, or configuration changes.</p>
+                <p data-i18n="t.s5p2">If your organization is subject to industry compliance, customer agreements, or data cross-border restrictions, please only use the relevant cloud capabilities after confirming they are permitted.</p>
             </section>
 
             <section>
-                <h2>6. 知识产权</h2>
-                <p>OrbitShell 及其网站中的界面、品牌、文案、设计、代码、图像和其他内容，除用户自行上传或依法授权的内容外，相关权利归 OrbitShell 或其许可方所有。未经书面许可，您不得复制、转售、改编、反向工程或用于创建竞争性产品。</p>
+                <h2 data-i18n="t.s6h">6. Intellectual Property</h2>
+                <p data-i18n="t.s6p">The interfaces, branding, copy, design, code, images, and other content within OrbitShell and its website, except for content uploaded by users or licensed by law, are owned by OrbitShell or its licensors. Without written permission, you may not copy, resell, adapt, reverse-engineer, or use to create competitive products.</p>
             </section>
 
             <section>
-                <h2>7. 可用性与免责声明</h2>
-                <p>我们会尽合理努力保持产品与服务可用，但不保证任何功能持续无中断、无错误或适用于所有场景。对测试版、预览功能、AI 能力或第三方集成功能，我们尤其不提供绝对可用性保证。</p>
-                <p>在法律允许的最大范围内，OrbitShell 按“现状”和“可用”基础提供。对于因网络波动、第三方服务故障、误操作、兼容性问题或不可抗力导致的损失，我们不承担超出法律强制要求范围的责任。</p>
+                <h2 data-i18n="t.s7h">7. Availability & Disclaimer</h2>
+                <p data-i18n="t.s7p1">We will make reasonable efforts to keep the product and services available, but we do not guarantee any feature will be continuously uninterrupted, error-free, or suitable for all scenarios. For beta, preview, AI capabilities, or third-party integration features, we especially do not provide absolute availability guarantees.</p>
+                <p data-i18n="t.s7p2">To the maximum extent permitted by law, OrbitShell is provided on an "as is" and "as available" basis. We are not liable for losses caused by network fluctuations, third-party service failures, user errors, compatibility issues, or force majeure beyond the scope of mandatory legal requirements.</p>
             </section>
 
             <section>
-                <h2>8. 暂停、终止与违规处理</h2>
-                <p>如果我们合理认为您违反本条款、威胁产品安全、损害其他用户权益或触犯法律法规，我们可以限制、暂停或终止对您的部分或全部服务支持。</p>
-                <p>您也可以随时停止使用 OrbitShell，并通过应用内删除功能或参考 <a href="privacy.html">隐私政策</a> 清理相关数据。</p>
+                <h2 data-i18n="t.s8h">8. Suspension, Termination & Violation Handling</h2>
+                <p data-i18n="t.s8p1">If we reasonably believe that you have violated these terms, threatened product security, harmed other users' rights, or violated laws and regulations, we may restrict, suspend, or terminate some or all of your service support.</p>
+                <p data-i18n="t.s8p2">You may also stop using OrbitShell at any time and clean up related data through the in-app deletion feature or by referencing the Privacy Policy.</p>
             </section>
 
             <section>
-                <h2>9. 条款更新与联系</h2>
-                <p>我们可能根据产品变化、法律要求或运营需要更新本条款。更新后的版本会发布在本页面，并以新的生效日期为准。若您在条款更新后继续使用 OrbitShell，视为接受更新后的内容。</p>
-                <p>如需商务、授权、投诉或法律相关沟通，请联系：<a href="mailto:support@orbitshell.cn">support@orbitshell.cn</a>。</p>
+                <h2 data-i18n="t.s9h">9. Terms Updates & Contact</h2>
+                <p data-i18n="t.s9p1">We may update these terms based on product changes, legal requirements, or operational needs. The updated version will be published on this page and take effect from the new effective date. If you continue to use OrbitShell after the terms are updated, you are deemed to have accepted the updated content.</p>
+                <p data-i18n="t.s9p2">For business, licensing, complaints, or legal communications, please contact: <a href="mailto:support@orbitshell.cn">support@orbitshell.cn</a>.</p>
 
                 <div class="cta-row">
-                    <a class="button-link" href="mailto:support@orbitshell.cn?subject=OrbitShell%20%E6%9D%A1%E6%AC%BE%E5%92%A8%E8%AF%A2">联系 OrbitShell</a>
-                    <a class="button-link secondary" href="privacy.html">查看隐私政策</a>
+                    <a class="button-link" href="mailto:support@orbitshell.cn?subject=OrbitShell%20Terms%20Inquiry" data-i18n="t.cta1">Contact OrbitShell</a>
+                    <a class="button-link secondary" href="privacy.html" data-i18n="t.cta2">View Privacy Policy</a>
                 </div>
             </section>
         </article>
     </main>
+
+    <script>
+        const i18n = {
+            en: {
+                "nav.home":"Home","nav.support":"Support","nav.privacy":"Privacy Policy",
+                "t.eyebrow":"Legal Documents","t.title":"Terms of Service","t.desc":"These terms outline the basic rules, rights boundaries, and liability allocation you should follow when using the OrbitShell client, website, and related support services.","t.date":"Effective: April 18, 2026","t.scope":"Applies to OrbitShell products and website",
+                "t.s1h":"1. Acceptance of Terms","t.s1p":"By accessing or using OrbitShell, you agree to be bound by these terms and related legal documents, including the Privacy Policy. If you use this product on behalf of a company or team, you confirm that you have the authority to accept these terms on behalf of that organization.",
+                "t.s2h":"2. Product Content & Scope","t.s2p1":"OrbitShell provides terminal connections, remote desktop management, database connections, data visualization dashboards, and AI-assisted diagnosis capabilities. Specific features depend on the current version, subscription plan, system compatibility, and regional availability.","t.s2p2":"We may update the interface, features, connected services, pricing, or support methods without prior notice, but this will not affect your basic rights as provided by law.",
+                "t.s3h":"3. Permitted & Prohibited Uses","t.s3l1":"You may use OrbitShell to manage devices, servers, databases, and remote resources that you own or are authorized to access.","t.s3l2":"You must not use OrbitShell for unauthorized access, password brute-forcing, malicious scanning, data theft, malware distribution, or other illegal activities.","t.s3l3":"You must not bypass security restrictions, license limitations, billing mechanisms, or anti-abuse controls in the product.","t.s3l4":"You must ensure that data uploaded to AI or other cloud features does not infringe on others' privacy, intellectual property, or confidentiality obligations.",
+                "t.s4h":"4. Your Data & Security Responsibilities","t.s4p1":"You are responsible for data you enter, import, connect, or send, including server credentials, database contents, business logs, and command outputs. Please apply redaction, permission controls, and access auditing as needed.","t.s4p2":"OrbitShell uses a local-first design, but you should still properly safeguard your device, system accounts, keys, passwords, and any API credentials. You bear full responsibility for data leaks, accidental deletions, or unauthorized access caused by your own mismanagement.",
+                "t.s5h":"5. AI Feature Disclaimer","t.s5p1":"AI features are designed to improve troubleshooting and analysis efficiency, but their output is machine-generated content that may be inaccurate, outdated, incomplete, or inapplicable to your production environment. You should independently review and bear the risks before executing any suggested commands, scripts, or configuration changes.","t.s5p2":"If your organization is subject to industry compliance, customer agreements, or data cross-border restrictions, please only use the relevant cloud capabilities after confirming they are permitted.",
+                "t.s6h":"6. Intellectual Property","t.s6p":"The interfaces, branding, copy, design, code, images, and other content within OrbitShell and its website, except for content uploaded by users or licensed by law, are owned by OrbitShell or its licensors. Without written permission, you may not copy, resell, adapt, reverse-engineer, or use to create competitive products.",
+                "t.s7h":"7. Availability & Disclaimer","t.s7p1":"We will make reasonable efforts to keep the product and services available, but we do not guarantee any feature will be continuously uninterrupted, error-free, or suitable for all scenarios. For beta, preview, AI capabilities, or third-party integration features, we especially do not provide absolute availability guarantees.","t.s7p2":"To the maximum extent permitted by law, OrbitShell is provided on an \"as is\" and \"as available\" basis. We are not liable for losses caused by network fluctuations, third-party service failures, user errors, compatibility issues, or force majeure beyond the scope of mandatory legal requirements.",
+                "t.s8h":"8. Suspension, Termination & Violation Handling","t.s8p1":"If we reasonably believe that you have violated these terms, threatened product security, harmed other users' rights, or violated laws and regulations, we may restrict, suspend, or terminate some or all of your service support.","t.s8p2":"You may also stop using OrbitShell at any time and clean up related data through the in-app deletion feature or by referencing the Privacy Policy.",
+                "t.s9h":"9. Terms Updates & Contact","t.s9p1":"We may update these terms based on product changes, legal requirements, or operational needs. The updated version will be published on this page and take effect from the new effective date. If you continue to use OrbitShell after the terms are updated, you are deemed to have accepted the updated content.","t.s9p2":"For business, licensing, complaints, or legal communications, please contact: support@orbitshell.cn.",
+                "t.cta1":"Contact OrbitShell","t.cta2":"View Privacy Policy"
+            },
+            zh: {
+                "nav.home":"首页","nav.support":"支持","nav.privacy":"隐私政策",
+                "t.eyebrow":"法律文件","t.title":"服务条款","t.desc":"本条款说明您在使用 OrbitShell 客户端、网站以及相关支持服务时应遵守的基本规则、权利边界和责任分配。","t.date":"生效日期：2026年4月18日","t.scope":"适用于 OrbitShell 产品与网站",
+                "t.s1h":"1. 接受条款","t.s1p":"访问或使用 OrbitShell，即表示您同意受本条款及相关法律文件约束，包括隐私政策。如果您代表公司或团队使用本产品，您确认自己有权代表该组织接受这些条款。",
+                "t.s2h":"2. 产品内容与适用范围","t.s2p1":"OrbitShell 提供终端连接、远程桌面管理、数据库连接、可视化看板以及 AI 辅助诊断等能力。具体功能以应用当前版本、订阅方案、系统兼容性和地区可用性为准。","t.s2p2":"我们可以在不另行通知的情况下对界面、功能、接入服务、定价或支持方式进行更新，但不会以此影响您依法享有的基本权利。",
+                "t.s3h":"3. 允许与禁止的使用方式","t.s3l1":"您可以在合法授权范围内使用 OrbitShell 管理自己拥有或被授权访问的设备、服务器、数据库和远程资源。","t.s3l2":"您不得使用 OrbitShell 从事未授权访问、口令爆破、恶意扫描、数据窃取、传播恶意代码或其他违法活动。","t.s3l3":"您不得规避产品中的安全限制、许可限制、计费机制或反滥用控制。","t.s3l4":"您应确保上传到 AI 或其他云端功能的数据不侵犯他人隐私、知识产权或保密义务。",
+                "t.s4h":"4. 您的数据与安全责任","t.s4p1":"您对自己录入、导入、连接或发送的数据负责，包括服务器凭证、数据库内容、业务日志和命令输出。请根据需要进行脱敏、权限控制和访问审计。","t.s4p2":"OrbitShell 采用本地优先设计，但您仍应妥善保管设备、系统账户、密钥、口令和任何 API 凭证。因您自身管理不当造成的数据泄露、误删或越权访问，由您自行承担相应责任。",
+                "t.s5h":"5. AI 功能说明","t.s5p1":"AI 功能用于提高排障和分析效率，但其输出属于机器生成内容，可能存在不准确、过时、不完整或不适用于您生产环境的情况。您在执行任何建议命令、脚本或配置修改前，应自行复核并承担相应风险。","t.s5p2":"如果您所在组织受行业合规、客户协议或数据出境限制约束，请仅在确认允许的前提下使用相关云端能力。",
+                "t.s6h":"6. 知识产权","t.s6p":"OrbitShell 及其网站中的界面、品牌、文案、设计、代码、图像和其他内容，除用户自行上传或依法授权的内容外，相关权利归 OrbitShell 或其许可方所有。未经书面许可，您不得复制、转售、改编、反向工程或用于创建竞争性产品。",
+                "t.s7h":"7. 可用性与免责声明","t.s7p1":"我们会尽合理努力保持产品与服务可用，但不保证任何功能持续无中断、无错误或适用于所有场景。对测试版、预览功能、AI 能力或第三方集成功能，我们尤其不提供绝对可用性保证。","t.s7p2":"在法律允许的最大范围内，OrbitShell 按"现状"和"可用"基础提供。对于因网络波动、第三方服务故障、误操作、兼容性问题或不可抗力导致的损失，我们不承担超出法律强制要求范围的责任。",
+                "t.s8h":"8. 暂停、终止与违规处理","t.s8p1":"如果我们合理认为您违反本条款、威胁产品安全、损害其他用户权益或触犯法律法规，我们可以限制、暂停或终止对您的部分或全部服务支持。","t.s8p2":"您也可以随时停止使用 OrbitShell，并通过应用内删除功能或参考隐私政策清理相关数据。",
+                "t.s9h":"9. 条款更新与联系","t.s9p1":"我们可能根据产品变化、法律要求或运营需要更新本条款。更新后的版本会发布在本页面，并以新的生效日期为准。若您在条款更新后继续使用 OrbitShell，视为接受更新后的内容。","t.s9p2":"如需商务、授权、投诉或法律相关沟通，请联系：support@orbitshell.cn。",
+                "t.cta1":"联系 OrbitShell","t.cta2":"查看隐私政策"
+            },
+            ja: {
+                "nav.home":"ホーム","nav.support":"サポート","nav.privacy":"プライバシーポリシー",
+                "t.eyebrow":"法的文書","t.title":"利用規約","t.desc":"本規約は、OrbitShellクライアント、ウェブサイト、および関連するサポートサービスを使用する際の基本ルール、権利の境界、責任配分を説明します。","t.date":"発効日：2026年4月18日","t.scope":"OrbitShell製品とウェブサイトに適用",
+                "t.s1h":"1. 規約の受理","t.s1p":"OrbitShellにアクセスまたは使用することで、プライバシーポリシーを含む本規約および関連法的文書に拘束されることに同意したものとみなされます。会社やチームに代わって本製品を使用する場合、その組織に代わって本規約を受理する権限があることを確認したものとみなされます。",
+                "t.s2h":"2. 製品内容と適用範囲","t.s2p1":"OrbitShellは、ターミナル接続、リモートデスクトップ管理、データベース接続、データ可視化ダッシュボード、AI補助診断機能を提供します。具体的な機能は、現在のバージョン、サブスクリプションプラン、システム互換性、地域別可用性によります。","t.s2p2":"事前の通知なしにインターフェース、機能、接続サービス、価格設定、サポート方法を更新する場合がありますが、法律が提供する基本的な権利に影響はありません。",
+                "t.s3h":"3. 許可される使用と禁止される使用","t.s3l1":"自分の所有する、またはアクセスを許可されたデバイス、サーバー、データベース、リモートリソースを管理するためにOrbitShellを使用できます。","t.s3l2":"未認証アクセス、パスワード総当たり、悪意のあるスキャン、データ窃取、悪意のあるコードの配布、その他の違法活動のためにOrbitShellを使用してはなりません。","t.s3l3":"製品のセキュリティ制限、ライセンス制限、課金メカニズム、悪用防止制御を回避してはなりません。","t.s3l4":"AIまたはその他のクラウド機能にアップロードするデータが、他者のプライバシー、知的財産権、保密義務を侵害しないことを確認してください。",
+                "t.s4h":"4. データとセキュリティの責任","t.s4p1":"サーバー認証情報、データベースの内容、ビジネスログ、コマンド出力を含め、入力、インポート、接続、送信するデータについて責任を負います。必要に応じてマスキング、権限制御、アクセス監査を適用してください。","t.s4p2":"OrbitShellはローカル優先の設計を使用しますが、デバイス、システムアカウント、鍵、パスワード、API認証情報を適切に管理する必要があります。自分の管理不備によるデータ漏洩、誤削除、不正アクセスの責任はすべてお客様が負います。",
+                "t.s5h":"5. AI機能の免責事項","t.s5p1":"AI機能はトラブルシューティングと分析効率を向上させるために設計されていますが、出力は機械生成されたコンテンツであり、不正確、古く、不完全、または本番環境に適用できない場合があります。推奨されるコマンド、スクリプト、設定変更を実行する前に、独自に確認し、リスクを負担してください。","t.s5p2":"組織が業界コンプライアンス、顧客契約、データ越境制約の制限を受ける場合、許可されていることを確認してから関連するクラウド機能を使用してください。",
+                "t.s6h":"6. 知的財産","t.s6p":"OrbitShellおよびそのウェブサイト内のインターフェース、ブランド、コピー、デザイン、コード、画像、その他のコンテンツは、ユーザーがアップロードまたは法的にライセンスされたものを除き、OrbitShellまたはそのライセンサーが所有しています。書面による許可なく、複製、再販売、改変、リバースエンジニアリング、競合製品の作成に使用してはなりません。",
+                "t.s7h":"7. 可用性と免責事項","t.s7p1":"製品とサービスの可用性を維持するための合理的な努力を行いますが、すべての機能が継続的に中断なく、エラーなく、すべてのシナリオに適していることを保証するものではありません。ベータ版、プレビュー機能、AI機能、サードパーティ統合機能については、特に絶対的な可用性保証を提供しません。","t.s7p2":"法律が許容する最大限の範囲で、OrbitShellは「現状のまま」および「利用可能な状態」で提供されます。ネットワークの変動、サードパーティサービスの障害、ユーザーの誤操作、互換性の問題、または不可抗力による損失について、法律の強制要求範囲を超えて責任を負いません。",
+                "t.s8h":"8. 一時停止、終了と違反処理","t.s8p1":"本規約違反、製品セキュリティの脅威、他のユーザーの権利の侵害、法令違反があると合理的に判断した場合、サービスの一部または全部を制限、一時停止、終了する場合があります。","t.s8p2":"いつでもOrbitShellの使用を停止し、アプリ内削除機能またはプライバシーポリシーを参照して関連データを削除できます。",
+                "t.s9h":"9. 規約の更新と連絡先","t.s9p1":"製品の変更、法的要件、または運用上の必要に応じて、本規約を更新する場合があります。更新されたバージョンはこのページに公開され、新しい発効日から効力が生じます。規約更新後もOrbitShellを使用し続ける場合、更新された内容に同意したものとみなされます。","t.s9p2":"ビジネス、ライセンス、苦情、または法的通信については、support@orbitshell.cn までご連絡ください。",
+                "t.cta1":"OrbitShellに連絡","t.cta2":"プライバシーポリシーを表示"
+            },
+            ko: {
+                "nav.home":"홈","nav.support":"지원","nav.privacy":"개인정보 처리방침",
+                "t.eyebrow":"법적 문서","t.title":"이용약관","t.desc":"본 약관은 OrbitShell 클라이언트, 웹사이트 및 관련 지원 서비스를 사용할 때 따라야 하는 기본 규칙, 권리 범위 및 책임 배분을 설명합니다.","t.date":"시행일: 2026년 4월 18일","t.scope":"OrbitShell 제품 및 웹사이트에 적용",
+                "t.s1h":"1. 약관 동의","t.s1p":"OrbitShell에 접속하거나 사용함으로써 개인정보 처리방침을 포함한 본 약관 및 관련 법적 문서에 구속되는 것에 동의한 것으로 간주됩니다. 회사나 팀을 대신하여 본 제품을 사용하는 경우 해당 조직을 대신하여 본 약관을 수락할 권한이 있음을 확인하는 것입니다.",
+                "t.s2h":"2. 제품 내용 및 범위","t.s2p1":"OrbitShell은 터미널 연결, 원격 데스크톱 관리, 데이터베이스 연결, 데이터 시각화 대시보드, AI 보조 진단 기능을 제공합니다. 구체적인 기능은 현재 버전, 구독 플랜, 시스템 호환성 및 지역별 가용성에 따라 다릅니다.","t.s2p2":"사전 통지 없이 인터페이스, 기능, 연결된 서비스, 가격 또는 지원 방법을 업데이트할 수 있지만 이는 법률이 제공하는 기본 권리에 영향을 미치지 않습니다.",
+                "t.s3h":"3. 허용 및 금지된 사용","t.s3l1":"자신이 소유하거나 접근을 허가받은 디바이스, 서버, 데이터베이스 및 원격 리소스를 관리하기 위해 OrbitShell을 사용할 수 있습니다.","t.s3l2":"무단 접근, 비밀번호 무차별 대입, 악의적 스캔, 데이터 절도, 악성 코드 배포 또는 기타 불법 활동을 위해 OrbitShell을 사용해서는 안 됩니다.","t.s3l3":"제품의 보안 제한, 라이선스 제한, 과금 메커니즘 또는 악용 방지 제어를 우회해서는 안 됩니다.","t.s3l4":"AI 또는 기타 클라우드 기능에 업로드하는 데이터가 타인의 프라이버시, 지적 재산권 또는 비밀 유지 의무를 침해하지 않도록 해야 합니다.",
+                "t.s4h":"4. 데이터 및 보안 책임","t.s4p1":"서버 자격 증명, 데이터베이스 내용, 비즈니스 로그 및 명령 출력을 포함하여 입력, 가져오기, 연결 또는 전송하는 데이터에 대해 책임을 집니다. 필요에 따라 마스킹, 권한 제어 및 접근 감사를 적용하십시오.","t.s4p2":"OrbitShell은 로컬 우선 설계를 사용하지만 디바이스, 시스템 계정, 키, 비밀번호 및 API 자격 증명을 적절히 관리해야 합니다. 잘못된 관리로 인한 데이터 유출, 실수 삭제 또는 무단 접근에 대한 모든 책임은 고객이 집니다.",
+                "t.s5h":"5. AI 기능 면책 조항","t.s5p1":"AI 기능은 문제 해결 및 분석 효율성을 높이도록 설계되었지만 출력은 기계 생성 콘텐츠로 부정확하거나 오래되었거나 불완전하거나 프로덕션 환경에 적용되지 않을 수 있습니다. 제안된 명령, 스크립트 또는 설정 변경을 실행하기 전에 독립적으로 검토하고 위험을 부담해야 합니다.","t.s5p2":"조직이 산업 컴플라이언스, 고객 계약 또는 데이터 국외 이전 제한을 받는 경우 허용된다는 것을 확인한 후에만 관련 클라우드 기능을 사용하십시오.",
+                "t.s6h":"6. 지적 재산권","t.s6p":"OrbitShell 및 웹사이트의 인터페이스, 브랜드, 카피, 디자인, 코드, 이미지 및 기타 콘텐츠 중 사용자가 업로드하거나 법적으로 라이선스된 콘텐츠를 제외하고는 OrbitShell 또는 라이선서가 소유합니다. 서면 허가 없이 복사, 재판매, 개조, 리버스 엔지니어링 또는 경쟁 제품 생성에 사용할 수 없습니다.",
+                "t.s7h":"7. 가용성 및 면책 조항","t.s7p1":"제품과 서비스를 계속 사용할 수 있도록 합리적인 노력을 기울이지만 모든 기능이 지속적으로 중단 없이, 오류 없이, 모든 시나리오에 적합하다고 보장하지 않습니다. 베타, 프리뷰, AI 기능 또는 서드파티 통합 기능에 대해서는 특히 절대적인 가용성을 보장하지 않습니다.","t.s7p2":"법률이 허용하는 최대 범위에서 OrbitShell은 \"있는 그대로\" 및 \"사용 가능한 상태\"로 제공됩니다. 네트워크 변동, 서드파티 서비스 장애, 사용자 오류, 호환성 문제 또는 불가항력으로 인한 손해에 대해 법률의 강제 요구 범위를 초과하여 책임을 지지 않습니다.",
+                "t.s8h":"8. 중지, 종료 및 위반 처리","t.s8p1":"본 약관 위반, 제품 보안 위협, 다른 사용자 권리 침해 또는 법률 위반이 합리적으로 판단되는 경우 서비스의 일부 또는 전부를 제한, 중지 또는 종료할 수 있습니다.","t.s8p2":"언제든지 OrbitShell 사용을 중단하고 앱 내 삭제 기능 또는 개인정보 처리방침을 참조하여 관련 데이터를 정리할 수 있습니다.",
+                "t.s9h":"9. 약관 업데이트 및 연락처","t.s9p1":"제품 변경, 법률 요구 또는 운영 필요에 따라 본 약관을 업데이트할 수 있습니다. 업데이트된 버전은 이 페이지에 게시되며 새 시행일부터 효력이 발생합니다. 약관 업데이트 후에도 OrbitShell을 계속 사용하면 업데이트된 내용에 동의한 것으로 간주됩니다.","t.s9p2":"비즈니스, 라이선스, 불만 또는 법적 소통은 support@orbitshell.cn으로 연락해 주세요.",
+                "t.cta1":"OrbitShell에 문의","t.cta2":"개인정보 처리방침 보기"
+            },
+            fr: {
+                "nav.home":"Accueil","nav.support":"Support","nav.privacy":"Politique de confidentialité",
+                "t.eyebrow":"Documents juridiques","t.title":"Conditions d'utilisation","t.desc":"Ces conditions décrivent les règles de base, les limites des droits et la répartition des responsabilités que vous devez suivre lors de l'utilisation du client OrbitShell, du site web et des services de support associés.","t.date":"Entrée en vigueur : 18 avril 2026","t.scope":"S'applique aux produits et au site web d'OrbitShell",
+                "t.s1h":"1. Acceptation des conditions","t.s1p":"En accédant ou en utilisant OrbitShell, vous acceptez d'être lié par ces conditions et les documents juridiques associés, y compris la Politique de confidentialité. Si vous utilisez ce produit pour le compte d'une entreprise ou d'une équipe, vous confirmez avoir l'autorité d'accepter ces conditions pour le compte de cette organisation.",
+                "t.s2h":"2. Contenu du produit et portée","t.s2p1":"OrbitShell fournit des connexions terminal, gestion de bureau à distance, connexions de bases de données, tableaux de bord de visualisation de données et capacités de diagnostic assisté par IA. Les fonctionnalités spécifiques dépendent de la version actuelle, du plan d'abonnement, de la compatibilité système et de la disponibilité régionale.","t.s2p2":"Nous pouvons mettre à jour l'interface, les fonctionnalités, les services connectés, la tarification ou les méthodes de support sans préavis, mais cela n'affectera pas vos droits fondamentaux tels que prévus par la loi.",
+                "t.s3h":"3. Utilisations autorisées et interdites","t.s3l1":"Vous pouvez utiliser OrbitShell pour gérer les appareils, serveurs, bases de données et ressources distantes que vous possédez ou êtes autorisé à accéder.","t.s3l2":"Vous ne devez pas utiliser OrbitShell pour l'accès non autorisé, le brute-force de mots de passe, l'analyse malveillante, le vol de données, la distribution de logiciels malveillants ou d'autres activités illégales.","t.s3l3":"Vous ne devez pas contourner les restrictions de sécurité, les limitations de licence, les mécanismes de facturation ou les contrôles de prévention des abus du produit.","t.s3l4":"Vous devez vous assurer que les données téléchargées vers l'IA ou d'autres fonctionnalités cloud ne portent pas atteinte à la vie privée, à la propriété intellectuelle ou aux obligations de confidentialité d'autrui.",
+                "t.s4h":"4. Vos données et responsabilités de sécurité","t.s4p1":"Vous êtes responsable des données que vous saisissez, importez, connectez ou envoyez, y compris les identifiants de serveur, le contenu des bases de données, les journaux métier et les sorties de commandes. Veuillez appliquer le masquage, les contrôles d'accès et l'audit d'accès selon les besoins.","t.s4p2":"OrbitShell utilise une conception local-first, mais vous devez toujours protéger correctement votre appareil, vos comptes système, vos clés, mots de passe et toute API credential. Vous assumez l'entière responsabilité des fuites de données, suppressions accidentelles ou accès non autorisés causés par votre propre mauvaise gestion.",
+                "t.s5h":"5. Avertissement concernant les fonctionnalités IA","t.s5p1":"Les fonctionnalités IA sont conçues pour améliorer l'efficacité du dépannage et de l'analyse, mais leur sortie est un contenu généré par machine qui peut être inexact, obsolète, incomplet ou inapplicable à votre environnement de production. Vous devez examiner indépendamment et assumer les risques avant d'exécuter toute commande, tout script ou toute modification de configuration suggérée.","t.s5p2":"Si votre organisation est soumise à des normes de conformité sectorielle, des accords clients ou des restrictions de transfert de données, veuillez n'utiliser les capacités cloud correspondantes qu'après avoir confirmé qu'elles sont autorisées.",
+                "t.s6h":"6. Propriété intellectuelle","t.s6p":"Les interfaces, la marque, le texte, le design, le code, les images et autres contenus d'OrbitShell et de son site web, à l'exception du contenu téléchargé par les utilisateurs ou autorisé par la loi, appartiennent à OrbitShell ou à ses concédants. Sans autorisation écrite, vous ne pouvez pas copier, revendre, adapter, faire de l'ingénierie inverse ou utiliser pour créer des produits concurrents.",
+                "t.s7h":"7. Disponibilité et avertissement","t.s7p1":"Nous ferons des efforts raisonnables pour maintenir la disponibilité du produit et des services, mais nous ne garantissons pas qu'une fonctionnalité sera continue, sans erreur ou adaptée à tous les scénarios. Pour les fonctionnalités bêta, aperçu, IA ou intégration tiers, nous ne fournissons pas de garantie de disponibilité absolue.","t.s7p2":"Dans la mesure maximale autorisée par la loi, OrbitShell est fourni en « état » et « tel quel ». Nous ne sommes pas responsables des pertes causées par les fluctuations réseau, les pannes de services tiers, les erreurs utilisateur, les problèmes de compatibilité ou les cas de force majeure au-delà du cadre des exigences légales obligatoires.",
+                "t.s8h":"8. Suspension, résiliation et gestion des violations","t.s8p1":"Si nous estimons raisonnablement que vous avez violé ces conditions, menacé la sécurité du produit, porté atteinte aux droits d'autres utilisateurs ou violé les lois et réglementations, nous pouvons restreindre, suspendre ou résilier tout ou partie de votre support de service.","t.s8p2":"Vous pouvez également arrêter d'utiliser OrbitShell à tout moment et nettoyer les données associées via la fonctionnalité de suppression intégrée ou en consultant la Politique de confidentialité.",
+                "t.s9h":"9. Mises à jour des conditions et contact","t.s9p1":"Nous pouvons mettre à jour ces conditions en fonction des changements de produit, des exigences légales ou des besoins opérationnels. La version mise à jour sera publiée sur cette page et prendra effet à la nouvelle date d'entrée en vigueur. Si vous continuez à utiliser OrbitShell après la mise à jour des conditions, vous êtes réputé avoir accepté le contenu mis à jour.","t.s9p2":"Pour les communications commerciales, de licence, de plaintes ou juridiques, veuillez contacter : support@orbitshell.cn.",
+                "t.cta1":"Contacter OrbitShell","t.cta2":"Voir la politique de confidentialité"
+            },
+            de: {
+                "nav.home":"Startseite","nav.support":"Support","nav.privacy":"Datenschutzrichtlinie",
+                "t.eyebrow":"Rechtliche Dokumente","t.title":"Nutzungsbedingungen","t.desc":"Diese Bedingungen beschreiben die grundlegenden Regeln, Rechtsgrenzen und Haftungsverteilung, die Sie bei der Nutzung des OrbitShell-Clients, der Website und der zugehörigen Supportdienste einhalten sollten.","t.date":"Gültig ab: 18. April 2026","t.scope":"Gilt für OrbitShell-Produkte und Website",
+                "t.s1h":"1. Annahme der Bedingungen","t.s1p":"Durch den Zugriff auf oder die Nutzung von OrbitShell stimmen Sie zu, an diese Bedingungen und zugehörige Rechtsdokumente einschließlich der Datenschutzrichtlinie gebunden zu sein. Wenn Sie dieses Produkt im Namen eines Unternehmens oder Teams nutzen, bestätigen Sie, dass Sie befugt sind, diese Bedingungen im Namen dieser Organisation anzunehmen.",
+                "t.s2h":"2. Produktinhalt & Umfang","t.s2p1":"OrbitShell bietet Terminalverbindungen, Remote-Desktop-Management, Datenbankverbindungen, Datenvisualisierungsdashboards und KI-gestützte Diagnosefunktionen. Spezifische Funktionen hängen von der aktuellen Version, dem Abonnementsystem, der Systemkompatibilität und der regionalen Verfügbarkeit ab.","t.s2p2":"Wir können die Oberfläche, Funktionen, verbundenen Dienste, Preise oder Supportmethoden ohne vorherige Ankündigung aktualisieren, aber dies wird Ihre grundlegenden Rechte nicht beeinträchtigen, wie sie gesetzlich vorgesehen sind.",
+                "t.s3h":"3. Erlaubte & verbotene Nutzung","t.s3l1":"Sie können OrbitShell verwenden, um Geräte, Server, Datenbanken und Remote-Ressourcen zu verwalten, die Sie besitzen oder zu denen Sie Zugang berechtigt sind.","t.s3l2":"Sie dürfen OrbitShell nicht für unbefugten Zugriff, Passwort-Brute-Force, bösartiges Scanning, Datendiebstahl, Malware-Verbreitung oder andere illegale Aktivitäten verwenden.","t.s3l3":"Sie dürfen Sicherheitsbeschränkungen, Lizenzbeschränkungen, Abrechnungsmechanismen oder Anti-Missbrauchskontrollen im Produkt nicht umgehen.","t.s3l4":"Sie müssen sicherstellen, dass an KI oder andere Cloud-Funktionen hochgeladene Daten die Privatsphäre, das geistige Eigentum oder die Vertraulichkeitsverpflichtungen anderer nicht verletzen.",
+                "t.s4h":"4. Ihre Daten & Sicherheitsverantwortung","t.s4p1":"Sie sind verantwortlich für Daten, die Sie eingeben, importieren, verbinden oder senden, einschließlich Serveranmeldedaten, Datenbankinhalte, Geschäftsprotokolle und Befehlsausgaben. Bitte wenden Sie bei Bedarf Schwärzung, Zugriffskontrollen und Zugriffsauditierung an.","t.s4p2":"OrbitShell verwendet ein lokales Design, aber Sie sollten Ihr Gerät, Ihre Systemkonten, Schlüssel, Passwörter und API-Anmeldedaten dennoch ordnungsgemäß schützen. Sie tragen die volle Verantwortung für Datendiebstähle, versehentliche Löschungen oder unbefugten Zugriff, der durch Ihr eigenes Fehlverhalten verursacht wird.",
+                "t.s5h":"5. Haftungsausschluss für KI-Funktionen","t.s5p1":"KI-Funktionen sind darauf ausgelegt, die Fehlersuche und Analyseeffizienz zu verbessern, aber ihre Ausgabe ist maschinell generierter Inhalt, der ungenau, veraltet, unvollständig oder nicht auf Ihre Produktionsumgebung anwendbar sein kann. Sie sollten unabhängig überprüfen und die Risiken tragen, bevor Sie vorgeschlagene Befehle, Skripte oder Konfigurationsänderungen ausführen.","t.s5p2":"Wenn Ihre Organisation branchenspezifischen Compliance, Kundenvereinbarungen oder datenübergreifende Beschränkungen unterliegt, nutzen Sie die relevanten Cloud-Funktionen nur nach Bestätigung der Erlaubnis.",
+                "t.s6h":"6. Geistiges Eigentum","t.s6p":"Die Oberflächen, Marken, Texte, Designs, Codes, Bilder und anderen Inhalte innerhalb von OrbitShell und seiner Website, mit Ausnahme von Inhalten, die von Benutzern hochgeladen oder gesetzlich lizenziert wurden, gehören OrbitShell oder seinen Lizenzgebern. Ohne schriftliche Genehmigung dürfen Sie nicht kopieren, weiterverkaufen, anpassen, reverse-engineern oder zur Erstellung konkurrierender Produkte verwenden.",
+                "t.s7h":"7. Verfügbarkeit & Haftungsausschluss","t.s7p1":"Wir werden angemessene Anstrengungen unternehmen, um die Verfügbarkeit des Produkts und der Dienste sicherzustellen, aber wir garantieren nicht, dass eine Funktion kontinuierlich unterbrechungsfehlerfrei oder für alle Szenarien geeignet ist. Für Beta-, Vorschau-, KI- oder Drittanbieter-Integrationsfunktionen bieten wir besonders keine absolute Verfügbarkeitsgarantie.","t.s7p2":"Im maximal zulässigen Umfang wird OrbitShell „wie besehen" und „verfügbar" bereitgestellt. Wir haften nicht für Verluste, die durch Netzwerkschwankungen, Drittanbieter-Servicefehler, Benutzerfehler, Kompatibilitätsprobleme oder höhere Gewalt jenseits des Rahmens gesetzlich zwingender Anforderungen verursacht werden.",
+                "t.s8h":"8. Aussetzung, Kündigung & Verstoßbehandlung","t.s8p1":"Wenn wir vernünftigerweise glauben, dass Sie diese Bedingungen verletzt haben, die Produktsicherheit bedroht haben, die Rechte anderer Benutzer verletzt haben oder Gesetze und Vorschriften verletzt haben, können wir Ihren Service-Teil oder den gesamten Service einschränken, aussetzen oder kündigen.","t.s8p2":"Sie können auch jederzeit die Nutzung von OrbitShell einstellen und zugehörige Daten über die integrierte Löschfunktion oder unter Bezugnahme auf die Datenschutzrichtlinie bereinigen.",
+                "t.s9h":"9. Bedingungsupdates & Kontakt","t.s9p1":"Wir können diese Bedingungen basierend auf Produktänderungen, rechtlichen Anforderungen oder betrieblichen Bedürfnissen aktualisieren. Die aktualisierte Version wird auf dieser Seite veröffentlicht und tritt ab dem neuen Wirksamkeitsdatum in Kraft. Wenn Sie nach der Aktualisierung der Bedingungen OrbitShell weiterhin nutzen, gelten Sie als einverstanden mit dem aktualisierten Inhalt.","t.s9p2":"Für geschäftliche, Lizenz-, Beschwerde- oder rechtliche Kommunikation kontaktieren Sie bitte: support@orbitshell.cn.",
+                "t.cta1":"OrbitShell kontaktieren","t.cta2":"Datenschutzrichtlinie ansehen"
+            },
+            es: {
+                "nav.home":"Inicio","nav.support":"Soporte","nav.privacy":"Política de privacidad",
+                "t.eyebrow":"Documentos legales","t.title":"Términos de servicio","t.desc":"Estos términos describen las reglas básicas, los límites de derechos y la distribución de responsabilidades que debe seguir al usar el cliente OrbitShell, el sitio web y los servicios de soporte relacionados.","t.date":"Vigente desde: 18 de abril de 2026","t.scope":"Se aplica a los productos y sitio web de OrbitShell",
+                "t.s1h":"1. Aceptación de los términos","t.s1p":"Al acceder o usar OrbitShell, usted acepta estar sujeto a estos términos y documentos legales relacionados, incluida la Política de privacidad. Si usa este producto en nombre de una empresa o equipo, confirma que tiene la autoridad para aceptar estos términos en nombre de esa organización.",
+                "t.s2h":"2. Contenido del producto y alcance","t.s2p1":"OrbitShell proporciona conexiones de terminal, administración de escritorio remoto, conexiones de bases de datos, paneles de visualización de datos y capacidades de diagnóstico asistido por IA. Las funciones específicas dependen de la versión actual, el plan de suscripción, la compatibilidad del sistema y la disponibilidad regional.","t.s2p2":"Podemos actualizar la interfaz, funciones, servicios conectados, precios o métodos de soporte sin previo aviso, pero esto no afectará sus derechos básicos según lo establecido por la ley.",
+                "t.s3h":"3. Usos permitidos y prohibidos","t.s3l1":"Puede usar OrbitShell para administrar dispositivos, servidores, bases de datos y recursos remotos que posea o esté autorizado para acceder.","t.s3l2":"No debe usar OrbitShell para acceso no autorizado, fuerza bruta de contraseñas, escaneo malicioso, robo de datos, distribución de malware u otras actividades ilegales.","t.s3l3":"No debe evadir restricciones de seguridad, limitaciones de licencia, mecanismos de facturación o controles de prevención de abuso del producto.","t.s3l4":"Debe asegurarse de que los datos cargados en funciones de IA u otras funciones en la nube no infrinjan la privacidad, propiedad intelectual u obligaciones de confidencialidad de terceros.",
+                "t.s4h":"4. Sus datos y responsabilidades de seguridad","t.s4p1":"Usted es responsable de los datos que ingresa, importa, conecta o envía, incluyendo credenciales de servidor, contenidos de bases de datos, registros comerciales y salidas de comandos. Aplique ofuscación, controles de acceso y auditoría de acceso según sea necesario.","t.s4p2":"OrbitShell usa un diseño local-first, pero aún debe proteger adecuadamente su dispositivo, cuentas de sistema, claves, contraseñas y credenciales de API. Usted asume toda la responsabilidad por filtraciones de datos, eliminaciones accidentales o accesos no autorizados causados por su propia mala gestión.",
+                "t.s5h":"5. Descargo de responsabilidad de funciones de IA","t.s5p1":"Las funciones de IA están diseñadas para mejorar la eficiencia del troubleshooting y análisis, pero su salida es contenido generado por máquina que puede ser inexacto, obsoleto, incompleto o inaplicable a su entorno de producción. Debe revisar independientemente y asumir los riesgos antes de ejecutar cualquier comando, script o cambio de configuración sugerido.","t.s5p2":"Si su organización está sujeta a cumplimiento industrial, acuerdos de clientes o restricciones de transferencia de datos, use las capacidades de la nube correspondientes solo después de confirmar que están permitidas.",
+                "t.s6h":"6. Propiedad intelectual","t.s6p":"Las interfaces, marca, contenido, diseño, código, imágenes y otros contenidos dentro de OrbitShell y su sitio web, excepto el contenido subido por usuarios o licenciado por ley, son propiedad de OrbitShell o sus licenciantes. Sin permiso escrito, no puede copiar, revender, adaptar, hacer ingeniería inversa o usar para crear productos competitivos.",
+                "t.s7h":"7. Disponibilidad y descargo de responsabilidad","t.s7p1":"Haremos esfrazones razonables para mantener el producto y servicios disponibles, pero no garantizamos que alguna función será continua, sin errores o adecuada para todos los escenarios. Para funciones beta, vista previa, IA o integración de terceros, especialmente no proporcionamos garantía de disponibilidad absoluta.","t.s7p2":"En la máxima medida permitida por la ley, OrbitShell se proporcionen \"tal cual\" y \"según disponibilidad\". No somos responsables de pérdidas causadas por fluctuaciones de red, fallos de servicios de terceros, errores de usuario, problemas de compatibilidad o fuerza mayor más allá del alcance de los requisitos legales obligatorios.",
+                "t.s8h":"8. Suspensión, terminación y manejo de violaciones","t.s8p1":"Si razonablemente creemos que ha violado estos términos, amenazado la seguridad del producto, dañado los derechos de otros usuarios o violado leyes y regulaciones, podemos restringir, suspender o terminar parte o todo su soporte de servicio.","t.s8p2":"También puede dejar de usar OrbitShell en cualquier momento y limpiar los datos relacionados a través de la función de eliminación integrada o consultando la Política de privacidad.",
+                "t.s9h":"9. Actualizaciones de términos y contacto","t.s9p1":"Podemos actualizar estos términos según cambios del producto, requisitos legales o necesidades operativas. La versión actualizada se publicará en esta página y entrará en vigor desde la nueva fecha de vigencia. Si continúa usando OrbitShell después de la actualización de los términos, se considera que acepta el contenido actualizado.","t.s9p2":"Para comunicaciones comerciales, de licencia, quejas o legales, contacte: support@orbitshell.cn.",
+                "t.cta1":"Contactar OrbitShell","t.cta2":"Ver política de privacidad"
+            },
+            pt: {
+                "nav.home":"Início","nav.support":"Suporte","nav.privacy":"Política de Privacidade",
+                "t.eyebrow":"Documentos legais","t.title":"Termos de Serviço","t.desc":"Estes termos descrevem as regras básicas, limites de direitos e distribuição de responsabilidade que você deve seguir ao usar o cliente OrbitShell, o site e os serviços de suporte relacionados.","t.date":"Vigência: 18 de abril de 2026","t.scope":"Aplica-se aos produtos e site do OrbitShell",
+                "t.s1h":"1. Aceitação dos termos","t.s1p":"Ao acessar ou usar o OrbitShell, você concorda em ficar sujeito a estes termos e documentos legais relacionados, incluindo a Política de Privacidade. Se você usa este produto em nome de uma empresa ou equipe, confirma que tem autoridade para aceitar estes termos em nome dessa organização.",
+                "t.s2h":"2. Conteúdo do produto e escopo","t.s2p1":"O OrbitShell fornece conexões de terminal, gerenciamento de desktop remoto, conexões de bancos de dados, painéis de visualização de dados e capacidades de diagnóstico assistido por IA. As funcionalidades específicas dependem da versão atual, plano de assinatura, compatibilidade do sistema e disponibilidade regional.","t.s2p2":"Podemos atualizar a interface, funcionalidades, serviços conectados, preços ou métodos de suporte sem aviso prévio, mas isso não afetará seus direitos básicos conforme previsto em lei.",
+                "t.s3h":"3. Usos permitidos e proibidos","t.s3l1":"Você pode usar o OrbitShell para gerenciar dispositivos, servidores, bancos de dados e recursos remotos que possui ou está autorizado a acessar.","t.s3l2":"Você não deve usar o OrbitShell para acesso não autorizado, força bruta de senhas, escaneamento malicioso, roubo de dados, distribuição de malware ou outras atividades ilegais.","t.s3l3":"Você não deve contornar restrições de segurança, limitações de licença, mecanismos de cobrança ou controles de prevenção a abusos do produto.","t.s3l4":"Você deve garantir que os dados carregados em funcionalidades de IA ou outras funcionalidades em nuvem não infrinjam a privacidade, propriedade intelectual ou obrigações de confidencialidade de terceiros.",
+                "t.s4h":"4. Seus dados e responsabilidades de segurança","t.s4p1":"Você é responsável pelos dados que insere, importa, conecta ou envia, incluindo credenciais de servidor, conteúdos de bancos de dados, logs de negócios e saídas de comandos. Aplique mascaramento, controles de acesso e auditoria de acesso conforme necessário.","t.s4p2":"O OrbitShell usa um design local-first, mas você ainda deve proteger adequadamente seu dispositivo, contas do sistema, chaves, senhas e credenciais de API. Você assume toda a responsabilidade por vazamentos de dados, exclusões acidentais ou acessos não autorizados causados por sua própria má gestão.",
+                "t.s5h":"5. Isenção de responsabilidade de funcionalidades de IA","t.s5p1":"As funcionalidades de IA são projetadas para melhorar a eficiência de troubleshooting e análise, mas sua saída é conteúdo gerado por máquina que pode ser impreciso, desatualizado, incompleto ou inaplicável ao seu ambiente de produção. Você deve revisar independentemente e assumir os riscos antes de executar quaisquer comandos, scripts ou alterações de configuração sugeridos.","t.s5p2":"Se sua organização estiver sujeita a conformidade setorial, acordos com clientes ou restrições de transferência de dados, use as capacidades em nuvem correspondentes apenas após confirmar que são permitidas.",
+                "t.s6h":"6. Propriedade intelectual","t.s6p":"As interfaces, marca, conteúdo, design, código, imagens e outros conteúdos dentro do OrbitShell e seu site, exceto conteúdo carregado por usuários ou licenciado por lei, são de propriedade do OrbitShell ou seus licenciantes. Sem permissão por escrito, você não pode copiar, revender, adaptar, fazer engenharia reversa ou usar para criar produtos competitivos.",
+                "t.s7h":"7. Disponibilidade e isenção de responsabilidade","t.s7p1":"Faremos esforços razoáveis para manter o produto e serviços disponíveis, mas não garantimos que qualquer funcionalidade será contínua, sem erros ou adequada para todos os cenários. Para funcionalidades beta, pré-visualização, IA ou integração com terceiros, especialmente não fornecemos garantia de disponibilidade absoluta.","t.s7p2":"Na máxima extensão permitida por lei, o OrbitShell é fornecido \"como está\" e \"disponível\". Não somos responsáveis por perdas causadas por flutuações de rede, falhas em serviços de terceiros, erros de usuário, problemas de compatibilidade ou força maior além do escopo dos requisitos legais obrigatórios.",
+                "t.s8h":"8. Suspensão, terminação e tratamento de violações","t.s8p1":"Se razoavelmente acreditarmos que você violou estes termos, ameaçou a segurança do produto, prejudicou direitos de outros usuários ou violou leis e regulamentos, podemos restringir, suspender ou terminar parte ou todo o seu suporte de serviço.","t.s8p2":"Você também pode parar de usar o OrbitShell a qualquer momento e limpar os dados relacionados através da funcionalidade de exclusão integrada ou consultando a Política de Privacidade.",
+                "t.s9h":"9. Atualizações dos termos e contato","t.s9p1":"Podemos atualizar estes termos com base em mudanças do produto, requisitos legais ou necessidades operacionais. A versão atualizada será publicada nesta página e entrará em vigor a partir da nova data de vigência. Se você continuar usando o OrbitShell após a atualização dos termos, será considerado que aceita o conteúdo atualizado.","t.s9p2":"Para comunicações comerciais, de licença, reclamações ou legais, entre em contato: support@orbitshell.cn.",
+                "t.cta1":"Contatar OrbitShell","t.cta2":"Ver política de privacidade"
+            },
+            ru: {
+                "nav.home":"Главная","nav.support":"Поддержка","nav.privacy":"Политика конфиденциальности",
+                "t.eyebrow":"Юридические документы","t.title":"Условия использования","t.desc":"Эти условия описывают основные правила, границы прав и распределение ответственности, которым вы должны следовать при использовании клиента OrbitShell, веб-сайта и связанных служб поддержки.","t.date":"Дата вступления в силу: 18 апреля 2026","t.scope":"Распространяется на продукты и веб-сайт OrbitShell",
+                "t.s1h":"1. Принятие условий","t.s1p":"Получая доступ к OrbitShell или используя его, вы соглашаетесь соблюдать эти условия и связанные юридические документы, включая Политику конфиденциальности. Если вы используете этот продукт от имени компании или команды, вы подтверждаете, что имеете полномочия принимать эти условия от имени этой организации.",
+                "t.s2h":"2. Содержание продукта и область применения","t.s2p1":"OrbitShell предоставляет подключения терминала, управление удалённым рабочим столом, подключения к базам данных, информационные панели визуализации данных и возможности ИИ-ассистированной диагностики. Конкретные функции зависят от текущей версии, плана подписки, совместимости системы и региональной доступности.","t.s2p2":"Мы можем обновлять интерфейс, функции, подключённые сервисы, цены или методы поддержки без предварительного уведомления, но это не повлияет на ваши основные права, предусмотренные законом.",
+                "t.s3h":"3. Разрешённые и запрещённые виды использования","t.s3l1":"Вы можете использовать OrbitShell для управления устройствами, серверами, базами данных и удалёнными ресурсами, которыми владеете или имеете право доступа.","t.s3l2":"Вы не должны использовать OrbitShell для несанкционированного доступа, грубого подбора паролей, вредоносного сканирования, кражи данных, распространения вредоносного ПО или другой незаконной деятельности.","t.s3l3":"Вы не должны обходить ограничения безопасности, лицензионные ограничения, биллинговые механизмы или контроль злоупотреблений в продукте.","t.s3l4":"Вы должны убедиться, что данные, загружаемые в ИИ или другие облачные функции, не нарушают конфиденциальность, интеллектуальную собственность или обязательства по сохранению конфиденциальности других лиц.",
+                "t.s4h":"4. Ваши данные и ответственность за безопасность","t.s4p1":"Вы несёте ответственность за данные, которые вводите, импортируете, подключаете или отправляете, включая учётные данные сервера, содержимое баз данных, бизнес-логи и выводы команд. При необходимости применяйте маскировку, контроль доступа и аудит доступа.","t.s4p2":"OrbitShell использует локальный дизайн, но вы всё равно должны надёжно защищать своё устройство, системные учётные записи, ключи, пароли и любые API-учётные данные. Вы несёте полную ответственность за утечки данных, случайные удаления или несанкционированный доступ, вызванные вашим собственным ненадлежащим управлением.",
+                "t.s5h":"5. Отказ от ответственности за ИИ-функции","t.s5p1":"ИИ-функцииDesigned to improve troubleshooting and analysis efficiency, but their output is machine-generated content that may be inaccurate, outdated, incomplete, or inapplicable to your production environment. You should independently review and bear the risks before executing any suggested commands, scripts, or configuration changes.","t.s5p2":"Если ваша организация подчиняется отраслевому compliance, клиентским соглашениям или ограничениям на трансграничную передачу данных, используйте соответствующие облачные возможности только после подтверждения их допустимости.",
+                "t.s6h":"6. Интеллектуальная собственность","t.s6p":"Интерфейсы, брендинг, тексты, дизайн, код, изображения и другие материалы внутри OrbitShell и его веб-сайта, за исключением контента, загруженного пользователями или лицензированного по закону, принадлежат OrbitShell или его лицензиарам. Без письменного разрешения вы не можете копировать, перепродавать, адаптировать, делать обратную инженерию или использовать для создания конкурирующих продуктов.",
+                "t.s7h":"7. Доступность и отказ от ответственности","t.s7p1":"Мы приложим разумные усилия для поддержания доступности продукта и сервисов, но не гарантируем, что какая-либо функция будет непрерывной, безошибочной или подходящей для всех сценариев. Для бета-, предварительных, ИИ-функций или функций интеграции с третьими сторонами мы особенно не предоставляем абсолютную гарантию доступности.","t.s7p2":"В максимальной степени, разрешённой законом, OrbitShell предоставляется «как есть» и «как доступно». Мы не несём ответственности за убытки, вызванные сетевыми колебаниями, сбоями сервисов третьих сторон, ошибками пользователей, проблемами совместимости или обстоятельствами непреодолимой силы за рамки обязательных правовых требований.",
+                "t.s8h":"8. Приостановка, прекращение и обработка нарушений","t.s8p1":"Если мы разумно полагаем, что вы нарушали эти условия, угрожали безопасности продукта, нарушали права других пользователей или нарушали законы и нормативные акты, мы можем ограничить, приостановить или прекратить часть или весь ваш сервис.","t.s8p2":"Вы также можете прекратить использование OrbitShell в любое время и очистить связанные данные через встроенную функцию удаления или обратившись к Политике конфиденциальности.",
+                "t.s9h":"9. Обновления условий и контакт","t.s9p1":"Мы можем обновлять эти условия на основе изменений продукта, правовых требований или операционных нужд. Обновлённая версия будет опубликована на этой странице и вступит в силу с новой даты. Если вы продолжаете использовать OrbitShell после обновления условий, считается, что вы приняли обновлённое содержание.","t.s9p2":"Для бизнес-, лицензионных, жалоб или юридических коммуникаций, пожалуйста, свяжитесь с нами: support@orbitshell.cn.",
+                "t.cta1":"Связаться с OrbitShell","t.cta2":"Посмотреть политику конфиденциальности"
+            }
+        };
+
+        const langLabels = { en:'EN', zh:'中文', ja:'日本語', ko:'한국어', fr:'FR', de:'DE', es:'ES', pt:'PT', ru:'RU' };
+        const langTitles = {
+            en:'OrbitShell Terms of Service', zh:'OrbitShell 服务条款', ja:'OrbitShell 利用規約', ko:'OrbitShell 이용약관',
+            fr:"Conditions d'utilisation OrbitShell", de:'OrbitShell Nutzungsbedingungen', es:'Términos de Servicio de OrbitShell', pt:'Termos de Serviço do OrbitShell', ru:'Условия использования OrbitShell'
+        };
+        const htmlLangMap = { en:'en', zh:'zh-CN', ja:'ja', ko:'ko', fr:'fr', de:'de', es:'es', pt:'pt', ru:'ru' };
+
+        const html = document.documentElement;
+        const langDropdown = document.getElementById('langDropdown');
+        const langToggle = document.getElementById('langToggle');
+        const langMenu = document.getElementById('langMenu');
+        let currentLang = localStorage.getItem('orbitshell-lang') || 'en';
+
+        function setLang(lang) {
+            currentLang = lang;
+            html.lang = htmlLangMap[lang] || 'en';
+            localStorage.setItem('orbitshell-lang', lang);
+            document.title = langTitles[lang] || langTitles.en;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key] !== undefined) el.textContent = i18n[lang][key];
+            });
+            langToggle.innerHTML = '🌐 ' + (langLabels[lang]||'EN') + ' <span class="arrow">▼</span>';
+            langMenu.querySelectorAll('.lang-option').forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
+        }
+
+        setLang(currentLang);
+        langToggle.addEventListener('click', e => { e.stopPropagation(); langDropdown.classList.toggle('open'); });
+        langMenu.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', e => { e.stopPropagation(); setLang(opt.dataset.lang); langDropdown.classList.remove('open'); });
+        });
+        document.addEventListener('click', () => langDropdown.classList.remove('open'));
+    </script>
 </body>
 </html>

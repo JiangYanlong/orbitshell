@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrbitShell - 智能统一连接管理与 AI 终端</title>
+    <title>OrbitShell - Smart Unified Connection Manager & AI Terminal</title>
 
     <link rel="icon" type="image/png" href="app-icon.png">
     <link rel="apple-touch-icon" href="app-icon.png">
@@ -66,9 +66,7 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "PingFang SC", "Helvetica Neue", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif;
@@ -82,10 +80,7 @@
             transition: background-color 0.5s ease, color 0.5s ease;
         }
 
-        a {
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+        a { text-decoration: none; transition: color 0.3s; }
 
         .container {
             max-width: var(--container-max);
@@ -93,7 +88,7 @@
             padding: 0 24px;
         }
 
-        /* --- 动画 --- */
+        /* --- Animations --- */
         .reveal {
             opacity: 0;
             transform: translateY(24px) scale(0.98);
@@ -111,7 +106,7 @@
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
 
-        /* ===== 导航 ===== */
+        /* ===== Nav ===== */
         header {
             background-color: var(--nav-bg);
             backdrop-filter: saturate(180%) blur(20px);
@@ -166,9 +161,7 @@
             letter-spacing: 0.01em;
         }
 
-        .nav-links a:hover {
-            color: var(--text-main);
-        }
+        .nav-links a:hover { color: var(--text-main); }
 
         .menu-toggle {
             display: none;
@@ -184,6 +177,100 @@
             height: 1.5px;
             background: var(--text-main);
             transition: 0.3s;
+        }
+
+        /* ===== Language Dropdown ===== */
+        .lang-dropdown {
+            position: relative;
+        }
+
+        .lang-toggle {
+            background: var(--tag-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .lang-toggle:hover {
+            background: var(--tag-active);
+            color: var(--text-main);
+        }
+
+        .lang-toggle .arrow {
+            font-size: 8px;
+            transition: transform 0.2s ease;
+            margin-left: 2px;
+        }
+
+        .lang-dropdown.open .lang-toggle .arrow {
+            transform: rotate(180deg);
+        }
+
+        .lang-menu {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            padding: 6px;
+            min-width: 160px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.2s var(--ease-out-expo);
+            z-index: 1100;
+        }
+
+        .lang-dropdown.open .lang-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .lang-option:hover {
+            background: var(--tag-bg);
+            color: var(--text-main);
+        }
+
+        .lang-option.active {
+            background: var(--accent-blue);
+            color: #FFF;
+        }
+
+        .lang-option .lang-code {
+            font-size: 11px;
+            opacity: 0.5;
+            margin-left: auto;
+        }
+
+        .lang-option.active .lang-code {
+            opacity: 0.7;
         }
 
         .btn-primary {
@@ -312,7 +399,7 @@
             display: block;
         }
 
-        /* ===== 统计条 ===== */
+        /* ===== Stats ===== */
         .stats-bar {
             display: flex;
             justify-content: center;
@@ -321,9 +408,7 @@
             margin-top: -20px;
         }
 
-        .stat-item {
-            text-align: center;
-        }
+        .stat-item { text-align: center; }
 
         .stat-number {
             font-size: 36px;
@@ -340,7 +425,7 @@
             margin-top: 4px;
         }
 
-        /* ===== 功能网格 ===== */
+        /* ===== Features ===== */
         .section-title {
             text-align: center;
             margin-bottom: 16px;
@@ -410,10 +495,8 @@
             line-height: 1.6;
         }
 
-        /* ===== 截图展示 ===== */
-        .showcase-section {
-            padding: 60px 0;
-        }
+        /* ===== Showcase ===== */
+        .showcase-section { padding: 60px 0; }
 
         .showcase-row {
             display: flex;
@@ -422,13 +505,9 @@
             margin-bottom: 100px;
         }
 
-        .showcase-row:nth-child(even) {
-            flex-direction: row-reverse;
-        }
+        .showcase-row:nth-child(even) { flex-direction: row-reverse; }
 
-        .showcase-text {
-            flex: 1;
-        }
+        .showcase-text { flex: 1; }
 
         .showcase-tag {
             display: inline-flex;
@@ -458,10 +537,7 @@
             line-height: 1.6;
         }
 
-        .showcase-list {
-            list-style: none;
-            padding: 0;
-        }
+        .showcase-list { list-style: none; padding: 0; }
 
         .showcase-list li {
             display: flex;
@@ -504,7 +580,7 @@
             transition: 0.5s var(--ease-out-expo);
         }
 
-        /* ===== 深色沉浸区 ===== */
+        /* ===== Dark Section ===== */
         .dark-section {
             background-color: #000;
             color: #FFFFFF;
@@ -537,15 +613,10 @@
             box-shadow: 0 40px 80px rgba(0,0,0,0.5);
         }
 
-        .dark-section img {
-            width: 100%;
-            display: block;
-        }
+        .dark-section img { width: 100%; display: block; }
 
-        /* ===== 数据库网格 ===== */
-        .db-section {
-            padding: 80px 0 60px;
-        }
+        /* ===== Database Grid ===== */
+        .db-section { padding: 80px 0 60px; }
 
         .db-grid {
             display: grid;
@@ -576,9 +647,7 @@
             transform: translateY(-2px);
         }
 
-        .db-tag .db-icon {
-            font-size: 16px;
-        }
+        .db-tag .db-icon { font-size: 16px; }
 
         .db-tag.coming-soon {
             opacity: 0.5;
@@ -586,7 +655,7 @@
             color: var(--text-tertiary);
         }
 
-        /* ===== 页脚 ===== */
+        /* ===== Footer ===== */
         footer {
             background: var(--footer-bg);
             padding: 60px 0 40px;
@@ -624,10 +693,7 @@
             line-height: 1.6;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 60px;
-        }
+        .footer-links { display: flex; gap: 60px; }
 
         .link-group h4 {
             font-size: 13px;
@@ -662,10 +728,8 @@
             display: none;
             position: fixed;
             z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
             background-color: rgba(0,0,0,0.85);
             backdrop-filter: blur(10px);
             opacity: 0;
@@ -678,8 +742,7 @@
         .modal-content {
             max-width: 90vw;
             max-height: 85vh;
-            width: auto;
-            height: auto;
+            width: auto; height: auto;
             object-fit: contain;
             border-radius: 12px;
             transform: scale(0.95);
@@ -690,8 +753,7 @@
 
         .close-modal {
             position: absolute;
-            top: 24px;
-            right: 32px;
+            top: 24px; right: 32px;
             font-size: 40px;
             font-weight: 300;
             color: #FFFFFF;
@@ -706,13 +768,12 @@
             transform: scale(1.1);
         }
 
-        /* ===== 响应式 ===== */
+        /* ===== Responsive ===== */
         @media (max-width: 768px) {
             .nav-links {
                 background: var(--bg-card);
                 position: fixed;
-                top: 0;
-                right: -100%;
+                top: 0; right: -100%;
                 height: 100vh;
                 width: 260px;
                 flex-direction: column;
@@ -762,11 +823,25 @@
             </div>
 
             <nav class="nav-links" id="navLinks">
-                <a href="#features">功能</a>
-                <a href="#workbench">工作台</a>
-                <a href="#canvas">沉浸画布</a>
-                <a href="#databases">数据库</a>
-                <a href="https://apps.apple.com/app/orbitshell/id6762333829" target="_blank" class="btn-primary">下载</a>
+                <a href="#features" data-i18n="nav.features">Features</a>
+                <a href="#workbench" data-i18n="nav.workbench">Workbench</a>
+                <a href="#canvas" data-i18n="nav.canvas">Canvas</a>
+                <a href="#databases" data-i18n="nav.databases">Databases</a>
+                <div class="lang-dropdown" id="langDropdown">
+                    <span class="lang-toggle" id="langToggle" title="Switch language">🌐 EN <span class="arrow">▼</span></span>
+                    <div class="lang-menu" id="langMenu">
+                        <div class="lang-option active" data-lang="en">English <span class="lang-code">EN</span></div>
+                        <div class="lang-option" data-lang="zh">中文 <span class="lang-code">ZH</span></div>
+                        <div class="lang-option" data-lang="ja">日本語 <span class="lang-code">JA</span></div>
+                        <div class="lang-option" data-lang="ko">한국어 <span class="lang-code">KO</span></div>
+                        <div class="lang-option" data-lang="fr">Français <span class="lang-code">FR</span></div>
+                        <div class="lang-option" data-lang="de">Deutsch <span class="lang-code">DE</span></div>
+                        <div class="lang-option" data-lang="es">Español <span class="lang-code">ES</span></div>
+                        <div class="lang-option" data-lang="pt">Português <span class="lang-code">PT</span></div>
+                        <div class="lang-option" data-lang="ru">Русский <span class="lang-code">RU</span></div>
+                    </div>
+                </div>
+                <a href="https://apps.apple.com/app/orbitshell/id6762333829" target="_blank" class="btn-primary" data-i18n="nav.download">Download</a>
             </nav>
         </div>
     </header>
@@ -775,13 +850,13 @@
         <section class="hero container">
             <div class="hero-badge reveal">
                 <span class="dot"></span>
-                v2.0 — 全新 Immersive Canvas
+                <span data-i18n="hero.badge">v2.0 — All-new Immersive Canvas</span>
             </div>
-            <h1 class="reveal delay-1">一个工作台，连接一切。</h1>
-            <p class="reveal delay-2">SSH、SFTP、RDP、30+ 种数据库与 API 调试，全部融于一个优雅的工作台。AI 助手全程陪伴，让运维和开发从未如此高效。</p>
+            <h1 class="reveal delay-1" data-i18n="hero.title">One workbench to connect them all.</h1>
+            <p class="reveal delay-2" data-i18n="hero.subtitle">SSH, SFTP, RDP, 30+ databases and API debugging — all unified in one elegant workbench. AI assistant by your side, making ops and development never been this efficient.</p>
             <div class="hero-actions reveal delay-3">
-                <a href="https://apps.apple.com/app/orbitshell/id6762333829" target="_blank" class="btn-primary">下载 for macOS</a>
-                <a href="#features" class="btn-secondary">了解更多 ↓</a>
+                <a href="https://apps.apple.com/app/orbitshell/id6762333829" target="_blank" class="btn-primary" data-i18n="hero.download">Download for macOS</a>
+                <a href="#features" class="btn-secondary" data-i18n="hero.learn">Learn more ↓</a>
             </div>
             <div class="hero-image-wrapper reveal delay-3">
                 <img src="main-qs.png" alt="OrbitShell Workbench" class="zoom-img">
@@ -791,70 +866,70 @@
         <section class="stats-bar container reveal">
             <div class="stat-item">
                 <div class="stat-number">30+</div>
-                <div class="stat-label">数据库类型</div>
+                <div class="stat-label" data-i18n="stat.databases">Database Types</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">4</div>
-                <div class="stat-label">协议全覆盖</div>
+                <div class="stat-label" data-i18n="stat.protocols">Protocols Covered</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">∞</div>
-                <div class="stat-label">AI 辅助诊断</div>
+                <div class="stat-label" data-i18n="stat.ai">AI-Powered Diagnosis</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">100%</div>
-                <div class="stat-label">本地优先</div>
+                <div class="stat-label" data-i18n="stat.local">Local-First</div>
             </div>
         </section>
 
         <section id="features" class="container features-grid">
             <div class="feature-card reveal">
                 <div class="feature-icon">⚡</div>
-                <h3>统一工作台</h3>
-                <p>在同一个窗口管理 SSH、SFTP、RDP、数据库和 API 调试。资源概览一目了然，双击即可连接。</p>
+                <h3 data-i18n="f1.title">Unified Workbench</h3>
+                <p data-i18n="f1.desc">Manage SSH, SFTP, RDP, databases and API debugging in one window. Resource overview at a glance, double-click to connect.</p>
             </div>
             <div class="feature-card reveal delay-1">
                 <div class="feature-icon">🤖</div>
-                <h3>AI 智能助手</h3>
-                <p>内置 AI 助手支持上下文感知诊断。终端报错一键解析，SQL 问题智能优化，全程伴随你的工作流。</p>
+                <h3 data-i18n="f2.title">AI Smart Assistant</h3>
+                <p data-i18n="f2.desc">Built-in AI with context-aware diagnostics. One-click terminal error parsing, intelligent SQL optimization, throughout your entire workflow.</p>
             </div>
             <div class="feature-card reveal delay-2">
                 <div class="feature-icon">🎨</div>
-                <h3>Immersive Canvas</h3>
-                <p>全新沉浸式画布模式，自由排列 AI、终端、文件、数据库、API 面板。像搭积木一样构建你的工作空间。</p>
+                <h3 data-i18n="f3.title">Immersive Canvas</h3>
+                <p data-i18n="f3.desc">All-new immersive canvas mode. Freely arrange AI, terminal, file, database, and API panels. Build your workspace like building blocks.</p>
             </div>
         </section>
 
         <section id="workbench" class="showcase-section container">
             <div class="showcase-row reveal">
                 <div class="showcase-text">
-                    <div class="showcase-tag">🏠 Workbench</div>
-                    <h2>一切从这里开始</h2>
-                    <p>智能搜索栏支持直接输入 user@host 快速连接，也可向 AI 助手提问。资源概览卡片实时显示各类连接数量。</p>
+                    <div class="showcase-tag">🏠 <span data-i18n="sw1.tag">Workbench</span></div>
+                    <h2 data-i18n="sw1.title">It all starts here</h2>
+                    <p data-i18n="sw1.desc">The smart search bar supports direct user@host connections, or ask the AI assistant. Resource overview cards show real-time connection counts.</p>
                     <ul class="showcase-list">
-                        <li>最近工作记录，一键恢复上次会话</li>
-                        <li>SQL 查询历史快速复制与重执行</li>
-                        <li>支持分组管理，生产/测试环境清晰分离</li>
+                        <li data-i18n="sw1.l1">Recent work history, restore last session with one click</li>
+                        <li data-i18n="sw1.l2">SQL query history for quick copy and re-execution</li>
+                        <li data-i18n="sw1.l3">Group management support, clear separation of prod/staging</li>
                     </ul>
                 </div>
                 <div class="showcase-image">
-                    <img src="main-qs.png" alt="OrbitShell Workbench 亮色模式" class="zoom-img">
+                    <img src="main-qs.png" alt="OrbitShell Workbench Light Mode" class="zoom-img">
                 </div>
             </div>
 
             <div class="showcase-row reveal">
                 <div class="showcase-text">
-                    <div class="showcase-tag">🌙 暗黑模式</div>
-                    <h2>深夜运维，从不伤眼</h2>
-                    <p>完美适配 macOS 暗黑模式，深色主题下依然保持清晰的层级关系和优雅的视觉体验。</p>
+                    <div class="showcase-tag">🌙 <span data-i18n="sw2.tag">Dark Mode</span></div>
+                    <h2 data-i18n="sw2.title">Late-night ops, easy on the eyes</h2>
+                    <p data-i18n="sw2.desc">Perfectly adapts to macOS dark mode. Clear visual hierarchy and elegant experience even in deep dark themes.</p>
                     <ul class="showcase-list">
-                        <li>自动跟随系统外观设置</li>
-                        <li>终端、文件管理器统一暗色风格</li>
-                        <li>AI 助手在暗色下依然醒目易用</li>
+                        <li data-i18n="sw2.l1">Auto-follows system appearance settings</li>
+                        <li data-i18n="sw2.l2">Unified dark style across terminal and file manager</li>
+                        <li data-i18n="sw2.l3">AI assistant stays prominent and easy to use in dark mode</li>
                     </ul>
                 </div>
                 <div class="showcase-image">
-                    <img src="main-ss.png" alt="OrbitShell Workbench 暗色模式" class="zoom-img">
+                    <img src="main-ss.png" alt="OrbitShell Workbench Dark Mode" class="zoom-img">
                 </div>
             </div>
         </section>
@@ -862,17 +937,17 @@
         <section id="canvas" class="dark-section">
             <div class="container reveal">
                 <h2>Immersive Canvas</h2>
-                <p>自由排列你的工作面板。AI 对话、SSH 终端、SFTP 文件管理、SQL 编辑器、API 调试器——在同一块画布上协同工作。</p>
+                <p data-i18n="canvas.desc">Freely arrange your work panels. AI chat, SSH terminal, SFTP file manager, SQL editor, API debugger — all collaborating on one canvas.</p>
                 <div class="image-container">
-                    <img src="wxhb.png" alt="Immersive Canvas 多面板视图" class="zoom-img">
+                    <img src="wxhb.png" alt="Immersive Canvas Multi-Panel View" class="zoom-img">
                 </div>
             </div>
         </section>
 
         <section id="databases" class="db-section container">
             <div class="reveal">
-                <h2 class="section-title">30+ 数据库，开箱即用</h2>
-                <p class="section-desc">从主流关系型数据库到向量数据库，从国产信创到云原生，一站全覆盖。</p>
+                <h2 class="section-title" data-i18n="db.title">30+ Databases, Ready to Go</h2>
+                <p class="section-desc" data-i18n="db.desc">From mainstream relational databases to vector databases, from domestic databases to cloud-native — one platform covers them all.</p>
             </div>
             <div class="db-grid reveal delay-1">
                 <div class="db-tag"><span class="db-icon">🐬</span> MySQL</div>
@@ -900,7 +975,7 @@
                 <div class="db-tag"><span class="db-icon">📐</span> Databend</div>
                 <div class="db-tag"><span class="db-icon">🔑</span> KWDB</div>
                 <div class="db-tag"><span class="db-icon">⛰️</span> YashanDB</div>
-                <div class="db-tag coming-soon">Qdrant · 更多</div>
+                <div class="db-tag coming-soon">Qdrant · <span data-i18n="db.more">More</span></div>
             </div>
         </section>
     </main>
@@ -913,30 +988,30 @@
                         <div class="logo-icon">O</div>
                         OrbitShell
                     </div>
-                    <p class="footer-desc">为现代开发者构建的下一代智能终端与连接管理工具。本地优先，数据安全。</p>
+                    <p class="footer-desc" data-i18n="footer.desc">The next-gen smart terminal and connection manager built for modern developers. Local-first, your data stays yours.</p>
                 </div>
                 <div class="footer-links">
                     <div class="link-group">
-                        <h4>产品</h4>
-                        <a href="#features">功能介绍</a>
-                        <a href="#workbench">工作台</a>
-                        <a href="#canvas">沉浸画布</a>
-                        <a href="#databases">数据库支持</a>
+                        <h4 data-i18n="footer.product">Product</h4>
+                        <a href="#features" data-i18n="footer.features">Features</a>
+                        <a href="#workbench" data-i18n="footer.workbench">Workbench</a>
+                        <a href="#canvas" data-i18n="footer.canvas">Canvas</a>
+                        <a href="#databases" data-i18n="footer.databases">Databases</a>
                     </div>
                     <div class="link-group">
-                        <h4>支持</h4>
-                        <a href="support.html">使用文档</a>
-                        <a href="mailto:support@orbitshell.cn">联系我们</a>
+                        <h4 data-i18n="footer.support">Support</h4>
+                        <a href="support.html" data-i18n="footer.docs">Documentation</a>
+                        <a href="mailto:support@orbitshell.cn" data-i18n="footer.contact">Contact Us</a>
                     </div>
                     <div class="link-group">
-                        <h4>法律</h4>
-                        <a href="privacy.html">隐私政策</a>
-                        <a href="terms.html">服务条款</a>
+                        <h4 data-i18n="footer.legal">Legal</h4>
+                        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <span>Copyright © 2026 OrbitShell Inc. 保留所有权利。</span>
+                <span>Copyright © 2026 OrbitShell Inc. All rights reserved.</span>
                 <span>Made with ❤️ for developers</span>
             </div>
         </div>
@@ -948,7 +1023,185 @@
     </div>
 
     <script>
-        // 移动端菜单
+        /* ===== i18n Translation Dictionary ===== */
+        const i18n = {
+            en: {
+                "nav.features":"Features","nav.workbench":"Workbench","nav.canvas":"Canvas","nav.databases":"Databases","nav.download":"Download",
+                "hero.badge":"v2.0 — All-new Immersive Canvas","hero.title":"One workbench to connect them all.","hero.subtitle":"SSH, SFTP, RDP, 30+ databases and API debugging — all unified in one elegant workbench. AI assistant by your side, making ops and development never been this efficient.","hero.download":"Download for macOS","hero.learn":"Learn more ↓",
+                "stat.databases":"Database Types","stat.protocols":"Protocols Covered","stat.ai":"AI-Powered Diagnosis","stat.local":"Local-First",
+                "f1.title":"Unified Workbench","f1.desc":"Manage SSH, SFTP, RDP, databases and API debugging in one window. Resource overview at a glance, double-click to connect.","f2.title":"AI Smart Assistant","f2.desc":"Built-in AI with context-aware diagnostics. One-click terminal error parsing, intelligent SQL optimization, throughout your entire workflow.","f3.title":"Immersive Canvas","f3.desc":"All-new immersive canvas mode. Freely arrange AI, terminal, file, database, and API panels. Build your workspace like building blocks.",
+                "sw1.tag":"Workbench","sw1.title":"It all starts here","sw1.desc":"The smart search bar supports direct user@host connections, or ask the AI assistant. Resource overview cards show real-time connection counts.","sw1.l1":"Recent work history, restore last session with one click","sw1.l2":"SQL query history for quick copy and re-execution","sw1.l3":"Group management support, clear separation of prod/staging",
+                "sw2.tag":"Dark Mode","sw2.title":"Late-night ops, easy on the eyes","sw2.desc":"Perfectly adapts to macOS dark mode. Clear visual hierarchy and elegant experience even in deep dark themes.","sw2.l1":"Auto-follows system appearance settings","sw2.l2":"Unified dark style across terminal and file manager","sw2.l3":"AI assistant stays prominent and easy to use in dark mode",
+                "canvas.desc":"Freely arrange your work panels. AI chat, SSH terminal, SFTP file manager, SQL editor, API debugger — all collaborating on one canvas.",
+                "db.title":"30+ Databases, Ready to Go","db.desc":"From mainstream relational databases to vector databases, from domestic databases to cloud-native — one platform covers them all.","db.more":"More",
+                "footer.desc":"The next-gen smart terminal and connection manager built for modern developers. Local-first, your data stays yours.","footer.product":"Product","footer.features":"Features","footer.workbench":"Workbench","footer.canvas":"Canvas","footer.databases":"Databases","footer.support":"Support","footer.docs":"Documentation","footer.contact":"Contact Us","footer.legal":"Legal","footer.privacy":"Privacy Policy","footer.terms":"Terms of Service"
+            },
+            zh: {
+                "nav.features":"功能","nav.workbench":"工作台","nav.canvas":"沉浸画布","nav.databases":"数据库","nav.download":"下载",
+                "hero.badge":"v2.0 — 全新 Immersive Canvas","hero.title":"一个工作台，连接一切。","hero.subtitle":"SSH、SFTP、RDP、30+ 种数据库与 API 调试，全部融于一个优雅的工作台。AI 助手全程陪伴，让运维和开发从未如此高效。","hero.download":"下载 for macOS","hero.learn":"了解更多 ↓",
+                "stat.databases":"数据库类型","stat.protocols":"协议全覆盖","stat.ai":"AI 辅助诊断","stat.local":"本地优先",
+                "f1.title":"统一工作台","f1.desc":"在同一个窗口管理 SSH、SFTP、RDP、数据库和 API 调试。资源概览一目了然，双击即可连接。","f2.title":"AI 智能助手","f2.desc":"内置 AI 助手支持上下文感知诊断。终端报错一键解析，SQL 问题智能优化，全程伴随你的工作流。","f3.title":"Immersive Canvas","f3.desc":"全新沉浸式画布模式，自由排列 AI、终端、文件、数据库、API 面板。像搭积木一样构建你的工作空间。",
+                "sw1.tag":"Workbench","sw1.title":"一切从这里开始","sw1.desc":"智能搜索栏支持直接输入 user@host 快速连接，也可向 AI 助手提问。资源概览卡片实时显示各类连接数量。","sw1.l1":"最近工作记录，一键恢复上次会话","sw1.l2":"SQL 查询历史快速复制与重执行","sw1.l3":"支持分组管理，生产/测试环境清晰分离",
+                "sw2.tag":"暗黑模式","sw2.title":"深夜运维，从不伤眼","sw2.desc":"完美适配 macOS 暗黑模式，深色主题下依然保持清晰的层级关系和优雅的视觉体验。","sw2.l1":"自动跟随系统外观设置","sw2.l2":"终端、文件管理器统一暗色风格","sw2.l3":"AI 助手在暗色下依然醒目易用",
+                "canvas.desc":"自由排列你的工作面板。AI 对话、SSH 终端、SFTP 文件管理、SQL 编辑器、API 调试器——在同一块画布上协同工作。",
+                "db.title":"30+ 数据库，开箱即用","db.desc":"从主流关系型数据库到向量数据库，从国产信创到云原生，一站全覆盖。","db.more":"更多",
+                "footer.desc":"为现代开发者构建的下一代智能终端与连接管理工具。本地优先，数据安全。","footer.product":"产品","footer.features":"功能介绍","footer.workbench":"工作台","footer.canvas":"沉浸画布","footer.databases":"数据库支持","footer.support":"支持","footer.docs":"使用文档","footer.contact":"联系我们","footer.legal":"法律","footer.privacy":"隐私政策","footer.terms":"服务条款"
+            },
+            ja: {
+                "nav.features":"機能","nav.workbench":"ワークベンチ","nav.canvas":"キャンバス","nav.databases":"データベース","nav.download":"ダウンロード",
+                "hero.badge":"v2.0 — 全新 Immersive Canvas","hero.title":"一つのワークベンチで、すべてを接続。","hero.subtitle":"SSH、SFTP、RDP、30以上のデータベースとAPIデバッグ——すべて一つのエレガントなワークベンチに統合。AIアシスタントが常にサポートし、運用と開発をこれまでにない効率に。","hero.download":"macOS版をダウンロード","hero.learn":"詳細を見る ↓",
+                "stat.databases":"データベース数","stat.protocols":"プロトコル数","stat.ai":"AI診断","stat.local":"ローカル優先",
+                "f1.title":"統合ワークベンチ","f1.desc":"SSH、SFTP、RDP、データベース、APIデバッグを一つのウィンドウで管理。リソース概要が一目瞭然、ダブルクリックで接続。","f2.title":"AIスマートアシスタント","f2.desc":"コンテキスト対応のAI内蔵診断。ターミナルエラーのワンクリック解析、SQLの最適化、ワークフローを全段階でサポート。","f3.title":"Immersive Canvas","f3.desc":"全新の Immersive Canvas モード。AI、ターミナル、ファイル、データベース、APIパネルを自由に配置。ブロックを积むようにワークスペースを構築。",
+                "sw1.tag":"ワークベンチ","sw1.title":"すべてはここから始まる","sw1.desc":"スマート検索バーで user@host を直接入力して接続、またはAIアシスタントに質問。リソース概要カードで接続数をリアルタイム表示。","sw1.l1":"最近の作業履歴、ワンクリックでセッション復元","sw1.l2":"SQLクエリ履歴のコピーと再実行","sw1.l3":"グループ管理対応、本番/ステージング環境を明確に分離",
+                "sw2.tag":"ダークモード","sw2.title":"深夜の運用、目に優しい","sw2.desc":"macOSダークモードに完全対応。ダークテーマでも明確な視覚階層とエレガントな体験を維持。","sw2.l1":"システムの外観設定に自動追従","sw2.l2":"ターミナルとファイルマネージャーで統一されたダークスタイル","sw2.l3":"ダークモードでもAIアシスタントが見やすく使いやすい",
+                "canvas.desc":"作業パネルを自由に配置。AIチャット、SSHターミナル、SFTPファイルマネージャー、SQLエディタ、APIデバッガー——一つのキャンバスで協働。",
+                "db.title":"30以上のデータベース、すぐに使える","db.desc":"リレーショナルデータベースからベクターデータベース、国産データベースからクラウドネイティブまで——一つのプラットフォームで網羅。","db.more":"その他",
+                "footer.desc":"モダンな開発者のために構築された次世代のスマートターミナルおよび接続管理ツール。ローカル優先、データはあなたのもの。","footer.product":"製品","footer.features":"機能","footer.workbench":"ワークベンチ","footer.canvas":"キャンバス","footer.databases":"データベース","footer.support":"サポート","footer.docs":"ドキュメント","footer.contact":"お問い合わせ","footer.legal":"法的情報","footer.privacy":"プライバシーポリシー","footer.terms":"利用規約"
+            },
+            ko: {
+                "nav.features":"기능","nav.workbench":"워크벤치","nav.canvas":"캔버스","nav.databases":"데이터베이스","nav.download":"다운로드",
+                "hero.badge":"v2.0 —全新的 Immersive Canvas","hero.title":"하나의 워크벤치로 모든 것을 연결합니다.","hero.subtitle":"SSH, SFTP, RDP, 30개 이상의 데이터베이스와 API 디버깅 — 모두 하나의 우아한 워크벤치에 통합. AI 어시스턴트가 항상 함께하여 운영과 개발을 그 어느 때보다 효율적으로.","hero.download":"macOS용 다운로드","hero.learn":"자세히 보기 ↓",
+                "stat.databases":"데이터베이스 수","stat.protocols":"프로토콜 수","stat.ai":"AI 진단","stat.local":"로컬 우선",
+                "f1.title":"통합 워크벤치","f1.desc":"SSH, SFTP, RDP, 데이터베이스, API 디버깅을 하나의 창에서 관리. 리소스 개요를 한눈에, 더블클릭으로 연결.","f2.title":"AI 스마트 어시스턴트","f2.desc":"컨텍스트 인식 AI 내장 진단. 터미널 오류 원클릭 분석, SQL 최적화, 전체 워크플로우를 지원.","f3.title":"Immersive Canvas","f3.desc":"전체 새로운 Immersive Canvas 모드. AI, 터미널, 파일, 데이터베이스, API 패널을 자유롭게 배치. 블록을 쌓듯 워크스페이스를 구축.",
+                "sw1.tag":"워크벤치","sw1.title":"모든 것은 여기서 시작됩니다","sw1.desc":"스마트 검색 바에서 user@host를 직접 입력하여 연결하거나 AI 어시스턴트에게 질문. 리소스 개요 카드에서 실시간 연결 수 표시.","sw1.l1":"최근 작업 기록, 원클릭으로 세션 복원","sw1.l2":"SQL 쿼리 기록 빠른 복사 및 재실행","sw1.l3":"그룹 관리 지원, 프로덕션/스테이징 환경 명확한 분리",
+                "sw2.tag":"다크 모드","sw2.title":"심야 운영, 눈에 편안한","sw2.desc":"macOS 다크 모드를 완벽하게 지원. 다크 테마에서도 명확한 시각적 계층과 우아한 경험 제공.","sw2.l1":"시스템 외관 설정 자동追随","sw2.l2":"터미널과 파일 관리자에서 통일된 다크 스타일","sw2.l3":"다크 모드에서도 AI 어시스턴트가 눈에 띄고 사용하기 쉬움",
+                "canvas.desc":"작업 패널을 자유롭게 배치. AI 채팅, SSH 터미널, SFTP 파일 관리자, SQL 편집기, API 디버거 — 하나의 캔버스에서 협업.",
+                "db.title":"30개 이상의 데이터베이스, 바로 사용 가능","db.desc":"관계형 데이터베이스부터 벡터 데이터베이스, 국산 데이터베이스부터 클라우드 네이티브까지 — 하나의 플랫폼으로 모두 지원.","db.more":"더 보기",
+                "footer.desc":"현대 개발자를 위해 구축된 차세대 스마트 터미널 및 연결 관리 도구. 로컬 우선, 데이터는 당신의 것.","footer.product":"제품","footer.features":"기능","footer.workbench":"워크벤치","footer.canvas":"캔버스","footer.databases":"데이터베이스","footer.support":"지원","footer.docs":"문서","footer.contact":"문의하기","footer.legal":"법적 정보","footer.privacy":"개인정보 처리방침","footer.terms":"이용약관"
+            },
+            fr: {
+                "nav.features":"Fonctionnalités","nav.workbench":"Bureau","nav.canvas":"Canvas","nav.databases":"Bases de données","nav.download":"Télécharger",
+                "hero.badge":"v2.0 — Nouveau Immersive Canvas","hero.title":"Un bureau pour tout connecter.","hero.subtitle":"SSH, SFTP, RDP, plus de 30 bases de données et débogage API — tout unifié dans un bureau élégant. Assistant IA à vos côtés, pour un fonctionnement et un développement plus efficaces que jamais.","hero.download":"Télécharger pour macOS","hero.learn":"En savoir plus ↓",
+                "stat.databases":"Types de BDD","stat.protocols":"Protocoles","stat.ai":"Diagnostic IA","stat.local":"Local en priorité",
+                "f1.title":"Bureau unifié","f1.desc":"Gérez SSH, SFTP, RDP, bases de données et débogage API dans une seule fenêtre. Vue d'ensemble des ressources en un coup d'œil, double-cliquez pour vous connecter.","f2.title":"Assistant IA intelligent","f2.desc":"IA intégrée avec diagnostic contextuel. Analyse des erreurs terminal en un clic, optimisation SQL intelligente, tout au long de votre flux de travail.","f3.title":"Immersive Canvas","f3.desc":"Nouveau mode de canevas immersif. Disposez librement les panneaux IA, terminal, fichiers, bases de données et API. Construisez votre espace de travail comme des briques.",
+                "sw1.tag":"Bureau","sw1.title":"Tout commence ici","sw1.desc":"La barre de recherche intelligente supporte les connexions user@host directes, ou posez une question à l'assistant IA. Les cartes de vue d'ensemble affichent les compteurs de connexions en temps réel.","sw1.l1":"Historique de travail récent, restaurez la dernière session en un clic","sw1.l2":"Historique de requêtes SQL pour copie et re-exécution rapide","sw1.l3":"Gestion par groupes, séparation claire prod/staging",
+                "sw2.tag":"Mode sombre","sw2.title":"Operations nocturnes, douces pour les yeux","sw2.desc":"Adapté parfaitement au mode sombre de macOS. Hiérarchie visuelle claire et expérience élégante même dans les thèmes sombres.","sw2.l1":"Suit automatiquement les paramètres d'apparence du système","sw2.l2":"Style sombre unifié entre le terminal et le gestionnaire de fichiers","sw2.l3":"L'assistant IA reste visible et facile à utiliser en mode sombre",
+                "canvas.desc":"Disposez librement vos panneaux de travail. Chat IA, terminal SSH, gestionnaire de fichiers SFTP, éditeur SQL, débogueur API — tous collaborant sur un seul canevas.",
+                "db.title":"30+ bases de données, prêtes à l'emploi","db.desc":"Des bases de données relationnelles aux bases vectorielles, des bases nationales au cloud-natif — une plateforme les couvre toutes.","db.more":"Plus",
+                "footer.desc":"Le terminal intelligent et gestionnaire de connexion de nouvelle génération construit pour les développeurs modernes. Priorité locale, vos données restent les vôtres.","footer.product":"Produit","footer.features":"Fonctionnalités","footer.workbench":"Bureau","footer.canvas":"Canvas","footer.databases":"Bases de données","footer.support":"Support","footer.docs":"Documentation","footer.contact":"Nous contacter","footer.legal":"Mentions légales","footer.privacy":"Politique de confidentialité","footer.terms":"Conditions d'utilisation"
+            },
+            de: {
+                "nav.features":"Funktionen","nav.workbench":"Arbeitsplatz","nav.canvas":"Canvas","nav.databases":"Datenbanken","nav.download":"Herunterladen",
+                "hero.badge":"v2.0 — Neues Immersive Canvas","hero.title":"Ein Arbeitsplatz für alles.","hero.subtitle":"SSH, SFTP, RDP, über 30 Datenbanken und API-Debugging — alles vereint in einem eleganten Arbeitsplatz. KI-Assistent an Ihrer Seite, für effizienteres Arbeiten und Entwickeln als je zuvor.","hero.download":"Für macOS herunterladen","hero.learn":"Mehr erfahren ↓",
+                "stat.databases":"Datenbanktypen","stat.protocols":"Protokolle","stat.ai":"KI-Diagnose","stat.local":"Lokal zuerst",
+                "f1.title":"Einziger Arbeitsplatz","f1.desc":"Verwalten Sie SSH, SFTP, RDP, Datenbanken und API-Debugging in einem Fenster. Ressourcenübersicht auf einen Blick, Doppelklick zum Verbinden.","f2.title":"KI-Smart-Assistent","f2.desc":"Eingebaute KI mit kontextbewusster Diagnose. Ein-Klick-Terminalfehleranalyse, intelligente SQL-Optimierung durch Ihren gesamten Workflow.","f3.title":"Immersive Canvas","f3.desc":"Neuer immersiver Canvas-Modus. Ordnen Sie KI-, Terminal-, Datei-, Datenbank- und API-Panel frei an. Bauen Sie Ihren Arbeitsplatz wie Bauklötze.",
+                "sw1.tag":"Arbeitsplatz","sw1.title":"Alles beginnt hier","sw1.desc":"Die intelligente Suchleiste unterstützt direkte user@host-Verbindungen oder stellen Sie eine Frage an den KI-Assistenten. Ressourcenübersichtskarten zeigen Echtzeit-Verbindungszahlen.","sw1.l1":"Letzte Arbeitshistorie, letzte Sitzung mit einem Klick wiederherstellen","sw1.l2":"SQL-Abfragehistorie zum schnellen Kopieren und Neu Ausführen","sw1.l3":"Gruppenverwaltung, klare Trennung von Prod/Staging",
+                "sw2.tag":"Dunkler Modus","sw2.title":"Nachtbetrieb, angenehm für die Augen","sw2.desc":"Perfekte Anpassung an den macOS-Dunkelmodus. Klare visuelle Hierarchie und elegantes Erlebnis selbst in dunklen Themen.","sw2.l1":"Folgt automatisch den Systemdarstellungseinstellungen","sw2.l2":"Einheitlicher dunkler Stil zwischen Terminal und Dateimanager","sw2.l3":"KI-Assistent bleibt auch im Dunkeln gut sichtbar und bedienbar",
+                "canvas.desc":"Ordnen Sie Ihre Arbeitspaneele frei an. KI-Chat, SSH-Terminal, SFTP-Dateimanager, SQL-Editor, API-Debugger — alle auf einer Leinwand zusammenarbeitsend.",
+                "db.title":"30+ Datenbanken, sofort einsatzbereit","db.desc":"Von relationalen Datenbanken über Vektordatenbanken bis hin zu inländischen Datenbanken und Cloud-Native — eine Plattform deckt alles ab.","db.more":"Mehr",
+                "footer.desc":"Das nächste Generation Smart-Terminal und Verbindungsmanager für moderne Entwickler. Lokal zuerst, Ihre Daten bleiben Ihre.","footer.product":"Produkt","footer.features":"Funktionen","footer.workbench":"Arbeitsplatz","footer.canvas":"Canvas","footer.databases":"Datenbanken","footer.support":"Support","footer.docs":"Dokumentation","footer.contact":"Kontakt","footer.legal":"Rechtliches","footer.privacy":"Datenschutz","footer.terms":"Nutzungsbedingungen"
+            },
+            es: {
+                "nav.features":"Funciones","nav.workbench":"Escritorio","nav.canvas":"Canvas","nav.databases":"Bases de datos","nav.download":"Descargar",
+                "hero.badge":"v2.0 — Nuevo Immersive Canvas","hero.title":"Un escritorio para conectarlo todo.","hero.subtitle":"SSH, SFTP, RDP, más de 30 bases de datos y depuración API — todo unificado en un elegante escritorio. Asistente IA a su lado, haciendo que las operaciones y el desarrollo sean más eficientes que nunca.","hero.download":"Descargar para macOS","hero.learn":"Saber más ↓",
+                "stat.databases":"Tipos de BDD","stat.protocols":"Protocolos","stat.ai":"Diagnóstico IA","stat.local":"Local primero",
+                "f1.title":"Escritorio unificado","f1.desc":"Administre SSH, SFTP, RDP, bases de datos y depuración API en una sola ventana. Vista general de recursos de un vistazo, doble clic para conectar.","f2.title":"Asistente IA inteligente","f2.desc":"IA integrada con diagnóstico contextual. Análisis de errores de terminal con un clic, optimización SQL inteligente, durante todo su flujo de trabajo.","f3.title":"Immersive Canvas","f3.desc":"Nuevo modo de lienzo inmersivo. Organice libremente los paneles de IA, terminal, archivos, bases de datos y API. Construya su espacio de trabajo como bloques.",
+                "sw1.tag":"Escritorio","sw1.title":"Todo comienza aquí","sw1.desc":"La barra de búsqueda inteligente admite conexiones user@host directas, o pregunte al asistente IA. Las tarjetas de vista general muestran conteos de conexiones en tiempo real.","sw1.l1":"Historial de trabajo reciente, restaure la última sesión con un clic","sw1.l2":"Historial de consultas SQL para copia y re-ejecución rápida","sw1.l3":"Gestión por grupos, separación clara prod/staging",
+                "sw2.tag":"Modo oscuro","sw2.title":"Operaciones nocturnas, suaves para los ojos","sw2.desc":"Se adapta perfectamente al modo oscuro de macOS. Jerarquía visual clara y experiencia elegante incluso en temas oscuros.","sw2.l1":"Sigue automáticamente la configuración de apariencia del sistema","sw2.l2":"Estilo oscuro unificado entre terminal y gestor de archivos","sw2.l3":"El asistente IA sigue siendo destacado y fácil de usar en modo oscuro",
+                "canvas.desc":"Organice libremente sus paneles de trabajo. Chat IA, terminal SSH, gestor de archivos SFTP, editor SQL, depurador API — todos colaborando en un solo lienzo.",
+                "db.title":"30+ bases de datos, listas para usar","db.desc":"Desde bases de datos relacionales hasta bases de datos vectoriales, desde bases de datos nacionales hasta cloud-native — una plataforma lo cubre todo.","db.more":"Más",
+                "footer.desc":"El terminal inteligente y gestor de conexiones de próxima generación construido para desarrolladores modernos. Local primero, sus datos son suyos.","footer.product":"Producto","footer.features":"Funciones","footer.workbench":"Escritorio","footer.canvas":"Canvas","footer.databases":"Bases de datos","footer.support":"Soporte","footer.docs":"Documentación","footer.contact":"Contacto","footer.legal":"Legal","footer.privacy":"Política de privacidad","footer.terms":"Términos de servicio"
+            },
+            pt: {
+                "nav.features":"Funcionalidades","nav.workbench":"Workbench","nav.canvas":"Canvas","nav.databases":"Bancos de dados","nav.download":"Baixar",
+                "hero.badge":"v2.0 — Novo Immersive Canvas","hero.title":"Um workbench para conectar tudo.","hero.subtitle":"SSH, SFTP, RDP, mais de 30 bancos de dados e depuração API — tudo unificado em um elegant workbench. Assistente IA ao seu lado, tornando operações e desenvolvimento mais eficientes do que nunca.","hero.download":"Baixar para macOS","hero.learn":"Saiba mais ↓",
+                "stat.databases":"Tipos de BDD","stat.protocols":"Protocolos","stat.ai":"Diagnóstico IA","stat.local":"Local primeiro",
+                "f1.title":"Workbench unificado","f1.desc":"Gerencie SSH, SFTP, RDP, bancos de dados e depuração API em uma janela. Visão geral dos recursos de relance, clique duplo para conectar.","f2.title":"Assistente IA inteligente","f2.desc":"IA integrada com diagnóstico contextual. Análise de erros de terminal com um clique, otimização de SQL inteligente, durante todo o seu fluxo de trabalho.","f3.title":"Immersive Canvas","f3.desc":"Novo modo de canvas imersivo. Organize livremente os painéis de IA, terminal, arquivos, bancos de dados e API. Construa seu espaço de trabalho como blocos.",
+                "sw1.tag":"Workbench","sw1.title":"Tudo começa aqui","sw1.desc":"A barra de pesquisa inteligente suporta conexões user@host diretas, ou pergunte ao assistente IA. Os cartões de visão geral mostram contagens de conexões em tempo real.","sw1.l1":"Histórico de trabalho recente, restaure a última sessão com um clique","sw1.l2":"Histórico de consultas SQL para cópia e re-execução rápida","sw1.l3":"Gerenciamento por grupos, separação clara prod/staging",
+                "sw2.tag":"Modo escuro","sw2.title":"Operações noturnas, suaves para os olhos","sw2.desc":"Adapta-se perfeitamente ao modo escuro do macOS. Hierarquia visual clara e experiência elegante mesmo em temas escuros.","sw2.l1":"Segue automaticamente as configurações de aparência do sistema","sw2.l2":"Estilo escuro unificado entre terminal e gerenciador de arquivos","sw2.l3":"O assistente IA continua destacado e fácil de usar no modo escuro",
+                "canvas.desc":"Organize livremente seus painéis de trabalho. Chat IA, terminal SSH, gerenciador de arquivos SFTP, editor SQL, depurador API — todos colaborando em um canvas.",
+                "db.title":"30+ bancos de dados, prontos para uso","db.desc":"De bancos de dados relacionais a bancos de dados vetoriais, de bancos de dados nacionais a cloud-native — uma plataforma cobre tudo.","db.more":"Mais",
+                "footer.desc":"O terminal inteligente e gerenciador de conexões de próxima geração construído para desenvolvedores modernos. Local primeiro, seus dados são seus.","footer.product":"Produto","footer.features":"Funcionalidades","footer.workbench":"Workbench","footer.canvas":"Canvas","footer.databases":"Bancos de dados","footer.support":"Suporte","footer.docs":"Documentação","footer.contact":"Contato","footer.legal":"Legal","footer.privacy":"Política de Privacidade","footer.terms":"Termos de Serviço"
+            },
+            ru: {
+                "nav.features":"Функции","nav.workbench":"Рабочая станция","nav.canvas":"Холст","nav.databases":"Базы данных","nav.download":"Скачать",
+                "hero.badge":"v2.0 — Новый Immersive Canvas","hero.title":"Одна рабочая станция для всего.","hero.subtitle":"SSH, SFTP, RDP, более 30 баз данных и отладка API — всё объединено в одной элегантной рабочей станции. ИИ-ассистент рядом, делая операции и разработку эффективнее, чем когда-либо.","hero.download":"Скачать для macOS","hero.learn":"Узнать больше ↓",
+                "stat.databases":"Типы БД","stat.protocols":"Протоколы","stat.ai":"ИИ-диагностика","stat.local":"Локально в первую очередь",
+                "f1.title":"Единая рабочая станция","f1.desc":"Управляйте SSH, SFTP, RDP, базами данных и отладкой API в одном окне. Обзор ресурсов с первого взглята, двойной клик для подключения.","f2.title":"ИИ-ассистент","f2.desc":"Встроенный ИИ с контекстной диагностикой. Однокликовый разбор ошибок терминала, интеллектуальная оптимизация SQL на протяжении всего рабочего процесса.","f3.title":"Immersive Canvas","f3.desc":"Новый режим погружающегося холста. Свободно расставляйте панели ИИ, терминала, файлов, баз данных и API. Стройте рабочее пространство как конструктор.",
+                "sw1.tag":"Рабочая станция","sw1.title":"Всё начинается здесь","sw1.desc":"Умная строка поиска поддерживает прямые подключения user@host или задайте вопрос ИИ-ассистенту. Карты обзора ресурсов показывают количество подключений в реальном времени.","sw1.l1":"Недавняя история работ, восстановите последнюю сессию одним кликом","sw1.l2":"История SQL-запросов для быстрого копирования и повторного выполнения","sw1.l3":"Управление группами, чёткое разделение prod/staging",
+                "sw2.tag":"Тёмная тема","sw2.title":"Ночные операции, мягкие для глаз","sw2.desc":"Идеально адаптируется к тёмной теме macOS. Чёткая визуальная иерархия и элегантный опыт даже в тёмных темах.","sw2.l1":"Автоматически следует настройкам внешнего вида системы","sw2.l2":"Единый тёмный стиль для терминала и файлового менеджера","sw2.l3":"ИИ-ассистент остаётся заметным и удобным в тёмной теме",
+                "canvas.desc":"Свободно расставляйте панели рабочего пространства. ИИ-чат, SSH-терминал, файловый менеджер SFTP, редактор SQL, отладчик API — всё сотрудничает на одном холсте.",
+                "db.title":"30+ баз данных, готовы к работе","db.desc":"От реляционных баз данных до векторных, от отечественных до облачно-нативных — одна платформа покрывает всё.","db.more":"Ещё",
+                "footer.desc":"Смарт-терминал и менеджер подключений нового поколения для современных разработчиков. Локально в первую очередь, ваши данные остаются вашими.","footer.product":"Продукт","footer.features":"Функции","footer.workbench":"Рабочая станция","footer.canvas":"Холст","footer.databases":"Базы данных","footer.support":"Поддержка","footer.docs":"Документация","footer.contact":"Связаться с нами","footer.legal":"Правовая информация","footer.privacy":"Политика конфиденциальности","footer.terms":"Условия использования"
+            }
+        };
+
+        const langLabels = {
+            en: 'EN', zh: '中文', ja: '日本語', ko: '한국어',
+            fr: 'FR', de: 'DE', es: 'ES', pt: 'PT', ru: 'RU'
+        };
+
+        const langTitles = {
+            en: 'OrbitShell - Smart Unified Connection Manager & AI Terminal',
+            zh: 'OrbitShell - 智能统一连接管理与 AI 终端',
+            ja: 'OrbitShell - スマート統一接続管理＆AIターミナル',
+            ko: 'OrbitShell - 스마트 통합 연결 관리 및 AI 터미널',
+            fr: 'OrbitShell - Gestionnaire de Connexion Intégré et Terminal IA',
+            de: 'OrbitShell - Smarte Unified Connection Manager & KI-Terminal',
+            es: 'OrbitShell - Gestor de Conexión Unificado e Terminal IA',
+            pt: 'OrbitShell - Gerenciador de Conexão Unificado e Terminal IA',
+            ru: 'OrbitShell - Умный менеджер подключений и ИИ-терминал'
+        };
+
+        const htmlLangMap = {
+            en:'en', zh:'zh-CN', ja:'ja', ko:'ko',
+            fr:'fr', de:'de', es:'es', pt:'pt', ru:'ru'
+        };
+
+        /* ===== Language Switcher ===== */
+        const html = document.documentElement;
+        const langDropdown = document.getElementById('langDropdown');
+        const langToggle = document.getElementById('langToggle');
+        const langMenu = document.getElementById('langMenu');
+        let currentLang = localStorage.getItem('orbitshell-lang') || 'en';
+
+        function setLang(lang) {
+            currentLang = lang;
+            html.lang = htmlLangMap[lang] || 'en';
+            localStorage.setItem('orbitshell-lang', lang);
+
+            document.title = langTitles[lang] || langTitles.en;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key] !== undefined) {
+                    el.textContent = i18n[lang][key];
+                }
+            });
+
+            // Update toggle label
+            langToggle.innerHTML = '🌐 ' + (langLabels[lang] || 'EN') + ' <span class="arrow">▼</span>';
+
+            // Update active state in dropdown
+            langMenu.querySelectorAll('.lang-option').forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.lang === lang);
+            });
+        }
+
+        // Initialize
+        setLang(currentLang);
+
+        // Toggle dropdown
+        langToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('open');
+        });
+
+        // Select language
+        langMenu.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', (e) => {
+                e.stopPropagation();
+                setLang(opt.dataset.lang);
+                langDropdown.classList.remove('open');
+            });
+        });
+
+        // Close on outside click
+        document.addEventListener('click', () => {
+            langDropdown.classList.remove('open');
+        });
+
+        /* ===== Mobile Menu ===== */
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
         mobileMenuBtn.addEventListener('click', () => {
@@ -956,7 +1209,7 @@
             navLinks.classList.toggle('active');
         });
 
-        // 滚动动画
+        /* ===== Scroll Animations ===== */
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -968,7 +1221,7 @@
 
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // 图片放大
+        /* ===== Image Zoom Modal ===== */
         const imgModal = document.getElementById('imgModal');
         const expandedImg = document.getElementById('expandedImg');
         document.querySelectorAll('.zoom-img').forEach(img => {

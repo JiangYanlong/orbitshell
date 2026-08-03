@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrbitShell 支持与联系</title>
-    <meta name="description" content="OrbitShell 支持中心，包含联系邮箱、隐私请求和审核资料入口。">
+    <title>OrbitShell Support</title>
+    <meta name="description" content="OrbitShell support center, including contact, privacy requests, and App Store review resources.">
     <link rel="icon" type="image/png" href="app-icon.png">
     <link rel="apple-touch-icon" href="app-icon.png">
     <link rel="stylesheet" href="legal.css">
@@ -14,69 +14,193 @@
         <div class="topbar">
             <div class="brand">OrbitShell</div>
             <nav>
-                <a href="index.html">首页</a>
-                <a href="privacy.html">隐私政策</a>
-                <a href="terms.html">服务条款</a>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="privacy.html" data-i18n="nav.privacy">Privacy Policy</a>
+                <a href="terms.html" data-i18n="nav.terms">Terms of Service</a>
+                <div class="lang-dropdown" id="langDropdown">
+                    <span class="lang-toggle" id="langToggle">🌐 EN <span class="arrow">▼</span></span>
+                    <div class="lang-menu" id="langMenu">
+                        <div class="lang-option active" data-lang="en">English <span class="lang-code">EN</span></div>
+                        <div class="lang-option" data-lang="zh">中文 <span class="lang-code">ZH</span></div>
+                        <div class="lang-option" data-lang="ja">日本語 <span class="lang-code">JA</span></div>
+                        <div class="lang-option" data-lang="ko">한국어 <span class="lang-code">KO</span></div>
+                        <div class="lang-option" data-lang="fr">Français <span class="lang-code">FR</span></div>
+                        <div class="lang-option" data-lang="de">Deutsch <span class="lang-code">DE</span></div>
+                        <div class="lang-option" data-lang="es">Español <span class="lang-code">ES</span></div>
+                        <div class="lang-option" data-lang="pt">Português <span class="lang-code">PT</span></div>
+                        <div class="lang-option" data-lang="ru">Русский <span class="lang-code">RU</span></div>
+                    </div>
+                </div>
             </nav>
         </div>
 
         <section class="hero">
-            <div class="eyebrow">支持中心</div>
-            <h1>支持与联系</h1>
-            <p>OrbitShell 的安装使用、隐私请求、上架审核资料和商务合作，都可以通过这里找到对应入口。</p>
+            <div class="eyebrow" data-i18n="s.eyebrow">Support Center</div>
+            <h1 data-i18n="s.title">Support & Contact</h1>
+            <p data-i18n="s.desc">OrbitShell installation, privacy requests, App Store review materials, and business inquiries — find the right entry point here.</p>
             <div class="meta">
-                <span>支持邮箱：support@orbitshell.cn</span>
-                <span>站点更新：2026年4月18日</span>
+                <span data-i18n="s.email">Support email: support@orbitshell.cn</span>
+                <span data-i18n="s.updated">Last updated: April 18, 2026</span>
             </div>
         </section>
 
         <article class="document">
             <section>
-                <h2>1. 常用入口</h2>
+                <h2 data-i18n="s.s1h">1. Common Entry Points</h2>
                 <div class="contact-grid">
                     <div class="contact-card">
-                        <h3>产品与使用问题</h3>
-                        <p>如需安装帮助、连接配置说明、功能咨询或故障反馈，请发送邮件到 <a href="mailto:support@orbitshell.cn">support@orbitshell.cn</a>。</p>
+                        <h3 data-i18n="s.c1h">Product & Usage Issues</h3>
+                        <p data-i18n="s.c1p">For installation help, connection configuration, feature inquiries, or bug reports, please email <a href="mailto:support@orbitshell.cn">support@orbitshell.cn</a>.</p>
                     </div>
                     <div class="contact-card">
-                        <h3>隐私与数据请求</h3>
-                        <p>如需删除数据、撤回授权、咨询 AI 数据处理方式，请阅读 <a href="privacy.html">隐私政策</a> 并通过邮箱联系我们。</p>
+                        <h3 data-i18n="s.c2h">Privacy & Data Requests</h3>
+                        <p data-i18n="s.c2p">To delete data, withdraw consent, or inquire about AI data processing, please read the <a href="privacy.html">Privacy Policy</a> and contact us via email.</p>
                     </div>
                     <div class="contact-card">
-                        <h3>法律与合规资料</h3>
-                        <p>提交 App Store、企业采购或法务审查时，可直接引用本站公开页面中的 <a href="privacy.html">隐私政策</a> 与 <a href="terms.html">服务条款</a>。</p>
+                        <h3 data-i18n="s.c3h">Legal & Compliance Materials</h3>
+                        <p data-i18n="s.c3p">For App Store submission, enterprise procurement, or legal review, you may reference the <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a> on this site.</p>
                     </div>
                     <div class="contact-card">
-                        <h3>商务合作</h3>
-                        <p>如需定制部署、团队采购或合作洽谈，请在邮件标题中注明需求背景与联系方式，便于快速响应。</p>
+                        <h3 data-i18n="s.c4h">Business Cooperation</h3>
+                        <p data-i18n="s.c4p">For custom deployment, team procurement, or partnership inquiries, please include your requirements and contact info in the email subject for faster response.</p>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2>2. 提交支持请求时建议提供的信息</h2>
+                <h2 data-i18n="s.s2h">2. Recommended Info for Support Requests</h2>
                 <ul>
-                    <li>使用平台与系统版本，例如 macOS、iOS 或 iPadOS 版本。</li>
-                    <li>OrbitShell 版本号、问题出现时间以及复现步骤。</li>
-                    <li>报错截图或日志片段。若包含密钥、令牌、客户数据或生产环境地址，请先脱敏。</li>
-                    <li>如果问题与上架审核有关，请同时提供审核意见原文与相关截图。</li>
+                    <li data-i18n="s.s2l1">Your platform and OS version, e.g. macOS, iOS, or iPadOS version.</li>
+                    <li data-i18n="s.s2l2">OrbitShell version, when the issue occurred, and steps to reproduce.</li>
+                    <li data-i18n="s.s2l3">Error screenshots or log snippets. Please redact any keys, tokens, customer data, or production addresses.</li>
+                    <li data-i18n="s.s2l4">If related to App Store review, please also provide the review feedback原文 and relevant screenshots.</li>
                 </ul>
             </section>
 
             <section>
-                <h2>3. App Store 上架前自查建议</h2>
+                <h2 data-i18n="s.s3h">3. Pre-Submission Checklist for App Store</h2>
                 <ul>
-                    <li>确认 <a href="privacy.html">隐私政策</a> 是可公开访问的独立 URL，而不是仅在应用内弹窗展示。</li>
-                    <li>确认 App Store Connect 的隐私标签与应用真实行为一致，覆盖所有第三方 SDK 和云服务。</li>
-                    <li>确认服务条款、支持方式、演示账号、审核说明和截图内容已经准备完整。</li>
+                    <li data-i18n="s.s3l1">Ensure the <a href="privacy.html">Privacy Policy</a> is a publicly accessible standalone URL, not just an in-app popup.</li>
+                    <li data-i18n="s.s3l2">Verify that App Store Connect privacy labels match actual app behavior, covering all third-party SDKs and cloud services.</li>
+                    <li data-i18n="s.s3l3">Confirm terms of service, support channels, demo accounts, review notes, and screenshots are complete.</li>
                 </ul>
 
                 <div class="cta-row">
-                    <a class="button-link" href="mailto:support@orbitshell.cn?subject=OrbitShell%20%E6%94%AF%E6%8C%81%E8%AF%B7%E6%B1%82">联系支持</a>
-                    <a class="button-link secondary" href="index.html">返回首页</a>
+                    <a class="button-link" href="mailto:support@orbitshell.cn?subject=OrbitShell%20Support%20Request" data-i18n="s.cta1">Contact Support</a>
+                    <a class="button-link secondary" href="index.html" data-i18n="s.cta2">Back to Home</a>
                 </div>
             </section>
         </article>
     </main>
+
+    <script>
+        const i18n = {
+            en: {
+                "nav.home":"Home","nav.privacy":"Privacy Policy","nav.terms":"Terms of Service",
+                "s.eyebrow":"Support Center","s.title":"Support & Contact","s.desc":"OrbitShell installation, privacy requests, App Store review materials, and business inquiries — find the right entry point here.","s.email":"Support email: support@orbitshell.cn","s.updated":"Last updated: April 18, 2026",
+                "s.s1h":"1. Common Entry Points","s.c1h":"Product & Usage Issues","s.c1p":"For installation help, connection configuration, feature inquiries, or bug reports, please email support@orbitshell.cn.","s.c2h":"Privacy & Data Requests","s.c2p":"To delete data, withdraw consent, or inquire about AI data processing, please read the Privacy Policy and contact us via email.","s.c3h":"Legal & Compliance Materials","s.c3p":"For App Store submission, enterprise procurement, or legal review, you may reference the Privacy Policy and Terms of Service on this site.","s.c4h":"Business Cooperation","s.c4p":"For custom deployment, team procurement, or partnership inquiries, please include your requirements and contact info in the email subject for faster response.",
+                "s.s2h":"2. Recommended Info for Support Requests","s.s2l1":"Your platform and OS version, e.g. macOS, iOS, or iPadOS version.","s.s2l2":"OrbitShell version, when the issue occurred, and steps to reproduce.","s.s2l3":"Error screenshots or log snippets. Please redact any keys, tokens, customer data, or production addresses.","s.s2l4":"If related to App Store review, please also provide the review feedback and relevant screenshots.",
+                "s.s3h":"3. Pre-Submission Checklist for App Store","s.s3l1":"Ensure the Privacy Policy is a publicly accessible standalone URL, not just an in-app popup.","s.s3l2":"Verify that App Store Connect privacy labels match actual app behavior, covering all third-party SDKs and cloud services.","s.s3l3":"Confirm terms of service, support channels, demo accounts, review notes, and screenshots are complete.",
+                "s.cta1":"Contact Support","s.cta2":"Back to Home"
+            },
+            zh: {
+                "nav.home":"首页","nav.privacy":"隐私政策","nav.terms":"服务条款",
+                "s.eyebrow":"支持中心","s.title":"支持与联系","s.desc":"OrbitShell 的安装使用、隐私请求、上架审核资料和商务合作，都可以通过这里找到对应入口。","s.email":"支持邮箱：support@orbitshell.cn","s.updated":"站点更新：2026年4月18日",
+                "s.s1h":"1. 常用入口","s.c1h":"产品与使用问题","s.c1p":"如需安装帮助、连接配置说明、功能咨询或故障反馈，请发送邮件到 support@orbitshell.cn。","s.c2h":"隐私与数据请求","s.c2p":"如需删除数据、撤回授权、咨询 AI 数据处理方式，请阅读隐私政策并通过邮箱联系我们。","s.c3h":"法律与合规资料","s.c3p":"提交 App Store、企业采购或法务审查时，可直接引用本站公开页面中的隐私政策与服务条款。","s.c4h":"商务合作","s.c4p":"如需定制部署、团队采购或合作洽谈，请在邮件标题中注明需求背景与联系方式，便于快速响应。",
+                "s.s2h":"2. 提交支持请求时建议提供的信息","s.s2l1":"使用平台与系统版本，例如 macOS、iOS 或 iPadOS 版本。","s.s2l2":"OrbitShell 版本号、问题出现时间以及复现步骤。","s.s2l3":"报错截图或日志片段。若包含密钥、令牌、客户数据或生产环境地址，请先脱敏。","s.s2l4":"如果问题与上架审核有关，请同时提供审核意见原文与相关截图。",
+                "s.s3h":"3. App Store 上架前自查建议","s.s3l1":"确认隐私政策是可公开访问的独立 URL，而不是仅在应用内弹窗展示。","s.s3l2":"确认 App Store Connect 的隐私标签与应用真实行为一致，覆盖所有第三方 SDK 和云服务。","s.s3l3":"确认服务条款、支持方式、演示账号、审核说明和截图内容已经准备完整。",
+                "s.cta1":"联系支持","s.cta2":"返回首页"
+            },
+            ja: {
+                "nav.home":"ホーム","nav.privacy":"プライバシーポリシー","nav.terms":"利用規約",
+                "s.eyebrow":"サポートセンター","s.title":"サポートと連絡","s.desc":"OrbitShellのインストール、プライバシーリクエスト、App Store審査資料、ビジネスのお問い合わせ——正しい入口はこちらから。","s.email":"サポートメール：support@orbitshell.cn","s.updated":"最終更新：2026年4月18日",
+                "s.s1h":"1. よくある入口","s.c1h":"製品と使用上の問題","s.c1p":"インストールヘルプ、接続設定、機能のお問い合わせ、バグ報告は support@orbitshell.cn までメールしてください。","s.c2h":"プライバシーとデータリクエスト","s.c2p":"データ削除、同意撤回、AIデータ処理に関するお問い合わせは、プライバシーポリシーをお読みの上、メールでご連絡ください。","s.c3h":"法的・コンプライアンス資料","s.c3p":"App Store提出、企業調達、法的審査の際は、当サイトのプライバシーポリシーと利用規約を参照できます。","s.c4h":"ビジネス提携","s.c4p":"カスタムデプロイメント、チーム調達、パートナーシップのお問い合わせは、メール件名に要件と連絡先を記載してください。",
+                "s.s2h":"2. サポートリクエストに推奨される情報","s.s2l1":"プラットフォームとOSバージョン（macOS、iOS、iPadOSなど）。","s.s2l2":"OrbitShellのバージョン、問題発生時刻、再現手順。","s.s2l3":"エラースクリーンショットまたはログ。キー、トークン、顧客データ、本番アドレスはマスキングしてください。","s.s2l4":"App Store審査に関連する場合は、審査フィードバックと関連スクリーンショットも提供してください。",
+                "s.s3h":"3. App Store提出前のチェックリスト","s.s3l1":"プライバシーポリシーが公開可能な独立URLであり、アプリ内ポップアップのみでないことを確認。","s.s3l2":"App Store Connectのプライバシーラベルが実際のアプリの動作と一致し、すべてのサードパーティSDKとクラウドサービスをカバーしていることを確認。","s.s3l3":"利用規約、サポート方法、デモアカウント、審査ノート、スクリーンショットが完整的であることを確認。",
+                "s.cta1":"サポートに連絡","s.cta2":"ホームに戻る"
+            },
+            ko: {
+                "nav.home":"홈","nav.privacy":"개인정보 처리방침","nav.terms":"이용약관",
+                "s.eyebrow":"지원 센터","s.title":"지원 및 연락","s.desc":"OrbitShell 설치, 개인정보 요청, App Store 심사 자료, 비즈니스 문의 — 여기에서 올바른 진입점을 찾으세요.","s.email":"지원 이메일: support@orbitshell.cn","s.updated":"마지막 업데이트: 2026년 4월 18일",
+                "s.s1h":"1. 주요 진입점","s.c1h":"제품 및 사용 문제","s.c1p":"설치 도움말, 연결 설정, 기능 문의 또는 버그 보고는 support@orbitshell.cn으로 이메일을 보내주세요.","s.c2h":"개인정보 및 데이터 요청","s.c2p":"데이터 삭제, 동의 철회, AI 데이터 처리 방식 문의는 개인정보 처리방침을 읽고 이메일로 연락주세요.","s.c3h":"법적 및 컴플라이언스 자료","s.c3p":"App Store 제출, 기업 조달 또는 법적 심사 시 이 사이트의 개인정보 처리방침과 이용약관을 참조할 수 있습니다.","s.c4h":"비즈니스 협력","s.c4p":"맞춤 배포, 팀 조달 또는 파트너십 문의 시 빠른 응답을 위해 이메일 제목에 요구 사항과 연락처를 기재해 주세요.",
+                "s.s2h":"2. 지원 요청 시 권장 정보","s.s2l1":"플랫폼 및 OS 버전(예: macOS, iOS 또는 iPadOS 버전).","s.s2l2":"OrbitShell 버版本, 문제 발생 시간, 재현 단계.","s.s2l3":"오류 스크린샷 또는 로그 조각. 키, 토큰, 고객 데이터 또는 프로덕션 주소는 마스킹해 주세요.","s.s2l4":"App Store 심사와 관련된 경우 심사 피드백과 관련 스크린샷도 제공해 주세요.",
+                "s.s3h":"3. App Store 제출 전 체크리스트","s.s3l1":"개인정보 처리방침이 공개적으로 접근 가능한 독립 URL인지, 앱 내 팝업만이 아닌지 확인.","s.s3l2":"App Store Connect 개인정보 라벨이 실제 앱 동작과 일치하며 모든 서드파티 SDK와 클라우드 서비스를 포함하는지 확인.","s.s3l3":"이용약관, 지원 채널, 데모 계정, 심사 노트 및 스크린샷이 완료되었는지 확인.",
+                "s.cta1":"지원 문의","s.cta2":"홈으로 돌아가기"
+            },
+            fr: {
+                "nav.home":"Accueil","nav.privacy":"Politique de confidentialité","nav.terms":"Conditions d'utilisation",
+                "s.eyebrow":"Centre de support","s.title":"Support et contact","s.desc":"Installation d'OrbitShell, demandes de confidentialité, documents de审核 App Store et demandes commerciales — trouvez le bon point d'entrée ici.","s.email":"Email de support : support@orbitshell.cn","s.updated":"Dernière mise à jour : 18 avril 2026",
+                "s.s1h":"1. Points d'entrée courants","s.c1h":"Problèmes de produit et d'utilisation","s.c1p":"Pour l'aide à l'installation, la configuration des connexions, les demandes de fonctionnalités ou les rapports de bugs, envoyez un email à support@orbitshell.cn.","s.c2h":"Demandes de confidentialité et de données","s.c2p":"Pour supprimer des données, retirer le consentement ou ask about AI data processing, please read the Politique de confidentialité and contact us by email.","s.c3h":"Documents juridiques et de conformité","s.c3p":"For App Store submission, enterprise procurement, or legal review, you may reference the Politique de confidentialité and Conditions d'utilisation on this site.","s.c4h":"Coopération commerciale","s.c4p":"For custom deployment, team procurement, or partnership inquiries, please include your requirements and contact info in the email subject for faster response.",
+                "s.s2h":"2. Informations recommandées pour les demandes de support","s.s2l1":"Votre plateforme et version OS, par ex. version macOS, iOS ou iPadOS.","s.s2l2":"Version d'OrbitShell, moment du problème et étapes de reproduction.","s.s2l3":"Captures d'écran d'erreur ou extraits de log. Veuillez masquer les clés, tokens, données clients ou adresses de production.","s.s2l4":"Si lié à审核 App Store, veuillez également fournir les commentaires de审核 et les captures d'écran correspondantes.",
+                "s.s3h":"3. Checklist avant soumission à l'App Store","s.s3l1":"Assurez-vous que la Politique de confidentialité est une URL publiquement accessible, pas seulement un popup dans l'application.","s.s3l2":"Vérifiez que les labels de confidentialité d'App Store Connect correspondent au comportement réel de l'application, couvrant tous les SDK et services tiers.","s.s3l3":"Confirmez que les conditions d'utilisation, les canaux de support, les comptes de démo, les notes de审核 et les captures d'écran sont complets.",
+                "s.cta1":"Contacter le support","s.cta2":"Retour à l'accueil"
+            },
+            de: {
+                "nav.home":"Startseite","nav.privacy":"Datenschutzrichtlinie","nav.terms":"Nutzungsbedingungen",
+                "s.eyebrow":"Support-Center","s.title":"Support & Kontakt","s.desc":"OrbitShell Installation, Datenschutzanfragen, App Store Review-Materialien und Geschäftsanfragen — finden Sie hier den richtigen Einstiegspunkt.","s.email":"Support-E-Mail: support@orbitshell.cn","s.updated":"Letzte Aktualisierung: 18. April 2026",
+                "s.s1h":"1. Häufige Einstiegspunkte","s.c1h":"Produkt- und Nutzungsprobleme","s.c1p":"Für Installationshilfe, Verbindungskonfiguration, Funktionsanfragen oder Fehlerberichte senden Sie bitte eine E-Mail an support@orbitshell.cn.","s.c2h":"Datenschutz- und Datenanfragen","s.c2p":"Zum Löschen von Daten, Widerruf von Einwilligungen oder Fragen zur KI-Datenverarbeitung lesen Sie bitte die Datenschutzrichtlinie und kontaktieren Sie uns per E-Mail.","s.c3h":"Rechtliche & Compliance-Materialien","s.c3p":"Für App Store Einreichungen, Unternehmensbeschaffung oder rechtliche Prüfung können Sie die Datenschutzrichtlinie und Nutzungsbedingungen auf dieser Seite heranziehen.","s.c4h":"Geschäftliche Zusammenarbeit","s.c4p":"Für benutzerdefinierte Bereitstellung, Teambeschaffung oder Partnerschaftsanfragen geben Sie bitte Ihre Anforderungen und Kontaktdaten in die E-Mail-Betreffzeile ein.",
+                "s.s2h":"2. Empfohlene Informationen für Support-Anfragen","s.s2l1":"Ihre Plattform und OS-Version, z.B. macOS-, iOS- oder iPadOS-Version.","s.s2l2":"OrbitShell-Version, wann das Problem auftrat und Schritte zur Reproduktion.","s.s2l3":"Fehler-Screenshots oder Log-Auszüge. Bitte schwärzen Sie Schlüssel, Token, Kundendaten oder Produktionsadressen.","s.s2l4":"Bei Bezug zur App Store Review geben Sie bitte auch das Review-Feedback und relevante Screenshots an.",
+                "s.s3h":"3. Checkliste vor der Einreichung beim App Store","s.s3l1":"Stellen Sie sicher, dass die Datenschutzrichtlinie eine öffentlich zugängliche eigenständige URL ist, nicht nur ein Popup in der App.","s.s3l2":"Überprüfen Sie, ob die Datenschutz-Labels in App Store Connect mit dem tatsächlichen App-Verhalten übereinstimmen und alle Drittanbieter-SDKs und Cloud-Dienste abdecken.","s.s3l3":"Bestätigen Sie, dass Nutzungsbedingungen, Supportkanäle, Demo-Konten, Review-Notizen und Screenshots vollständig sind.",
+                "s.cta1":"Support kontaktieren","s.cta2":"Zurück zur Startseite"
+            },
+            es: {
+                "nav.home":"Inicio","nav.privacy":"Política de privacidad","nav.terms":"Términos de servicio",
+                "s.eyebrow":"Centro de soporte","s.title":"Soporte y contacto","s.desc":"Instalación de OrbitShell, solicitudes de privacidad, materiales de revisión de App Store y consultas comerciales — encuentre el punto de entrada correcto aquí.","s.email":"Correo de soporte: support@orbitshell.cn","s.updated":"Última actualización: 18 de abril de 2026",
+                "s.s1h":"1. Puntos de entrada comunes","s.c1h":"Problemas de producto y uso","s.c1p":"Para ayuda con instalación, configuración de conexiones, consultas de funciones o reportes de errores, envíe un correo a support@orbitshell.cn.","s.c2h":"Solicitudes de privacidad y datos","s.c2p":"Para eliminar datos, retirar consentimiento o consultar sobre procesamiento de datos de IA, lea la Política de privacidad y contáctenos por correo.","s.c3h":"Materiales legales y de cumplimiento","s.c3p":"Para envíos a App Store, adquisiciones empresariales o revisiones legales, puede referenciar la Política de privacidad y los Términos de servicio en este sitio.","s.c4h":"Cooperación comercial","s.c4p":"Para despliegue personalizado, adquisiciones de equipo o consultas de asociación, incluya sus requisitos y información de contacto en el asunto del correo.",
+                "s.s2h":"2. Información recomendada para solicitudes de soporte","s.s2l1":"Su plataforma y versión del SO, ej. versión de macOS, iOS o iPadOS.","s.s2l2":"Versión de OrbitShell, cuándo ocurrió el problema y pasos para reproducir.","s.s2l3":"Capturas de pantalla de errores o fragmentos de registro. Por favor enmascare claves, tokens, datos de clientes o direcciones de producción.","s.s2l4":"Si está relacionado con la revisión de App Store, proporcione también los comentarios de revisión y las capturas de pantalla correspondientes.",
+                "s.s3h":"3. Lista de verificación antes de enviar a App Store","s.s3l1":"Asegúrese de que la Política de privacidad sea una URL independiente y públicamente accesible, no solo un popup dentro de la aplicación.","s.s3l2":"Verifique que las etiquetas de privacidad de App Store Connect coincidan con el comportamiento real de la aplicación, cubriendo todos los SDK y servicios de terceros.","s.s3l3":"Confirme que los términos de servicio, canales de soporte, cuentas de demostración, notas de revisión y capturas de pantalla estén completos.",
+                "s.cta1":"Contactar soporte","s.cta2":"Volver al inicio"
+            },
+            pt: {
+                "nav.home":"Início","nav.privacy":"Política de Privacidade","nav.terms":"Termos de Serviço",
+                "s.eyebrow":"Central de suporte","s.title":"Suporte e contato","s.desc":"Instalação do OrbitShell, solicitações de privacidade, materiais de revisão da App Store e consultas comerciais — encontre o ponto de entrada certo aqui.","s.email":"E-mail de suporte: support@orbitshell.cn","s.updated":"Última atualização: 18 de abril de 2026",
+                "s.s1h":"1. Pontos de entrada comuns","s.c1h":"Problemas de produto e uso","s.c1p":"Para ajuda com instalação, configuração de conexões, consultas de funcionalidades ou relatórios de bugs, envie um e-mail para support@orbitshell.cn.","s.c2h":"Solicitações de privacidade e dados","s.c2p":"Para excluir dados, retirar consentimento ou consultar sobre processamento de dados de IA, leia a Política de Privacidade e entre em contato por e-mail.","s.c3h":"Materiais legais e de conformidade","s.c3p":"Para envio à App Store, aquisição empresarial ou revisão legal, você pode referenciar a Política de Privacidade e os Termos de Serviço neste site.","s.c4h":"Cooperação comercial","s.c4p":"Para implantação personalizada, aquisição de equipe ou consultas de parceria, inclua seus requisitos e informações de contato no assunto do e-mail.",
+                "s.s2h":"2. Informações recomendadas para solicitações de suporte","s.s2l1":"Sua plataforma e versão do SO, ex. versão macOS, iOS ou iPadOS.","s.s2l2":"Versão do OrbitShell, quando o problema ocorreu e passos para reproduzir.","s.s2l3":"Capturas de tela de erros ou trechos de log. Por favor, mascare chaves, tokens, dados de clientes ou endereços de produção.","s.s2l4":"Se relacionado com revisão da App Store, forneça também os comentários da revisão e as capturas de tela relevantes.",
+                "s.s3h":"3. Lista de verificação antes da submissão à App Store","s.s3l1":"Certifique-se de que a Política de Privacidade seja uma URL independente e publicamente acessível, não apenas um popup no aplicativo.","s.s3l2":"Verifique se as etiquetas de privacidade do App Store Connect correspondem ao comportamento real do aplicativo, cobrindo todos os SDKs e serviços de terceiros.","s.s3l3":"Confirme que os termos de serviço, canais de suporte, contas de demonstração, notas de revisão e capturas de tela estejam completos.",
+                "s.cta1":"Contatar suporte","s.cta2":"Voltar ao início"
+            },
+            ru: {
+                "nav.home":"Главная","nav.privacy":"Политика конфиденциальности","nav.terms":"Условия использования",
+                "s.eyebrow":"Центр поддержки","s.title":"Поддержка и контакт","s.desc":"Установка OrbitShell, запросы на конфиденциальность, материалы для проверки App Store и деловые запросы — найдите правильную точку входа здесь.","s.email":"Email поддержки: support@orbitshell.cn","s.updated":"Последнее обновление: 18 апреля 2026",
+                "s.s1h":"1. Основные точки входа","s.c1h":"Продукт и проблемы использования","s.c1p":"Для помощи с установкой, настройкой подключений, вопросами по функциям или отчётов об ошибках, отправьте письмо на support@orbitshell.cn.","s.c2h":"Запросы конфиденциальности и данных","s.c2p":"Для удаления данных, отозвать согласие или вопросов об обработке данных ИИ, прочитайте Политику конфиденциальности и свяжитесь с нами по email.","s.c3h":"Юридические и compliance материалы","s.c3p":"Для подачи в App Store, корпоративных закупок или юридической проверки вы можете сослаться на Политику конфиденциальности и Условия использования на этом сайте.","s.c4h":"Деловое сотрудничество","s.c4p":"Для индивидуального развёртывания, командных закупок или партнёрских запросов, укажите требования и контактную информацию в теме письма.",
+                "s.s2h":"2. Рекомендуемая информация для запросов поддержки","s.s2l1":"Ваша платформа и версия ОС, напр. версия macOS, iOS или iPadOS.","s.s2l2":"Версия OrbitShell, когда возникла проблема и шаги для воспроизведения.","s.s2l3":"Скриншоты ошибок или фрагменты логов. Пожалуйста, замаскируйте ключи, токены, данные клиентов или адреса производства.","s.s2l4":"Если связано с проверкой App Store, предоставьте также отзыв проверки и соответствующие скриншоты.",
+                "s.s3h":"3. Чек-лист перед подачей в App Store","s.s3l1":"Убедитесь, что Политика конфиденциальности является публично доступным отдельным URL, а не только всплывающим окном в приложении.","s.s3l2":"Проверьте, что метки конфиденциальности App Store Connect соответствуют реальному поведению приложения, охватывая все сторонние SDK и облачные сервисы.","s.s3l3":"Подтвердите, что условия использования, каналы поддержки, демо-аккаунты, заметки проверки и скриншоты являются полными.",
+                "s.cta1":"Связаться с поддержкой","s.cta2":"Вернуться на главную"
+            }
+        };
+
+        const langLabels = { en:'EN', zh:'中文', ja:'日本語', ko:'한국어', fr:'FR', de:'DE', es:'ES', pt:'PT', ru:'RU' };
+        const langTitles = {
+            en:'OrbitShell Support', zh:'OrbitShell 支持与联系', ja:'OrbitShell サポート', ko:'OrbitShell 지원',
+            fr:'Support OrbitShell', de:'OrbitShell Support', es:'Soporte de OrbitShell', pt:'Suporte OrbitShell', ru:'Поддержка OrbitShell'
+        };
+        const htmlLangMap = { en:'en', zh:'zh-CN', ja:'ja', ko:'ko', fr:'fr', de:'de', es:'es', pt:'pt', ru:'ru' };
+
+        const html = document.documentElement;
+        const langDropdown = document.getElementById('langDropdown');
+        const langToggle = document.getElementById('langToggle');
+        const langMenu = document.getElementById('langMenu');
+        let currentLang = localStorage.getItem('orbitshell-lang') || 'en';
+
+        function setLang(lang) {
+            currentLang = lang;
+            html.lang = htmlLangMap[lang] || 'en';
+            localStorage.setItem('orbitshell-lang', lang);
+            document.title = langTitles[lang] || langTitles.en;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key] !== undefined) el.textContent = i18n[lang][key];
+            });
+            langToggle.innerHTML = '🌐 ' + (langLabels[lang]||'EN') + ' <span class="arrow">▼</span>';
+            langMenu.querySelectorAll('.lang-option').forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
+        }
+
+        setLang(currentLang);
+        langToggle.addEventListener('click', e => { e.stopPropagation(); langDropdown.classList.toggle('open'); });
+        langMenu.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', e => { e.stopPropagation(); setLang(opt.dataset.lang); langDropdown.classList.remove('open'); });
+        });
+        document.addEventListener('click', () => langDropdown.classList.remove('open'));
+    </script>
 </body>
 </html>
